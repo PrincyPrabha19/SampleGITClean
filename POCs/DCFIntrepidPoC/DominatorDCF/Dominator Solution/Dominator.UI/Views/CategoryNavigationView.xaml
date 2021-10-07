@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Dominator.UI.Views.CategoryNavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:properties="clr-namespace:Dominator.UI.Properties"
+             xmlns:views="clr-namespace:Dominator.UI.Views"
+             xmlns:controls="clr-namespace:Dominator.UI.Controls"
+             mc:Ignorable="d" 
+             Background="{x:Null}"
+             d:DesignHeight="500" d:DesignWidth="400">
+    
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OCControls.Resources;component/Dictionaries/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+    
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <RadioButton Content="{x:Static properties:Resources.CPUCategory}" Style="{DynamicResource CategoryButton}" Tag="/OCControls.Resources;component/Media/Icons/cpu.png" GroupName="Categories" Height="45" Margin="0,0,0,10" Command="{Binding ShowCPUCategoryViewCommand}" VerticalAlignment="Center" IsChecked="{Binding CPUCategorySelected}" />
+            <controls:AnimatedArrowControl x:Name="cpuToMemoryArrows"  IsEnabled ="{Binding MemoryArrowEnabled}" Visibility="{Binding IsMemorySupported}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="20" d:LayoutOverrides="HorizontalAlignment" Margin="100,0,0,10"/>
+            <RadioButton Content="{x:Static properties:Resources.MemoryThermalsCategory}" Style="{DynamicResource CategoryButton}"  Visibility="{Binding IsMemorySupported}" Tag="/OCControls.Resources;component/Media/Icons/memory.png" GroupName="Categories" Height="45" Margin="0,0,0,10" VerticalAlignment="Center" Command="{Binding ShowMemoryCategoryViewCommand}"  />
+            <!--<controls:AnimatedArrowControl x:Name="memoryToThermalArrows"  IsEnabled ="{Binding ThermalArrowEnabled}" Visibility="{Binding IsThermalSupported}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" d:LayoutOverrides="HorizontalAlignment" Margin="100,0,0,10"/>-->
+            <!--<RadioButton Content="{x:Static properties:Resources.SystemThermalCategory}" Style="{DynamicResource CategoryButton}" Tag="/OCControls.Resources;component/Media/Icons/system_thermal.png" GroupName="Categories" Height="40" Margin="0,0,0,10" VerticalAlignment="Top" Command="{Binding ShowSystemThermalCategoryViewCommand}" />-->
+        </StackPanel>
+    </Grid>
+</UserControl>

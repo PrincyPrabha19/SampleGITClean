@@ -1,0 +1,39 @@
+﻿<Window x:Class="Dominator.UI.Views.ProfileNameInputView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        xmlns:properties="clr-namespace:Dominator.UI.Properties"
+        mc:Ignorable="d"
+        Height="500" Width="700"
+	    ResizeMode="NoResize" 
+	    WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"        
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OCControls.Resources;component/Dictionaries/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29.749" Margin="42.334,72.082,0,0" TextWrapping="Wrap" Text="{x:Static properties:Resources.ProfileName}" VerticalAlignment="Top" Width="133.867"/>
+        <TextBox x:Name="textBoxProfileName" Height="28.604" Margin="176.201,71.082,186.043,0" TextWrapping="NoWrap" VerticalAlignment="Top" Text="{Binding ProfileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Content="{x:Static properties:Resources.Save}" Command="{Binding SaveCommand}"  VerticalAlignment="Bottom" Height="60" Style="{DynamicResource button}" HorizontalAlignment="Left" Width="176.201" d:LayoutOverrides="HorizontalAlignment" Margin="137.299,0,0,45.767" />
+        <Button Content="{x:Static properties:Resources.Cancel}" Command="{Binding CancelCommand}"  VerticalAlignment="Bottom" Height="60" Style="{DynamicResource button}" HorizontalAlignment="Left" Width="176.201" Margin="378.718,0,0,45.767" />
+        <TextBlock x:Name="textBlockHeader" Height="34.749" Margin="42.334,20.082,41.799,0" TextWrapping="Wrap" Text="{x:Static properties:Resources.ProfileInputHeader}" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBoxProfiles" Margin="176.201,118,186.043,137" ItemsSource="{Binding ProfileNameList}" SelectedItem="{Binding ProfileNameSelected, Mode=TwoWay}"/>
+        <!--<TextBlock x:Name="textBlockError" Height="34.749" Margin="176.201,113.082,186.043,0" TextWrapping="Wrap" Text="{x:Static properties:Resources.ProfileNameInUse}" VerticalAlignment="Top" Visibility="{Binding IsInvalidProfileName, Converter={StaticResource boolToVisibility}}"/>-->
+
+        <!--<Label VerticalAlignment="Bottom" Background="#FF9C9C9C">
+            <Label.Content>
+                <Binding ElementName="buttonSave"
+                         Path="Command"
+                         diag:PresentationTraceSources.TraceLevel="High" />
+            </Label.Content>
+        </Label>-->
+    </Grid>
+</Window>

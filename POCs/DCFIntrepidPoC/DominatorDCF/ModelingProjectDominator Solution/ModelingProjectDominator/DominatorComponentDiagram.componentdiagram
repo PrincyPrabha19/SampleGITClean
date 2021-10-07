@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2e016bba-1fcc-46aa-90b2-fcb53087f3bd" name="DominatorComponentDiagram" linkedPackageId="4b407d5b-7613-433a-bb7d-5881d8a2cdbe" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="195415d9-886d-4649-998f-fc5ceab70d84">
+      <profileInstance Id="14f79cc4-516d-4928-80fb-f63a9200039b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f0a2163c-e8f3-4e71-b23f-d31d7a3bb18d">
+      <profileInstance Id="a9680d97-fd26-42b2-ad83-2c5a385cb937" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="cb408551-66d9-45b2-9453-5263ac2b1312" name="CPU-Overclocking - Framework" isAbstract="false" isLeaf="false" isActiveClass="false" isIndirectlyInstantiated="false">
+        <elementDefinition Id="0d717b8b-616a-4e9a-a89b-78483d9280fd" />
+        <ownedAttributesInternal>
+          <providedInterface Id="8f826fe3-374f-446c-acf7-c296d94d6cc3" name="CPU OverClockingService Interface" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="71235988-c7a6-48f2-bded-7bde18f65f00" />
+            <targetNamedElementsInternal>
+              <connector Id="0d373edb-d2c2-49eb-b2ae-214763ef4de3" isLeaf="false" isStatic="false">
+                <partMoniker Id="e40cd7a6-4b61-4798-9f99-3ffdf03238ba" LastKnownName="OC - ServiceAgent" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="bb1b1311-65d7-4fac-a21e-d5d2b39abe9b">
+                      <elementDefinition Id="f82f294c-580a-40f7-8f01-8c5b3529a2ec" />
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="8fbcbad5-7238-43e9-8091-8ff10d274d5e">
+                      <elementDefinition Id="3e1558e6-5818-491c-a455-eb89be1e5e3d" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="f822c01e-1054-4380-935e-0ff0774143d1" LastKnownName="Port3" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="bf934825-f2cf-4a10-881e-ee2d29ad647f" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="5c6a1f75-10d9-4e88-902d-3d14bc915340" LastKnownName="CPU OverclockingService Interface" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="7a109c5e-94bb-4439-a0df-a720bf025567" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="334346fa-864f-4c23-859a-95638f2c0d45" />
+            <type_NamedElement>
+              <interfaceMoniker Id="435b2039-dc2a-441a-b591-7fe37522e601" LastKnownName="XTU API" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface Id="708b9e02-bbd5-447d-b604-e26274ffa948" name="OC DPO Interface" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="5fa33591-e70b-4f52-8e73-fd64811f1f5c" />
+            <targetNamedElementsInternal>
+              <connector Id="59e170d4-a9af-4132-85fa-49ede11a78e5" isLeaf="false" isStatic="false">
+                <partMoniker Id="38ddf726-cdb4-4269-bd87-74b97f1fdf87" LastKnownName="CPU-OC DPO Component/DFS" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="f4b2ea7d-5fd4-465c-b8f8-dbdc472c3ddb">
+                      <elementDefinition Id="6fbb0814-b2c9-4033-829d-36a50f274ddd" />
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="3d8b4289-62bc-4e0d-ab1f-a59741381415">
+                      <elementDefinition Id="71f6c98f-0437-404b-9860-cbd062bc18ad" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="28c4b3a5-d1c0-4084-bbce-d034cea417d4" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="2feaecff-7070-4f6f-a14e-92d97cc680b2" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="e52d1498-2db0-4694-a368-db38a2b8a02b" />
+            </type_NamedElement>
+          </providedInterface>
+          <part Id="e40cd7a6-4b61-4798-9f99-3ffdf03238ba" name="OC - ServiceAgent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="fe3c6854-a8ef-41d2-ab4e-c1ba9875f290" />
+            <targetNamedElementsInternal>
+              <connector Id="0aa28d8a-a272-47a7-a0e5-516e0cea78f2" isLeaf="false" isStatic="false">
+                <requiredInterfaceMoniker Id="7a109c5e-94bb-4439-a0df-a720bf025567" LastKnownName="Port2" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="d4dccf81-3538-439d-85b0-a4c373cecb02">
+                      <elementDefinition Id="90720093-19fd-4a08-b5bd-18d4cf3d8e53" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="b7690e81-26f9-455f-aa93-a1572d07c07b" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="796c73d6-a7bf-4829-8b95-b00822be71d0">
+                      <elementDefinition Id="81cf6d2c-700e-4d01-92c1-a0ca51ff3c3b" />
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="189f48ae-b137-458a-ab0c-d21cbb482f3d" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker Id="6e4101d0-f2ac-40a6-843f-754a313284bf" LastKnownName="Component1" />
+            </type_NamedElement>
+          </part>
+          <part Id="38ddf726-cdb4-4269-bd87-74b97f1fdf87" name="CPU-OC DPO Component/DFS" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="650595cb-7612-442f-b269-f4cf8690e10d" />
+            <targetNamedElementsInternal>
+              <connector Id="ce77a507-9dd7-469f-a607-5bb7e1d53676" isLeaf="false" isStatic="false">
+                <partMoniker Id="e40cd7a6-4b61-4798-9f99-3ffdf03238ba" LastKnownName="OC - ServiceAgent" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="10383888-2ad1-479e-ba09-595a789d0f79">
+                      <elementDefinition Id="d459ad82-9adb-4668-82e7-2bf69e8f118a" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="c380a1f4-4573-4e08-b4da-08f4d9dee5d1" LastKnownName="Port2" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="865cd1bc-bac3-40aa-a572-bd5ebc6e537e">
+                      <elementDefinition Id="12b51c70-4205-478f-8376-8dc8c2719f83" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="f822c01e-1054-4380-935e-0ff0774143d1" LastKnownName="Port3" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="33d38393-8cef-4949-ad2b-127714585c89" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker Id="30ceedc4-3a49-4b6b-ac00-0a1070ea8518" LastKnownName="Component2" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="0d96aab4-535f-4e34-8d65-b169429c717d" name="CPU - OverclockingGUI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f9f95625-39f6-4c77-b033-998f39e2e0f1" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="8d389ee2-eb7f-41b4-a5f2-ed928f41ff36" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="a80e8705-1b8f-475d-98fc-e42d283cd7fa" />
+            <type_NamedElement>
+              <interfaceMoniker Id="eb20857c-0b78-464d-9205-bb0160696e1e" LastKnownName="CPU OverclockingServiceInterface" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="eb20857c-0b78-464d-9205-bb0160696e1e" name="CPU OverclockingServiceInterface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a731125d-daab-44eb-a7c3-389930adfeaf" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="5c6a1f75-10d9-4e88-902d-3d14bc915340" name="CPU OverclockingService Interface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="53dcb776-727c-4895-b464-6ec74993acd1" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="435b2039-dc2a-441a-b591-7fe37522e601" name="XTU API" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="79618d76-8b9c-428a-b948-7aa1d8c2b310" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="85c82e98-edb5-47bf-a7e3-887017aeee5f" name="XTU SDK" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b526ea77-7d0d-4681-abfd-96e74cd8669b" />
+        <ownedAttributesInternal>
+          <providedInterface Id="2e83f155-1a91-464f-b442-0db6c00f0bdc" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="ae229768-ce9f-4052-ad61-e79d93a3e42d" />
+            <type_NamedElement>
+              <interfaceMoniker Id="e7e5de5a-65ee-45df-bcb0-4a45eac226bb" LastKnownName="XTU API" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="e7e5de5a-65ee-45df-bcb0-4a45eac226bb" name="XTU API" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cfa9502f-ee99-4de4-a7af-ca86a91076ca" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="e52d1498-2db0-4694-a368-db38a2b8a02b" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c0d3ab88-fe3a-4fca-8198-e76a93261dee" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="6e4101d0-f2ac-40a6-843f-754a313284bf" name="Component1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c2b20869-a67c-4db5-8708-2ed33fdc8787" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="b7690e81-26f9-455f-aa93-a1572d07c07b" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="012f0c07-2edf-456e-98e9-a0301df8419c" />
+            <type_NamedElement>
+              <interfaceMoniker Id="362b09ed-b60d-4cd9-ac1a-5e2d1ca06a5c" LastKnownName="XTU API Interface" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface Id="f822c01e-1054-4380-935e-0ff0774143d1" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="95a3751b-4eea-4f3f-970a-ddf5f1d11fdc" />
+            <type_NamedElement>
+              <interfaceMoniker Id="666a1fec-9ea3-4e99-b516-4b80630710e7" LastKnownName="OC Service Interdace" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="38bfacdf-5512-454a-9d40-8f3230be8832" name="DPO Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f6542569-86b9-48d3-ba11-6f84568d4967" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="ec140b16-4408-41fa-85b4-901ecabfc386" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="83157391-b74a-4e9c-8bcd-408a7efbf209" />
+            <type_NamedElement>
+              <interfaceMoniker Id="8723026f-0935-4349-a95e-17e97bb047f9" LastKnownName="OC DPO Interface" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="8723026f-0935-4349-a95e-17e97bb047f9" name="OC DPO Interface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5d339474-86bf-46fd-a88c-15d125ce8a9f" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="362b09ed-b60d-4cd9-ac1a-5e2d1ca06a5c" name="XTU API Interface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ef61a48b-7a0e-4e27-957b-9babcd5e2326" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="666a1fec-9ea3-4e99-b516-4b80630710e7" name="OC Service Interdace" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bdba120e-54f9-4391-a82f-a16c98c8c009" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="30ceedc4-3a49-4b6b-ac00-0a1070ea8518" name="Component2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5d038152-5dbe-43ba-bbff-851914fdb6f1" />
+        <ownedAttributesInternal>
+          <providedInterface Id="28c4b3a5-d1c0-4084-bbce-d034cea417d4" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="c5b5ed1b-7dd1-4612-9e28-b527421c2f85" />
+            <type_NamedElement>
+              <interfaceMoniker Id="80285e4c-e90f-4af6-8608-08835ba56385" LastKnownName="OC DPO Interface" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="c380a1f4-4573-4e08-b4da-08f4d9dee5d1" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="431ad625-c009-49cb-b3dc-4e4636c1938a" />
+            <type_NamedElement>
+              <interfaceMoniker Id="e02f7080-680c-458c-beef-d4f5dbcbbd8f" LastKnownName="OC Service Interface" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="80285e4c-e90f-4af6-8608-08835ba56385" name="OC DPO Interface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a0faa6aa-da0b-43c8-a0c2-0201ffbcf6b2" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="e02f7080-680c-458c-beef-d4f5dbcbbd8f" name="OC Service Interface" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="318ccca0-d125-4089-a918-1bc32e92ddce" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="aaf380c4-ed6f-476d-b700-95156c78ecf4" name="DELL Framework Service" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b49be71b-4cfe-4d1b-9ce8-113a23689c2b" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="4bd9237c-3f47-4ce6-833d-1cf0d91187a6" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="e3b3f6ae-d32e-438d-a018-3603ec96e21f" />
+            <type_NamedElement>
+              <interfaceMoniker Id="80744bdd-dfe9-4068-9870-8ee472f4ef88" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface Id="4c0facb6-f06f-4817-9028-990dade1e1d1" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="40405561-1e9b-4a16-88e9-105acb7dacfe" />
+            <type_NamedElement>
+              <interfaceMoniker Id="9652103e-6b35-4792-a85b-df87d16382a8" LastKnownName="CPU OC DPO Interface/DFS Framework." />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="80744bdd-dfe9-4068-9870-8ee472f4ef88" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="955d2703-23b6-4e30-841a-fa212a71e674" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="9652103e-6b35-4792-a85b-df87d16382a8" name="CPU OC DPO Interface/DFS Framework." isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9572ce3c-24fa-46db-8476-0f6884d9cf96" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="4b407d5b-7613-433a-bb7d-5881d8a2cdbe" name="ModelingProjectDominator">
+    <elementDefinition Id="836a20f9-247c-4e52-82a9-6df9dd640bbd" />
+  </package>
+</componentModel>

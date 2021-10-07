@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ProfileData>
+<signatureSetting version=""><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>nQfx+OIvXzGdW8nHWamUoeygBW4=</DigestValue></Reference></SignedInfo><SignatureValue>cvWtJSiASsbNht1z77f6KlVayy/shMY6WukuuAPcawLlOsdV28IKe/kEUwGooJjV6JuGsQSFlC04Ep7V1BKVdE4UMhvTdZ4Y60T9IVjlpoVuRMhacdLmMJmTRtkMfH5ABflxOwEARFr9RM+cRZ4C8QaEeRTsMSfLC24tpdE9wH8=</SignatureValue></Signature></signatureSetting>
+  <Name>OC2</Name>
+  <Model>AlienwareAuroraR6</Model>
+
+  <CPUPackage>
+    <BaseClock>100</BaseClock>
+
+    <CPU>
+      <OCEnabled>True</OCEnabled>
+      <XtuPath>i5-7600K_OC2.xtu</XtuPath>
+      <Brand>i5-7600K</Brand>
+    </CPU>
+
+    <Memory>
+      <OCEnabled>True</OCEnabled>
+      <ProfileID>2</ProfileID>
+    </Memory>
+  </CPUPackage>
+</ProfileData>
+
+
