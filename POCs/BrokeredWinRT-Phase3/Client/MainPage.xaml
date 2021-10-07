@@ -1,0 +1,18 @@
+﻿<Page x:Name="page"
+    x:Class="Client.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnDiscover" Click="discover" HorizontalAlignment="Stretch" Margin="0,0,0,10" Width="200" Content="Discover Devices"/>
+            <TextBlock x:Name="textBlockDevices" TextWrapping="Wrap" Text=""/>
+        </StackPanel>
+        <Border VerticalAlignment="Bottom" Height="25" BorderBrush="Black" BorderThickness="0,1,0,0">
+            <TextBlock x:Name="textBlockStatus" TextWrapping="Wrap" Text=""/>
+        </Border>
+    </Grid>
+</Page>

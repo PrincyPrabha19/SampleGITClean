@@ -1,0 +1,161 @@
+﻿<ResourceDictionary
+    x:Class="AlienLabs.AlienAdrenaline.App.ResourceDictionaries.BarChartStyle" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:System_Windows_Controls_DataVisualization_Charting_Primitives="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit" mc:Ignorable="d">
+	
+	
+	<Style x:Key="BarChartStyle" TargetType="{x:Type chartingToolkit:Chart}">
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="IsTabStop" Value="False"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
+		<Setter Property="Foreground" Value="#FFCCCCCC"/>
+		<Setter Property="FontFamily" Value="Pill Gothic 600mg Light"/>
+		<Setter Property="MinWidth" Value="260"/>
+		<Setter Property="MinHeight" Value="230"/>
+		<Setter Property="Palette">
+			<Setter.Value>
+				<visualizationToolkit:ResourceDictionaryCollection>	
+					<ResourceDictionary>
+						<Style x:Key="DataPointStyle" TargetType="{x:Type Control}">
+							<Setter Property="MaxHeight" Value="16" />
+							<Setter Property="BorderThickness" Value="8"/>							
+							<Setter Property="BorderBrush" Value="{DynamicResource Fill_BarChartDataPoint}" />  
+						</Style>
+					</ResourceDictionary>
+					<ResourceDictionary>
+						<Style x:Key="DataPointStyle" TargetType="{x:Type Control}">
+							<Setter Property="MaxHeight" Value="16" />
+							<Setter Property="BorderThickness" Value="8"/>							
+							<Setter Property="BorderBrush" Value="{DynamicResource Fill_BarChartDataPoint2}" /> 
+						</Style>
+					</ResourceDictionary>
+				</visualizationToolkit:ResourceDictionaryCollection>
+			</Setter.Value>
+		</Setter>
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type chartingToolkit:Chart}">
+					<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<visualizationToolkit:Title Content="{TemplateBinding Title}" Style="{TemplateBinding TitleStyle}" HorizontalAlignment="Left" Margin="0,10" FontSize="16"/>
+							<Grid Margin="6,0" Grid.Row="1">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="0"/>
+								</Grid.ColumnDefinitions>
+								<visualizationToolkit:Legend x:Name="Legend" Grid.Column="1" Style="{TemplateBinding LegendStyle}" Title="{TemplateBinding LegendTitle}" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Collapsed" />
+								<System_Windows_Controls_DataVisualization_Charting_Primitives:EdgePanel x:Name="ChartArea" Style="{TemplateBinding ChartAreaStyle}">
+									<Grid Style="{TemplateBinding PlotAreaStyle}" Panel.ZIndex="-1" Background="Black"/>
+									<Border BorderThickness="0.6" Panel.ZIndex="10" BorderBrush="#FF646464"/>
+								</System_Windows_Controls_DataVisualization_Charting_Primitives:EdgePanel>
+							</Grid>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+		<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+	</Style>
+	
+	
+	<!-- Styles for Bar Chart -->
+
+	<!-- Legend Items -->
+	<Style x:Key="BarLegendItemStyle" TargetType="{x:Type chartingToolkit:LegendItem}">
+		<Setter Property="Visibility" Value="Collapsed" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type chartingToolkit:LegendItem}">
+					<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+						<StackPanel Orientation="Horizontal">
+							<Rectangle Height="12" Margin="0,0,5,15" StrokeThickness="0.4" Width="12" Stroke="Black" Fill="{DynamicResource Fill_BarChartDataPoint}"/>
+							<visualizationToolkit:Title Content="{TemplateBinding Content}" Margin="0,2,0,0" />
+						</StackPanel>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!-- Style for Data Bars -->
+	<Style x:Key="BarDataPointStyle" TargetType="{x:Type chartingToolkit:BarDataPoint}">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="IsTabStop" Value="False"/>
+		<Setter Property="MaxHeight" Value="16"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type chartingToolkit:BarDataPoint}">
+					<Border x:Name="Root" Opacity="1">
+						<Border.ToolTip>
+							<ContentControl Content="{TemplateBinding FormattedDependentValue}"/>
+						</Border.ToolTip>
+						<Grid>
+							<Border Background="{DynamicResource Fill_BarChartDataPoint}"/>
+							<Rectangle x:Name="SelectionHighlight" Fill="Red" Opacity="0"/>
+							<Rectangle x:Name="MouseOverHighlight" Fill="White" Opacity="0"/>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Vertical grid lines behind data bars -->
+	<Style x:Key="BarChartGridLineStyle" TargetType="Line">
+    	<Setter Property="Stroke" Value="#FF646464" />
+		<Setter Property="StrokeThickness" Value="0.5" />
+	</Style>
+	
+	<!-- Y axis category label spacing -->
+	<Style x:Key="BarChartYAxisStyle" TargetType="{x:Type chartingToolkit:AxisLabel}">
+	 	<Setter Property="Margin" Value="0,4,10,5" />
+	 	<Setter Property="Template" Value="{DynamicResource AxisLabelControlTemplate}"/>
+	</Style>
+	<ControlTemplate x:Key="AxisLabelControlTemplate" TargetType="{x:Type chartingToolkit:AxisLabel}">
+	 	<TextBlock x:Name="textBlock" Text="{TemplateBinding FormattedContent}" MinHeight="0" MaxWidth="110" TextWrapping="NoWrap"
+				   TextAlignment="Right" Margin="0,-4,0,0" LineHeight="10" TextTrimming="CharacterEllipsis" FontWeight="Normal" ToolTipOpening="textBlock_ToolTipOpening" ToolTip="{Binding Text, ElementName=textBlock}" />
+	 </ControlTemplate>
+
+    <!-- Y axis category label spacing -->
+    <Style x:Key="BarChartYAxisWrapStyle" TargetType="{x:Type chartingToolkit:AxisLabel}">
+        <Setter Property="Margin" Value="0,4,10,5" />
+        <Setter Property="Template" Value="{DynamicResource AxisLabelWrapControlTemplate}"/>
+    </Style>
+    <ControlTemplate x:Key="AxisLabelWrapControlTemplate" TargetType="{x:Type chartingToolkit:AxisLabel}">
+        <TextBlock x:Name="textBlock" Text="{TemplateBinding FormattedContent}" MinHeight="0" Width="110" MaxWidth="105" TextWrapping="Wrap"
+				   TextAlignment="Right" Margin="0,-4,0,0"  FontWeight="Normal" ToolTipOpening="textBlock_ToolTipOpeningHeigth" ToolTip="{Binding Text, ElementName=textBlock}" TextTrimming="CharacterEllipsis" MaxHeight="36" />
+    </ControlTemplate>
+
+    <!-- X axis spacing -->
+	<Style x:Key="BarChartXAxisStyle" TargetType="chartingToolkit:AxisLabel">
+	   <Setter Property="Margin" Value="0,5,0,0" />
+    </Style>
+	 
+	 <!-- Hide tick marks -->
+	 <Style x:Key ="BarChartTickMarkStyle" TargetType="Line">
+    	<Setter Property="Visibility" Value="Collapsed" />
+	 </Style>
+	 
+	 <!-- Style for Bar Chart Title -->
+	 <Style x:Key="BarChartTitleStyle" TargetType="{x:Type visualizationToolkit:Title}">
+	 	<Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template" Value="{DynamicResource BarChartTitleControlTemplate}"/>
+    </Style>
+    <ControlTemplate x:Key="BarChartTitleControlTemplate" TargetType="{x:Type visualizationToolkit:Title}">
+        <TextBlock x:Name="textBlock" Text="{TemplateBinding Content}" MinHeight="0" TextWrapping="NoWrap"
+				   TextAlignment="Right" Margin="0,-4,0,0" LineHeight="14.667" TextTrimming="CharacterEllipsis" FontWeight="Normal" ToolTipOpening="textBlock_ToolTipOpening" ToolTip="{Binding Text, ElementName=textBlock}" />
+    </ControlTemplate>
+
+
+</ResourceDictionary>
+
+
+						
+					

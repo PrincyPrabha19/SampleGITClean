@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Dominator.UI.Converters">
+
+    <converters:PredefinedProfileNameTranslator x:Key="predefinedProfileNameTranslator" />
+    <converters:BooleanVisibilityConverter x:Key="booleanVisibilityConverter" />
+    <converters:InvertBooleanVisibilityConverter x:Key="invertBooleanVisibilityConverter" />
+    <converters:InvertBooleanConverter x:Key="invertBooleanConverter" />
+    <converters:CheckboxStatusOpacityConverter x:Key="checkboxStatusOpacityConverter" />
+    <converters:VoltageAutoConverter x:Key="voltageAutoConverter" />
+    <converters:VoltageAutoStaticConverter x:Key="voltageAutoStaticConverter"/>
+    <converters:CelciusFahrenheitConverter x:Key="celciusFahrenheitConverter" />
+    <converters:XMPIDConverter x:Key="xmpIDConverter" />
+    <converters:FanPumpConverter x:Key="fanPumpConverter" />
+    <converters:FanConverter x:Key="fanConverter" />
+    <converters:InvertBooleanOpacityConverter x:Key="invertBooleanOpacityConverter" />
+</ResourceDictionary>

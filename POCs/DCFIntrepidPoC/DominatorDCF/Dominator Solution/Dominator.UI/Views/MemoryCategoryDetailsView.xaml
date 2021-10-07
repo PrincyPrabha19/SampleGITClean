@@ -1,0 +1,67 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:properties="clr-namespace:Dominator.UI.Properties"
+             xmlns:controls="clr-namespace:Dominator.UI.Controls"             
+             x:Class="Dominator.UI.Views.MemoryCategoryDetailsView"             
+             mc:Ignorable="d" 
+             Background="{x:Null}"
+             d:DesignHeight="550" d:DesignWidth="850">
+
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OCControls.Resources;component/Dictionaries/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="180"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="{Binding IsXMPSupported, Converter={StaticResource booleanVisibilityConverter}}">
+            <ComboBox ItemsSource="{Binding XMPList}" DisplayMemberPath="ProfileName" SelectedValuePath="ProfileID" SelectedValue="{Binding XMPSelected, Mode=TwoWay}" Style="{DynamicResource ComboBoxFlatStyle}" Width="220" Height="35" Foreground="White" FontSize="14" HorizontalAlignment="Left" Margin="0,10,0,0" />
+        </StackPanel>
+
+        <Border Grid.Row="1" Grid.RowSpan="2" BorderThickness="2,2,0,2" BorderBrush="#FF7F7F7F" Margin="0,35,0,53" Visibility="{Binding IsMemoryOCSupported}">
+            <Image Source="/OCControls.Resources;component/Media/Icons/link.png" Height="20" Stretch="Fill" Width="20" HorizontalAlignment="Left" Margin="-4,0,0,0" />
+        </Border>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="0" IsEnabled="{Binding IsManualModeEnabled}" Visibility="{Binding IsMemoryOCSupported}">
+            <TextBlock Text="{x:Static properties:Resources.Frequency}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Left" />
+            <!--<controls:ColourSlider x:Name="colourSliderFrequency" MaximumValue="{Binding MaximumFrequency}" MinimumValue="{Binding MinimumFrequency}" SelectedValue="{Binding CurrentFrequency, Mode=TwoWay}" Height="30" VerticalAlignment="Top" YellowStartValue="{Binding FrequencySafeModeUpperLimit}" RedStartValue="{Binding FrequencyDangerModeLowerLimit}" Style="{DynamicResource ColourSliderStyle}" IsEnabled="True" DragCompletedCommand="{Binding FrequencyChangedCommand}"/>-->
+            <Grid>
+                <TextBlock Text="{Binding MinimumFrequency, StringFormat=\{0:0.0\}}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Left" />
+                <TextBlock Text="{Binding MaximumFrequency, StringFormat={x:Static properties:Resources.MemoryFrequencyFormat}}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Right" />
+            </Grid>
+        </StackPanel>
+        <controls:EditTextBlock Grid.Row="1" Grid.Column="2" Visibility="{Binding IsMemoryOCSupported}" Text="{Binding SelectedValue, ElementName=colourSliderFrequency, StringFormat={x:Static properties:Resources.FrequencyFormat}}" Value="{Binding SelectedValue, ElementName=colourSliderFrequency}" ValueFormat="{x:Static properties:Resources.FrequencyFormat}" VerticalAlignment="Top" Height="40" Margin="0,16,0,0" FontSize="26.667" Width="140" HorizontalAlignment="Right" EditedCommand="{Binding FrequencyEditedCommand}" IsEnabled="{Binding IsManualModeEnabled}"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="0" IsEnabled="False" Visibility="{Binding IsMemoryOCSupported}">
+            <TextBlock Text="{x:Static properties:Resources.Voltage}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Left" />
+            <!--<controls:ColourSlider x:Name="colourSliderVoltage" MaximumValue="{Binding MaximumVoltage}" MinimumValue="{Binding MinimumVoltage}" SelectedValue="{Binding CurrentVoltage, Mode=TwoWay}" Height="30" VerticalAlignment="Top" YellowStartValue="{Binding VoltageSafeModeUpperLimit}" RedStartValue="{Binding VoltageDangerModeLowerLimit}" MaximumLimitValue="{Binding VoltageUpperLimit}" MinimumLimitValue="{Binding VoltageLowerLimit}" Style="{DynamicResource ColourSliderStyle}" DragCompletedCommand="{Binding VoltageChangedCommand}" IsEnabled="{Binding VoltageEnabled}" />-->
+            <Grid>
+                <TextBlock Text="{Binding MinimumVoltage, StringFormat=\{0:0.##\}}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Left" />
+                <TextBlock Text="{Binding MaximumVoltage, StringFormat={x:Static properties:Resources.VoltageFormat}}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Right" />
+            </Grid>
+        </StackPanel>
+        <TextBox Grid.Row="2" Grid.Column="2" Visibility="{Binding IsMemoryOCSupported}" Text="{Binding SelectedValue, ElementName=colourSliderVoltage, StringFormat={x:Static properties:Resources.VoltageFormat}}" VerticalAlignment="Top" Height="40" Margin="0,15,0,0" FontSize="26.667" Width="140" HorizontalAlignment="Right" Background="{x:Null}" Foreground="{DynamicResource LightGrayColor}" IsEnabled="False" />
+
+                <!--<StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="{x:Static properties:Resources.Thermals}" Style="{DynamicResource CategoryValueTextBlock}" HorizontalAlignment="Left" />
+            <ComboBox ItemsSource="{Binding ThermalModeList}" DisplayMemberPath="Name" SelectedValuePath="Mode" SelectedValue="{Binding ThermalModeSelected}" Width="240" HorizontalAlignment="Left" Margin="0,10,0,0" Style="{DynamicResource ComboBoxFlatStyle}" Height="40" Foreground="White" FontSize="17.333" />
+        </StackPanel>-->
+    </Grid>
+</UserControl>

@@ -1,0 +1,71 @@
+;/*++
+;
+;Copyright (c) Dell Inc.  All rights reserved.
+;
+;Module Name:
+;
+;    AWCC_AWCCApp_DCHU_Component.INF
+;
+;Abstract:
+;
+;    Installation inf for one of the Alienware Command Center And Win32 Components
+;    AddComponent directives
+;
+;--*/
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = AWCC_AWCCAppAndWin32_DCHU_Component.cat
+DriverVer = 
+
+[Manufacturer]
+%ManufacturerName% = AWCCComponent, NT$ARCH$
+
+[AWCCComponent.NT$ARCH$]
+%DeviceName% = AWCCComponent_Install, SWC\VID001&PID0001&AWCCAPPWIN32
+
+[SourceDisksFiles]
+setup.exe = 1
+setup.iss = 1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+AWCCComponent_CopyFiles = 13 ; copy to driverstore
+
+[AWCCComponent_Install.NT]
+CopyFiles = AWCCComponent_CopyFiles
+
+
+[AWCCComponent_Install.NT.Software]
+AddSoftware = AWCC_AWCCWin32_DCHU_Componentsoftware,, AWCCWin32Component_SoftwareInstall
+;AddSoftware = AWCC_AWCCApp_DCHU_Componentsoftware,, AWCCAppComponent_SoftwareInstall
+;AddSoftware = AWCC_OP_DCHU_Componentsoftware,, AWCCComponent_SoftwareInstall
+
+
+[AWCCWin32Component_SoftwareInstall]
+SoftwareType = 1
+SoftwareBinary = setup.exe
+SoftwareArguments = /s /z"fida"
+SoftwareVersion = 5.2.27.0
+
+;[AWCCAppComponent_SoftwareInstall]
+;SoftwareType = 2
+;SoftwareID = pfn://DellInc.AlienwareCommandCenter_htrsf667h5kn2
+
+;[AWCCComponent_SoftwareInstall]
+;SoftwareType = 2
+;SoftwareID = pfn://DellInc.6066037A8FCF7_htrsf667h5kn2
+
+[AWCCComponent_CopyFiles]
+setup.exe
+setup.iss
+
+[Strings]
+ManufacturerName = "Alienware"
+DiskName = "Alienware Command Center Win32 Component Installation Disk"
+DeviceName = "Alienware Command Center Win32 Component Device"
