@@ -1,0 +1,15 @@
+WinMetadata\Windows.winmd
+App.xbf
+MainPage.xbf
+Scenario1_Launch.xbf
+Scenario2_ShowHideEvents.xbf
+Scenario3_ShowHideMethods.xbf
+Scenario4_ShowView.xbf
+Styles\Styles.xbf
+TouchKeyboard.xr.xml
+Properties\Default.rd.xml
+Assets\smalltile-sdk.png
+Assets\splash-sdk.png
+Assets\squaretile-sdk.png
+Assets\storelogo-sdk.png
+Assets\tile-sdk.png
