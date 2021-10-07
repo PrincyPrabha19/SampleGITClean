@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avansert</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Grunnleggende</value>
+  </data>
+  <data name="MissingComponetErrorMsg" xml:space="preserve">
+    <value>Beklager, noe gikk galt. En nødvendig komponent i applikasjonen ble ikke funnet. Reparer applikasjonen i Start &gt; Programmer og funksjoner.</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="OCLevel1" xml:space="preserve">
+    <value>Bruk Stage 1 OC </value>
+  </data>
+  <data name="OCLevel2" xml:space="preserve">
+    <value>Bruk Stage 2 OC </value>
+  </data>
+  <data name="TurnOffOC" xml:space="preserve">
+    <value>Slå av OC</value>
+  </data>
+  <data name="ServiceNotRunningErrorMsg" xml:space="preserve">
+    <value>En tjeneste som er nødvendig for applikasjonen, er stoppet. Kontroller at du kjører tjenesten når den er nødvendig, eller start tjenesten før du kjører denne applikasjonen.</value>
+  </data>
+  <data name="ServiceNotRunningQuestion" xml:space="preserve">
+    <value>En tjeneste som er nødvendig for applikasjonen, er stoppet. Vil du starte tjenesten?</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>OC Controls</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="ProfileInputHeader" xml:space="preserve">
+    <value>Velg et profilnavn for å lagre denne egendefinerte profilen</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>PROFILNAVN:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lagre</value>
+  </data>
+  <data name="ProfileNameInUse" xml:space="preserve">
+    <value>Dette profilnavnet er allerede i bruk. Vil du overstyre det?</value>
+  </data>
+  <data name="OverclockingTitle" xml:space="preserve">
+    <value>OC Controls</value>
+  </data>
+  <data name="OverclockingOnOff" xml:space="preserve">
+    <value>OVERKLOKKING</value>
+  </data>
+  <data name="Profiles" xml:space="preserve">
+    <value>PROFILER</value>
+  </data>
+  <data name="CPUCategory" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="GPUCategory" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="MemoryCategory" xml:space="preserve">
+    <value>MINNE</value>
+  </data>
+  <data name="TemperatureCategory" xml:space="preserve">
+    <value>TEMPERATUR</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>TEMP</value>
+  </data>
+  <data name="Utilization" xml:space="preserve">
+    <value>BRUK</value>
+  </data>
+  <data name="FanSpeed" xml:space="preserve">
+    <value>VIFTE</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>FREKVENS</value>
+  </data>
+  <data name="Voltage" xml:space="preserve">
+    <value>SPENNING</value>
+  </data>
+  <data name="OC1" xml:space="preserve">
+    <value>Stage 1 OC </value>
+  </data>
+  <data name="OC2" xml:space="preserve">
+    <value>Stage 2 OC </value>
+  </data>
+  <data name="AddProfile" xml:space="preserve">
+    <value>+ LEGG TIL PROFIL</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nei</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Prøv igjen</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="TemperatureFormat" xml:space="preserve">
+    <value>{0:0}  </value>
+  </data>
+  <data name="TemperatureCelciusFormat" xml:space="preserve">
+    <value>{0:0} °C</value>
+  </data>
+  <data name="TemperatureFahrenheitFormat" xml:space="preserve">
+    <value>{0:0} °F</value>
+  </data>
+  <data name="UtilizationFormat" xml:space="preserve">
+    <value>{0:0} %</value>
+  </data>
+  <data name="FanSpeedFormat" xml:space="preserve">
+    <value>{0:0} %</value>
+  </data>
+  <data name="FrequencyFormat" xml:space="preserve">
+    <value>{0:0.0} GHz</value>
+  </data>
+  <data name="MemoryFrequencyFormat" xml:space="preserve">
+    <value>{0:0.0} MHz</value>
+  </data>
+  <data name="MemoryIndexFormat" xml:space="preserve">
+    <value>Minne {0}</value>
+  </data>
+  <data name="VoltageFormat" xml:space="preserve">
+    <value>{0:0.###} V</value>
+  </data>
+  <data name="VoltageModeFormat" xml:space="preserve">
+    <value>({0})</value>
+  </data>
+  <data name="XMPFormat" xml:space="preserve">
+    <value>XMP {0}</value>
+  </data>
+  <data name="MaximumFrequencyFormat" xml:space="preserve">
+    <value>(MAKS {0} GHz)</value>
+  </data>
+  <data name="XMP" xml:space="preserve">
+    <value>XMP</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>AV</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>MAKS</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>MIN</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="OverallOverclocking" xml:space="preserve">
+    <value>GENERELL OVERKLOKKING</value>
+  </data>
+  <data name="MemoryThermalsCategory" xml:space="preserve">
+    <value>MINNE</value>
+  </data>
+  <data name="SystemThermalCategory" xml:space="preserve">
+    <value>SYSTEM-TERMISK</value>
+  </data>
+  <data name="NewCustomProfileNameFormat" xml:space="preserve">
+    <value>BRUKERPROFIL {0}</value>
+  </data>
+  <data name="DeleteProfileWarningMessage" xml:space="preserve">
+    <value>Er du sikker på at du vil slette profilen?</value>
+  </data>
+  <data name="SaveProfileErrorMessage" xml:space="preserve">
+    <value>Kan ikke bruke disse innstillingene. Juster verdiene, og prøv på nytt.</value>
+  </data>
+  <data name="Thermals" xml:space="preserve">
+    <value>TERMISK</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>DEAKTIVERT</value>
+  </data>
+  <data name="ThermalAggresive" xml:space="preserve">
+    <value>AGGRESSIV</value>
+  </data>
+  <data name="ThermalNormal" xml:space="preserve">
+    <value>NORMAL</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="XMPMainFormat" xml:space="preserve">
+    <value>(XMP: {0})</value>
+  </data>
+  <data name="Freq" xml:space="preserve">
+    <value>FREKV</value>
+  </data>
+  <data name="VoltageMode" xml:space="preserve">
+    <value>SPENNINGSMODUS</value>
+  </data>
+  <data name="VoltageModeAuto" xml:space="preserve">
+    <value>AUTOMATISK</value>
+  </data>
+  <data name="VoltageModeStatic" xml:space="preserve">
+    <value>STATISK</value>
+  </data>
+  <data name="VoltageOffset" xml:space="preserve">
+    <value>SPENNINGSUTJEVNING</value>
+  </data>
+  <data name="VoltageOffsetFormat" xml:space="preserve">
+    <value>{0:0} mV</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>PÅ</value>
+  </data>
+  <data name="DataConfigError" xml:space="preserve">
+    <value>Datakonfigurasjon utilgjengelig</value>
+  </data>
+  <data name="DataConfigMissingErrorMessage" xml:space="preserve">
+    <value>En datakonfigurasjonsfil mangler eller er ugyldig. Kan ikke opprette overklokkingsprofiler.</value>
+  </data>
+  <data name="InvalidProfileError" xml:space="preserve">
+    <value>Ugyldig profil</value>
+  </data>
+  <data name="InvalidProfileErrorMessage" xml:space="preserve">
+    <value>{0} oppdaget et problem og deaktiverte profilen. Hvis du vil aktivere profilen på nytt, må du justere og validere innstillingene.</value>
+  </data>
+  <data name="DoNotShowAgain" xml:space="preserve">
+    <value>Ikke vis denne meldingen igjen</value>
+  </data>
+  <data name="OCDisclaimer" xml:space="preserve">
+    <value>Under Avansert i {0} kan du manuelt endre ulike innstillinger, blant annet frekvensen og spenningen til prosessoren. Hvis du endrer disse verdiene, kan ytelsen til systemet bli endret, og i enkelte tilfeller kan systemet bli ustabilt, fryse eller til og med krasje. Hvis du vil fortsette, klikker du på Godta, ellers klikker du på Avbryt.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortsett</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Godta</value>
+  </data>
+  <data name="InvalidPredefinedProfileErrorMessage" xml:space="preserve">
+    <value>Vi har oppdaget et problem med overklokkingsinnstillingene som er godkjent for Alienware. Kontakt kundestøtte på 1-800-ALIENWARE eller 1-866-287-6727 og velg alternativ 4.</value>
+  </data>
+  <data name="TempUnitCelsius" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="TempUnitFahrenheit" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="BIOSInterfaceNotSupportedError" xml:space="preserve">
+    <value>{0} fant ikke minimumsversjonen av BIOS som kreves for å aktivere overklokkingsfunksjonaliteten. Vil du starte SupportAssist for å laste ned den nyeste versjonen av BIOS?</value>
+  </data>
+  <data name="SummaryTitle" xml:space="preserve">
+    <value>SAMMENDRAG</value>
+  </data>
+  <data name="ValidationSettingsInProgress" xml:space="preserve">
+    <value>Vent mens vi validerer innstillingene</value>
+  </data>
+  <data name="ValidationSettingsSucceeded" xml:space="preserve">
+    <value>De valgte verdiene har bestått valideringen</value>
+  </data>
+  <data name="ValidationSettingsFailed" xml:space="preserve">
+    <value>De valgte verdiene har ikke bestått valideringen.
+Juster verdiene, og prøv på nytt.</value>
+  </data>
+  <data name="LoadingCustomProfilesFailedMessage" xml:space="preserve">
+    <value>Applikasjonen kunne ikke laste noen av brukerprofilene.</value>
+  </data>
+  <data name="Pump" xml:space="preserve">
+    <value>PUMPE</value>
+  </data>
+  <data name="PumpOff" xml:space="preserve">
+    <value>MISLYKTES</value>
+  </data>
+  <data name="PumpOn" xml:space="preserve">
+    <value>PÅ</value>
+  </data>
+  <data name="FanMin" xml:space="preserve">
+    <value>TOMGANG</value>
+  </data>
+  <data name="AllPredefinedProfilesMissing" xml:space="preserve">
+    <value>Forhåndsdefinerte profiler mangler</value>
+  </data>
+  <data name="AllPredefinedProfilesMissingMessage" xml:space="preserve">
+    <value>Applikasjonen kunne ikke laste inn de forhåndsdefinerte profilene. Koble til Internett, og start applikasjonen på nytt.</value>
+  </data>
+  <data name="PredefinedProfileMissing" xml:space="preserve">
+    <value>Forhåndsdefinert profil mangler</value>
+  </data>
+  <data name="PredefinedProfileMissingMessage" xml:space="preserve">
+    <value>Applikasjonen kunne ikke laste inn de forhåndsdefinerte profilene. Koble til Internett, og start applikasjonen på nytt.</value>
+  </data>
+  <data name="RestartService" xml:space="preserve">
+    <value>Start tjeneste</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Start på nytt</value>
+  </data>
+  <data name="MetadataDownloadInProgress" xml:space="preserve">
+    <value>Vent mens konfigurasjonsfilene lastes ned.</value>
+  </data>
+  <data name="MetadataDownloadFailed" xml:space="preserve">
+    <value>Kunne ikke laste ned konfigurasjonsfilene for systemet. Det blir gjort et nytt forsøk når applikasjonen er startet.</value>
+  </data>
+  <data name="MetadataServiceUnreachable" xml:space="preserve">
+    <value>Kunne ikke laste ned konfigurasjonsfilene. Kontroller Internett-tilkoblingen.</value>
+  </data>
+  <data name="MetadataDownloadTitle" xml:space="preserve">
+    <value>INNSTILLINGER FOR {0}</value>
+  </data>
+  <data name="ProfileSelectionError" xml:space="preserve">
+    <value>Vi har oppdaget et problem med profilen. Last inn applikasjonen på nytt hvis problemet vedvarer.</value>
+  </data>
+  <data name="RebootRequiredAtEdit" xml:space="preserve">
+    <value>Systemet må startes på nytt for at alle OC-verdier skal valideres og brukes i systemet i den avanserte delen. Klikk på Ja for å fortsette med omstarten.</value>
+  </data>
+  <data name="RebootRequiredAtStart" xml:space="preserve">
+    <value>Systemet må startes på nytt for at alle OC-verdier skal brukes i systemet. Vil du starte på nytt nå eller senere?</value>
+  </data>
+  <data name="RebootRequiredError" xml:space="preserve">
+    <value>Omstart nødvendig</value>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Senere</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Start på nytt nå</value>
+  </data>
+  <data name="CPURebootRequired" xml:space="preserve">
+    <value>Omstart er nødvendig for å bruke CPU-innstillingene</value>
+  </data>
+  <data name="MemoryRebootRequired" xml:space="preserve">
+    <value>Omstart er nødvendig for å bruke minneinnstillingene</value>
+  </data>
+  <data name="AnotherInstanceIsRunningErrorMsg" xml:space="preserve">
+    <value>Kan ikke laste applikasjonen.
+En annen forekomst av applikasjonen kjører.</value>
+  </data>
+  <data name="OverallOCControls" xml:space="preserve">
+    <value>OC Controls generelt</value>
+  </data>
+  <data name="ProfileDisabled" xml:space="preserve">
+    <value>Profil deaktivert</value>
+  </data>
+  <data name="BIOSInterfaceNotSupportedLaunchSupportDellMessage" xml:space="preserve">
+    <value>OC Controls støttes ikke for dette systemet. Gå til http://support.dell.com hvis du ønsker å laste ned programvare for systemet ditt.</value>
+  </data>
+  <data name="LoadingPredefinedProfileValuesFailedMessage" xml:space="preserve">
+    <value>{0} er ikke kompatibel med Intel XTU. Hvis du vil bruke {0}, må du avinstallere XTU og installere {0} på nytt.</value>
+  </data>
+  <data name="BIOSUpdateRequiredErrorMsg" xml:space="preserve">
+    <value>Systemet krever en oppdatering til den nyeste BIOS-versjonen.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laster ...</value>
+  </data>
+  <data name="ServiceNotFoundErrorMsg" xml:space="preserve">
+    <value>Noe gikk galt. Finner ikke en nødvendig komponent av applikasjonen. Installer applikasjonen på nytt.</value>
+  </data>
+</root>

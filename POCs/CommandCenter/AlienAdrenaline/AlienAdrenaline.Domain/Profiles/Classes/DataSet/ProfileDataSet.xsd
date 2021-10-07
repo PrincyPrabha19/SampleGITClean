@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProfileDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProfileAction" msprop:Generator_TableClassName="ProfileActionDataTable" msprop:Generator_TableVarName="tableProfileAction" msprop:Generator_RowChangedName="ProfileActionRowChanged" msprop:Generator_TablePropName="ProfileAction" msprop:Generator_RowDeletingName="ProfileActionRowDeleting" msprop:Generator_RowChangingName="ProfileActionRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionRowDeleted" msprop:Generator_RowClassName="ProfileActionRow" msprop:Generator_UserTableName="ProfileAction" msprop:Generator_RowEvArgName="ProfileActionRowChangeEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+        <xs:element name="ProfileId" msprop:Generator_ColumnVarNameInTable="columnProfileId" msprop:Generator_ColumnPropNameInRow="ProfileId" msprop:Generator_ColumnPropNameInTable="ProfileIdColumn" msprop:Generator_UserColumnName="ProfileId" type="xs:int" minOccurs="0" />
+        <xs:element name="Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+        <xs:element name="Type" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" minOccurs="0" />
+        <xs:element name="OrderNo" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="OrderNo" msprop:Generator_ColumnVarNameInTable="columnOrderNo" msprop:Generator_ColumnPropNameInTable="OrderNoColumn" msprop:Generator_UserColumnName="OrderNo" type="xs:int" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProfileDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ProfileDataSet" msprop:Generator_UserDSName="ProfileDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProfileAction" />
+        <xs:element name="Profile" msprop:Generator_TableClassName="ProfileDataTable" msprop:Generator_TableVarName="tableProfile" msprop:Generator_RowChangedName="ProfileRowChanged" msprop:Generator_TablePropName="Profile" msprop:Generator_RowDeletingName="ProfileRowDeleting" msprop:Generator_RowChangingName="ProfileRowChanging" msprop:Generator_RowEvHandlerName="ProfileRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileRowDeleted" msprop:Generator_RowClassName="ProfileRow" msprop:Generator_UserTableName="Profile" msprop:Generator_RowEvArgName="ProfileRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="GameId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnGameId" msprop:Generator_ColumnPropNameInRow="GameId" msprop:Generator_ColumnPropNameInTable="GameIdColumn" msprop:Generator_UserColumnName="GameId" type="xs:string" minOccurs="0" />
+              <xs:element name="GameTitle" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="GameTitle" msprop:Generator_ColumnVarNameInTable="columnGameTitle" msprop:Generator_ColumnPropNameInTable="GameTitleColumn" msprop:Generator_UserColumnName="GameTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="GamePath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="GamePath" msprop:Generator_ColumnVarNameInTable="columnGamePath" msprop:Generator_ColumnPropNameInTable="GamePathColumn" msprop:Generator_UserColumnName="GamePath" type="xs:string" minOccurs="0" />
+              <xs:element name="GameRealPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="GameRealPath" msprop:Generator_ColumnVarNameInTable="columnGameRealPath" msprop:Generator_ColumnPropNameInTable="GameRealPathColumn" msprop:Generator_UserColumnName="GameRealPath" type="xs:string" minOccurs="0" />
+              <xs:element name="GameInstallPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="GameInstallPath" msprop:Generator_ColumnVarNameInTable="columnGameInstallPath" msprop:Generator_ColumnPropNameInTable="GameInstallPathColumn" msprop:Generator_UserColumnName="GameInstallPath" type="xs:string" minOccurs="0" />
+              <xs:element name="GameShortcutPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="GameShortcutPath" msprop:Generator_ColumnVarNameInTable="columnGameShortcutPath" msprop:Generator_ColumnPropNameInTable="GameShortcutPathColumn" msprop:Generator_UserColumnName="GameShortcutPath" type="xs:string" minOccurs="0" />
+              <xs:element name="GameIconPath" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="GameIconPath" msprop:Generator_ColumnVarNameInTable="columnGameIconPath" msprop:Generator_ColumnPropNameInTable="GameIconPathColumn" msprop:Generator_UserColumnName="GameIconPath" type="xs:string" minOccurs="0" />
+              <xs:element name="SteamId" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="SteamId" msprop:Generator_ColumnVarNameInTable="columnSteamId" msprop:Generator_ColumnPropNameInTable="SteamIdColumn" msprop:Generator_UserColumnName="SteamId" type="xs:int" minOccurs="0" />
+              <xs:element name="SteamGamePath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="SteamGamePath" msprop:Generator_ColumnVarNameInTable="columnSteamGamePath" msprop:Generator_ColumnPropNameInTable="SteamGamePathColumn" msprop:Generator_UserColumnName="SteamGamePath" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoWebLink" msprop:Generator_TableClassName="ProfileActionInfoWebLinkDataTable" msprop:Generator_TableVarName="tableProfileActionInfoWebLink" msprop:Generator_RowChangedName="ProfileActionInfoWebLinkRowChanged" msprop:Generator_TablePropName="ProfileActionInfoWebLink" msprop:Generator_RowDeletingName="ProfileActionInfoWebLinkRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoWebLinkRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoWebLinkRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoWebLinkRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoWebLinkRow" msprop:Generator_UserTableName="ProfileActionInfoWebLink" msprop:Generator_RowEvArgName="ProfileActionInfoWebLinkRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" minOccurs="0" />
+              <xs:element name="Url" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Url" msprop:Generator_ColumnVarNameInTable="columnUrl" msprop:Generator_ColumnPropNameInTable="UrlColumn" msprop:Generator_UserColumnName="Url" type="xs:string" minOccurs="0" />
+              <xs:element name="EnableTabbedBrowsing" msprop:nullValue="1" msprop:Generator_ColumnPropNameInRow="EnableTabbedBrowsing" msprop:Generator_ColumnVarNameInTable="columnEnableTabbedBrowsing" msprop:Generator_ColumnPropNameInTable="EnableTabbedBrowsingColumn" msprop:Generator_UserColumnName="EnableTabbedBrowsing" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoAudioOutput" msprop:Generator_TableClassName="ProfileActionInfoAudioOutputDataTable" msprop:Generator_TableVarName="tableProfileActionInfoAudioOutput" msprop:Generator_RowChangedName="ProfileActionInfoAudioOutputRowChanged" msprop:Generator_TablePropName="ProfileActionInfoAudioOutput" msprop:Generator_RowDeletingName="ProfileActionInfoAudioOutputRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoAudioOutputRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoAudioOutputRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoAudioOutputRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoAudioOutputRow" msprop:Generator_UserTableName="ProfileActionInfoAudioOutput" msprop:Generator_RowEvArgName="ProfileActionInfoAudioOutputRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" minOccurs="0" />
+              <xs:element name="AudioDeviceId" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AudioDeviceId" msprop:Generator_ColumnVarNameInTable="columnAudioDeviceId" msprop:Generator_ColumnPropNameInTable="AudioDeviceIdColumn" msprop:Generator_UserColumnName="AudioDeviceId" type="xs:string" minOccurs="0" />
+              <xs:element name="AudioDeviceName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AudioDeviceName" msprop:Generator_ColumnVarNameInTable="columnAudioDeviceName" msprop:Generator_ColumnPropNameInTable="AudioDeviceNameColumn" msprop:Generator_UserColumnName="AudioDeviceName" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoApplication" msprop:Generator_TableClassName="ProfileActionInfoApplicationDataTable" msprop:Generator_TableVarName="tableProfileActionInfoApplication" msprop:Generator_RowChangedName="ProfileActionInfoApplicationRowChanged" msprop:Generator_TablePropName="ProfileActionInfoApplication" msprop:Generator_RowDeletingName="ProfileActionInfoApplicationRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoApplicationRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoApplicationRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoApplicationRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoApplicationRow" msprop:Generator_UserTableName="ProfileActionInfoApplication" msprop:Generator_RowEvArgName="ProfileActionInfoApplicationRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" minOccurs="0" />
+              <xs:element name="ApplicationName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ApplicationName" msprop:Generator_ColumnVarNameInTable="columnApplicationName" msprop:Generator_ColumnPropNameInTable="ApplicationNameColumn" msprop:Generator_UserColumnName="ApplicationName" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ApplicationPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ApplicationPath" msprop:Generator_ColumnVarNameInTable="columnApplicationPath" msprop:Generator_ColumnPropNameInTable="ApplicationPathColumn" msprop:Generator_UserColumnName="ApplicationPath" type="xs:string" minOccurs="0" />
+              <xs:element name="ApplicationRealPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ApplicationRealPath" msprop:Generator_ColumnVarNameInTable="columnApplicationRealPath" msprop:Generator_ColumnPropNameInTable="ApplicationRealPathColumn" msprop:Generator_UserColumnName="ApplicationRealPath" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoAdditionalApplication" msprop:Generator_TableClassName="ProfileActionInfoAdditionalApplicationDataTable" msprop:Generator_TableVarName="tableProfileActionInfoAdditionalApplication" msprop:Generator_RowChangedName="ProfileActionInfoAdditionalApplicationRowChanged" msprop:Generator_TablePropName="ProfileActionInfoAdditionalApplication" msprop:Generator_RowDeletingName="ProfileActionInfoAdditionalApplicationRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoAdditionalApplicationRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoAdditionalApplicationRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoAdditionalApplicationRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoAdditionalApplicationRow" msprop:Generator_UserTableName="ProfileActionInfoAdditionalApplication" msprop:Generator_RowEvArgName="ProfileActionInfoAdditionalApplicationRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" minOccurs="0" />
+              <xs:element name="ApplicationName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ApplicationName" msprop:Generator_ColumnVarNameInTable="columnApplicationName" msprop:Generator_ColumnPropNameInTable="ApplicationNameColumn" msprop:Generator_UserColumnName="ApplicationName" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ApplicationPath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ApplicationPath" msprop:Generator_ColumnVarNameInTable="columnApplicationPath" msprop:Generator_ColumnPropNameInTable="ApplicationPathColumn" msprop:Generator_UserColumnName="ApplicationPath" type="xs:string" minOccurs="0" />
+              <xs:element name="LaunchIfNotOpen" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="LaunchIfNotOpen" msprop:Generator_ColumnVarNameInTable="columnLaunchIfNotOpen" msprop:Generator_ColumnPropNameInTable="LaunchIfNotOpenColumn" msprop:Generator_UserColumnName="LaunchIfNotOpen" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoPowerPlan" msprop:Generator_TableClassName="ProfileActionInfoPowerPlanDataTable" msprop:Generator_TableVarName="tableProfileActionInfoPowerPlan" msprop:Generator_RowChangedName="ProfileActionInfoPowerPlanRowChanged" msprop:Generator_TablePropName="ProfileActionInfoPowerPlan" msprop:Generator_RowDeletingName="ProfileActionInfoPowerPlanRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoPowerPlanRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoPowerPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoPowerPlanRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoPowerPlanRow" msprop:Generator_UserTableName="ProfileActionInfoPowerPlan" msprop:Generator_RowEvArgName="ProfileActionInfoPowerPlanRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" />
+              <xs:element name="PowerPlanId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnPowerPlanId" msprop:Generator_ColumnPropNameInRow="PowerPlanId" msprop:Generator_ColumnPropNameInTable="PowerPlanIdColumn" msprop:Generator_UserColumnName="PowerPlanId" type="xs:string" minOccurs="0" />
+              <xs:element name="PowerPlanName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="PowerPlanName" msprop:Generator_ColumnVarNameInTable="columnPowerPlanName" msprop:Generator_ColumnPropNameInTable="PowerPlanNameColumn" msprop:Generator_UserColumnName="PowerPlanName" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoThermal" msprop:Generator_TableClassName="ProfileActionInfoThermalDataTable" msprop:Generator_TableVarName="tableProfileActionInfoThermal" msprop:Generator_RowChangedName="ProfileActionInfoThermalRowChanged" msprop:Generator_TablePropName="ProfileActionInfoThermal" msprop:Generator_RowDeletingName="ProfileActionInfoThermalRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoThermalRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoThermalRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoThermalRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoThermalRow" msprop:Generator_UserTableName="ProfileActionInfoThermal" msprop:Generator_RowEvArgName="ProfileActionInfoThermalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" />
+              <xs:element name="ThermalProfileId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnThermalProfileId" msprop:Generator_ColumnPropNameInRow="ThermalProfileId" msprop:Generator_ColumnPropNameInTable="ThermalProfileIdColumn" msprop:Generator_UserColumnName="ThermalProfileId" type="xs:string" minOccurs="0" />
+              <xs:element name="ThermalProfileName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ThermalProfileName" msprop:Generator_ColumnVarNameInTable="columnThermalProfileName" msprop:Generator_ColumnPropNameInTable="ThermalProfileNameColumn" msprop:Generator_UserColumnName="ThermalProfileName" type="xs:string" default="" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProfileActionInfoAlienFX" msprop:Generator_TableClassName="ProfileActionInfoAlienFXDataTable" msprop:Generator_TableVarName="tableProfileActionInfoAlienFX" msprop:Generator_RowChangedName="ProfileActionInfoAlienFXRowChanged" msprop:Generator_TablePropName="ProfileActionInfoAlienFX" msprop:Generator_RowDeletingName="ProfileActionInfoAlienFXRowDeleting" msprop:Generator_RowChangingName="ProfileActionInfoAlienFXRowChanging" msprop:Generator_RowEvHandlerName="ProfileActionInfoAlienFXRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileActionInfoAlienFXRowDeleted" msprop:Generator_RowClassName="ProfileActionInfoAlienFXRow" msprop:Generator_UserTableName="ProfileActionInfoAlienFX" msprop:Generator_RowEvArgName="ProfileActionInfoAlienFXRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProfileActionId" msprop:Generator_ColumnVarNameInTable="columnProfileActionId" msprop:Generator_ColumnPropNameInRow="ProfileActionId" msprop:Generator_ColumnPropNameInTable="ProfileActionIdColumn" msprop:Generator_UserColumnName="ProfileActionId" type="xs:int" />
+              <xs:element name="Type" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="ThemeName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ThemeName" msprop:Generator_ColumnVarNameInTable="columnThemeName" msprop:Generator_ColumnPropNameInTable="ThemeNameColumn" msprop:Generator_UserColumnName="ThemeName" type="xs:string" default="" />
+              <xs:element name="ThemePath" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ThemePath" msprop:Generator_ColumnVarNameInTable="columnThemePath" msprop:Generator_ColumnPropNameInTable="ThemePathColumn" msprop:Generator_UserColumnName="ThemePath" type="xs:string" default="" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//ProfileAction" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="Profile_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//Profile" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoWebLink_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoWebLink" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoAudioOutput_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoAudioOutput" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoApplication_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoApplication" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoAdditionalApplication_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoAdditionalApplication" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoPowerPlan_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoPowerPlan" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoThermal_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoThermal" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:unique name="ProfileActionInfoAlienFX_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProfileActionInfoAlienFX" />
+      <xs:field xpath="Id" />
+    </xs:unique>
+    <xs:keyref name="FK_ProfileAction_ProfileActionInfoAlienFX" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoAlienFX" msprop:rel_Generator_ChildPropName="GetProfileActionInfoAlienFXRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionInfoAlienFX" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionInfoAlienFX" msprop:rel_Generator_UserParentTable="ProfileAction" msprop:rel_Generator_ParentPropName="ProfileActionRow">
+      <xs:selector xpath=".//ProfileActionInfoAlienFX" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionInfoThermal" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoThermal" msprop:rel_Generator_ChildPropName="GetProfileActionInfoThermalRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionInfoThermal" msprop:rel_Generator_ParentPropName="ProfileActionRow" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionInfoThermal" msprop:rel_Generator_UserParentTable="ProfileAction">
+      <xs:selector xpath=".//ProfileActionInfoThermal" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionInfoPowerPlan" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoPowerPlan" msprop:rel_Generator_ChildPropName="GetProfileActionInfoPowerPlanRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionInfoPowerPlan" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionInfoPowerPlan" msprop:rel_Generator_UserParentTable="ProfileAction" msprop:rel_Generator_ParentPropName="ProfileActionRow">
+      <xs:selector xpath=".//ProfileActionInfoPowerPlan" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionAdditionalApplication" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoAdditionalApplication" msprop:rel_Generator_ChildPropName="GetProfileActionInfoAdditionalApplicationRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionAdditionalApplication" msprop:rel_Generator_ParentPropName="ProfileActionRow" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionAdditionalApplication" msprop:rel_Generator_UserParentTable="ProfileAction">
+      <xs:selector xpath=".//ProfileActionInfoAdditionalApplication" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionApplication" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoApplication" msprop:rel_Generator_ChildPropName="GetProfileActionInfoApplicationRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionApplication" msprop:rel_Generator_ParentPropName="ProfileActionRow" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionApplication" msprop:rel_Generator_UserParentTable="ProfileAction">
+      <xs:selector xpath=".//ProfileActionInfoApplication" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionInfoAudioOutput" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoAudioOutput" msprop:rel_Generator_ChildPropName="GetProfileActionInfoAudioOutputRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionInfoAudioOutput" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionInfoAudioOutput" msprop:rel_Generator_UserParentTable="ProfileAction" msprop:rel_Generator_ParentPropName="ProfileActionRow">
+      <xs:selector xpath=".//ProfileActionInfoAudioOutput" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProfileAction_ProfileActionWebLinks" refer="Constraint1" msprop:rel_Generator_UserChildTable="ProfileActionInfoWebLink" msprop:rel_Generator_ChildPropName="GetProfileActionInfoWebLinkRows" msprop:rel_Generator_UserRelationName="FK_ProfileAction_ProfileActionWebLinks" msprop:rel_Generator_ParentPropName="ProfileActionRow" msprop:rel_Generator_RelationVarName="relationFK_ProfileAction_ProfileActionWebLinks" msprop:rel_Generator_UserParentTable="ProfileAction">
+      <xs:selector xpath=".//ProfileActionInfoWebLink" />
+      <xs:field xpath="ProfileActionId" />
+    </xs:keyref>
+    <xs:keyref name="FK_Profile_ProfileAction" refer="Profile_Constraint1" msprop:rel_Generator_UserChildTable="ProfileAction" msprop:rel_Generator_ChildPropName="GetProfileActionRows" msprop:rel_Generator_UserRelationName="FK_Profile_ProfileAction" msprop:rel_Generator_ParentPropName="ProfileRow" msprop:rel_Generator_RelationVarName="relationFK_Profile_ProfileAction" msprop:rel_Generator_UserParentTable="Profile">
+      <xs:selector xpath=".//ProfileAction" />
+      <xs:field xpath="ProfileId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

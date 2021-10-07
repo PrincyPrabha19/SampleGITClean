@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ProfileData>
+  <signatureSetting version=""><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>n+YMMudgJ0DTAejyjyG6otugtlE=</DigestValue></Reference></SignedInfo><SignatureValue>hOSNiD3Dmk01mIv9G83MJqFaMDnYauSFANXwTHywOlpx7GuLFrIhANftWSZ6JgRVc/eWY88L0aKEpWmhq/PsTHJlqJQsN0mGYIeIykKc95xiIU9NPxH8ME7BDasM9YdNlC3IU0l1MU9obxLxs03KwBwjvUIchbmcrTKjFdG5At0=</SignatureValue></Signature></signatureSetting>
+  <Name>OC1</Name>
+  <Model>Alienware15R3</Model>
+
+  <CPUPackage>
+    <BaseClock>100</BaseClock>
+
+    <CPU>
+      <OCEnabled>True</OCEnabled>
+      <XtuPath>i7-7820HK_OC1.xtu</XtuPath>
+      <Brand>i7-7820HK</Brand>
+    </CPU>
+
+    <Memory>
+      <OCEnabled>True</OCEnabled>
+      <ProfileID>0</ProfileID>
+    </Memory>	
+  </CPUPackage>
+</ProfileData>
+
+

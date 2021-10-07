@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="60dfebc2-c615-4a3b-a48e-bfa425503a0d" name="UILayer" linkedPackageId="2467760e-88e9-4281-9980-899f6f29a65d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="8e49a2e8-d542-418c-bdac-dfc2cea151e6">
+      <profileInstance Id="763d646b-b15d-447a-a722-f318aef7f2fc" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cbae02bc-ea7d-4859-890f-354d62cb0300">
+      <profileInstance Id="56f37ade-6831-41c3-a088-52e288359987" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5a9c8ac0-884c-465e-b77e-401737199ea6" name="IOCProfileView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d13cf3ad-0f38-4eb2-ad9e-161deae52919" />
+        <generalsInternal>
+          <generalization Id="902fb57e-e301-4a27-ad53-847962b5c307" isSubstitutable="false">
+            <interfaceMoniker Id="392205e0-b4ae-4438-ae71-0e0b585ce029" LastKnownName="IOCView" />
+            <elementDefinition Id="00c35cb4-52c0-4eba-9e0a-7afb23d0d9a3" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="25c64adf-328f-4715-a81e-a87ef95b7a32" name="IOCAdvancedView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0e0edc2c-1e71-4fdb-b4d8-4e56a0d07204" />
+        <generalsInternal>
+          <generalization Id="9fd70f98-6799-4cff-a336-30342401e96c" isSubstitutable="false">
+            <interfaceMoniker Id="392205e0-b4ae-4438-ae71-0e0b585ce029" LastKnownName="IOCView" />
+            <elementDefinition Id="17edb51b-7c64-4377-9a3f-f34425d24482" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="7568bb5f-7fb7-4cd1-a4e6-b154e7c71125" name="IOCFriendlyView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="11f870c1-2522-4641-a9c6-80f09dff40e5" />
+        <generalsInternal>
+          <generalization Id="5957696a-03bc-49f2-9fe4-c5bd6a317bd9" isSubstitutable="false">
+            <interfaceMoniker Id="392205e0-b4ae-4438-ae71-0e0b585ce029" LastKnownName="IOCView" />
+            <elementDefinition Id="b0517c73-3c1c-42c5-91c7-63aa0174151f" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="392205e0-b4ae-4438-ae71-0e0b585ce029" name="IOCView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ffdb8efd-fefc-45e7-a879-2c4487939ad8" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2467760e-88e9-4281-9980-899f6f29a65d" name="ModelingProjectDominator">
+    <elementDefinition Id="836a20f9-247c-4e52-82a9-6df9dd640bbd" />
+  </package>
+</logicalClassDesignerModel>

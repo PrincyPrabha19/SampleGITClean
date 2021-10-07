@@ -1,0 +1,47 @@
+﻿<Window x:Class="Dominator.UI.Views.NotifierView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:properties="clr-namespace:Dominator.UI.Properties"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+
+    Height="170" Width="687"
+    ResizeMode="NoResize" 
+	WindowStartupLocation="CenterScreen" 
+	Topmost="True"
+	
+    x:Name="NotifierWindow"
+    Loaded="loaded"
+    Background="{DynamicResource NotifierBackgroundBrush}"  
+	WindowStyle="None"
+	Foreground="#FFFFFFFF" 
+	AllowsTransparency="True"
+    >
+
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OCControls.Resources;component/Dictionaries/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+
+    <Grid>
+        <StackPanel x:Name="stackTitle" Orientation="Horizontal" d:LayoutOverrides="Width" VerticalAlignment="Top">
+            <Image Margin="10,10,5,10" x:Name="imageIcon" Width="16" d:LayoutOverrides="LeftPosition, RightPosition" Height="16" />
+            <Label x:Name="labelTitle" FontFamily="{DynamicResource TextTitleFontFamily}" FontSize="{DynamicResource MesssageTitleFontSize}" Foreground="{DynamicResource NotifierTextInfoForegroundBrush}" VerticalContentAlignment="Center" Content="{Binding Title, ElementName=NotifierWindow, Mode=Default}" VerticalAlignment="Center" MaxWidth="632" Margin="0,3,0,0" />
+        </StackPanel>
+        <TextBox Margin="18,50,22,72" x:Name="textboxMessage" Background="{DynamicResource NotifierBackgroundBrush}" BorderThickness="0"  IsReadOnly="True" Text="" Width="Auto" FontFamily="{DynamicResource TextInfoFontFamily}" Foreground="{DynamicResource NotifierTextInfoForegroundBrush}" FontSize="{DynamicResource TextInfoFontSize}" TextWrapping="Wrap" TextBlock.LineHeight="15" TextBlock.LineStackingStrategy="BlockLineHeight" VerticalScrollBarVisibility="Auto" MaxHeight="55" Height="55"  />
+        <StackPanel x:Name="stackButtons" Height="27" Margin="0,0,0,21" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="buttonLeft" HorizontalAlignment="Right" Width="123" FontSize="14" Padding="0,0,0,0" Margin="5,-7,5,7" Style="{DynamicResource MetroButtonStyle}"/>
+            <Button x:Name="buttonMiddle" Width="123" Margin="5,-7,5,7" Style="{DynamicResource MetroButtonStyle}" />
+            <Button Width="123" x:Name="buttonRight" Margin="5,-7,5,7" Style="{DynamicResource MetroButtonStyle}" />
+        </StackPanel>
+        <CheckBox x:Name="checkBoxDoNotShowAgain" Content="{x:Static properties:Resources.DoNotShowAgain}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,9" FontFamily="{DynamicResource TextInfoFontFamily}" Foreground="{DynamicResource NotifierTextInfoForegroundBrush}" FontSize="{DynamicResource SmallTextInfoFontSize}" VerticalContentAlignment="Center" Visibility="{Binding DoNotShowAgainVisibility, ElementName=NotifierWindow, Mode=TwoWay}"/>
+    </Grid>
+
+
+
+
+</Window>
