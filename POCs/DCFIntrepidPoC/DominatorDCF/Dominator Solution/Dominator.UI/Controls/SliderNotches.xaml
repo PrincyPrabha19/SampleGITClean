@@ -1,5 +1,0 @@
-﻿<UserControl x:Class="Dominator.UI.Controls.SliderNotches"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <StackPanel x:Name="stackLayout" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-</UserControl>
