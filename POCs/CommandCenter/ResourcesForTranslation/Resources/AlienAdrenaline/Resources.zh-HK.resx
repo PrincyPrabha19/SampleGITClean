@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessErrorText" xml:space="preserve">
+    <value>使用者帳戶的配置不允許執行此應用程式。</value>
+  </data>
+  <data name="ActionDetailsText" xml:space="preserve">
+    <value>操作：{0}</value>
+  </data>
+  <data name="ActionSequenceSummaryText" xml:space="preserve">
+    <value>操作序列總結</value>
+  </data>
+  <data name="ActionSequenceText" xml:space="preserve">
+    <value>操作序列</value>
+  </data>
+  <data name="AddActionText" xml:space="preserve">
+    <value>新增操作</value>
+  </data>
+  <data name="ApplyText" xml:space="preserve">
+    <value>套用</value>
+  </data>
+  <data name="CancelText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CreateNewModeText" xml:space="preserve">
+    <value>建立新遊戲模式</value>
+  </data>
+  <data name="CreateNewModeTitleText" xml:space="preserve">
+    <value>建立新遊戲模式個人檔案</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="GameModeDescriptionText" xml:space="preserve">
+    <value>你可以建立可自動設定系統環境的自定義桌面捷徑，然後執行一系列操作，無論何時啟動此遊戲都可使用。</value>
+  </data>
+  <data name="GameModeLearnModeLinkText" xml:space="preserve">
+    <value>告訴我更多有關遊戲模式的資訊</value>
+  </data>
+  <data name="GameModeNameText" xml:space="preserve">
+    <value>遊戲模式個人檔案名稱：</value>
+  </data>
+  <data name="GameModesLinkText" xml:space="preserve">
+    <value>遊戲模式</value>
+  </data>
+  <data name="GameModeTitleText" xml:space="preserve">
+    <value>遊戲模式 - {0}</value>
+  </data>
+  <data name="MoveText" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="NewGameModeDescriptionText" xml:space="preserve">
+    <value>你可以從下面列表中選擇一個已偵測的遊戲，或瀏覽所需遊戲或應用程式的可執行檔案，以建立新遊戲模式個人檔案。點擊下一步繼續。</value>
+  </data>
+  <data name="NewGameModeTitleText" xml:space="preserve">
+    <value>新遊戲模式個人檔案</value>
+  </data>
+  <data name="NextText" xml:space="preserve">
+    <value>下一步 &gt;</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="PerformanceMonitoringLinkText" xml:space="preserve">
+    <value>效能監控</value>
+  </data>
+  <data name="PreviewText" xml:space="preserve">
+    <value>預覽</value>
+  </data>
+  <data name="SaveAsText" xml:space="preserve">
+    <value>另存為...</value>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="ActionNameText" xml:space="preserve">
+    <value>操作名稱：</value>
+  </data>
+  <data name="AddActionTitleText" xml:space="preserve">
+    <value>新增操作</value>
+  </data>
+  <data name="AvailableActionsText" xml:space="preserve">
+    <value>可用操作：</value>
+  </data>
+  <data name="AdditionalAppsText" xml:space="preserve">
+    <value>額外的應用程式</value>
+  </data>
+  <data name="AlienFXText" xml:space="preserve">
+    <value>AlienFX</value>
+  </data>
+  <data name="AudioOutputText" xml:space="preserve">
+    <value>音效輸出</value>
+  </data>
+  <data name="PowerPlanText" xml:space="preserve">
+    <value>電源計劃</value>
+  </data>
+  <data name="ThermalText" xml:space="preserve">
+    <value>溫度</value>
+  </data>
+  <data name="WebLinksText" xml:space="preserve">
+    <value>網站連結</value>
+  </data>
+  <data name="FrapsText" xml:space="preserve">
+    <value>遊戲內監控</value>
+  </data>
+  <data name="MediaPlayerText" xml:space="preserve">
+    <value>媒體播放器</value>
+  </data>
+  <data name="VoIPText" xml:space="preserve">
+    <value>VoIP (聊天)</value>
+  </data>
+  <data name="PlaybackDeviceDescriptionText" xml:space="preserve">
+    <value>點擊選擇預設的播放裝置。</value>
+  </data>
+  <data name="AudioDeviceNotPresentText" xml:space="preserve">
+    <value>不存在</value>
+  </data>
+  <data name="AudioDeviceReadyText" xml:space="preserve">
+    <value>準備就緒</value>
+  </data>
+  <data name="AudioDeviceUnpluggedText" xml:space="preserve">
+    <value>未插入</value>
+  </data>
+  <data name="BackToActionSequenceSummaryText" xml:space="preserve">
+    <value>返回操作序列總結</value>
+  </data>
+  <data name="WebLinksDescriptionText" xml:space="preserve">
+    <value>輸入你想使用此操作開啟的網站連結。</value>
+  </data>
+  <data name="WebLinkItemizedText" xml:space="preserve">
+    <value>網站連結 {0}：</value>
+  </data>
+  <data name="ApplicationHeaderText" xml:space="preserve">
+    <value>應用程式：</value>
+  </data>
+  <data name="BrowseAdditionalAppsText" xml:space="preserve">
+    <value>瀏覽以下的額外應用程式。</value>
+  </data>
+  <data name="BrowseText" xml:space="preserve">
+    <value>瀏覽 ...</value>
+  </data>
+  <data name="AllFilesFilterText" xml:space="preserve">
+    <value>所有檔案 ({0})</value>
+  </data>
+  <data name="ApplicationBehaviorText" xml:space="preserve">
+    <value>你想這個應用程式做些甚麼？</value>
+  </data>
+  <data name="BrowseAppsText" xml:space="preserve">
+    <value>瀏覽以下應用程式。</value>
+  </data>
+  <data name="ApplicationErrorPathNotFoundText" xml:space="preserve">
+    <value>選擇的應用程式路徑不存在，請再次檢查路徑或使用瀏覽器按鈕，以取得準確的應用程式路徑。</value>
+  </data>
+  <data name="GameApplicationPathText" xml:space="preserve">
+    <value>遊戲應用程式路徑：</value>
+  </data>
+  <data name="ActionSummaryDescriptionText" xml:space="preserve">
+    <value>點擊左側其中一個操作按鈕以編輯操作設定，向上或向下移動按鈕即可改變序列，或將操作刪除。</value>
+  </data>
+  <data name="LaunchGameText" xml:space="preserve">
+    <value>啟動 / 退出</value>
+  </data>
+  <data name="InvalidUrlErrorText" xml:space="preserve">
+    <value>無效的網站連結。</value>
+  </data>
+  <data name="DeleteGameModeTitleText" xml:space="preserve">
+    <value>刪除遊戲模式</value>
+  </data>
+  <data name="WantToDeleteGameModeText" xml:space="preserve">
+    <value>確定要刪除「{0}」遊戲模式嗎？</value>
+  </data>
+  <data name="ChangeGameModeTitleText" xml:space="preserve">
+    <value>更改遊戲模式</value>
+  </data>
+  <data name="WantToSaveGameModeChangesToText" xml:space="preserve">
+    <value>你要儲存 {0} 的變更嗎？</value>
+  </data>
+  <data name="PowerPlanHeaderText" xml:space="preserve">
+    <value>電源計劃：</value>
+  </data>
+  <data name="SelectPowerPlanText" xml:space="preserve">
+    <value>選擇這個遊戲模式的電源計劃。</value>
+  </data>
+  <data name="ActivePowerPlanText" xml:space="preserve">
+    <value>&lt;使用中的電源計劃&gt;</value>
+  </data>
+  <data name="ApplicationErrorPowerPlanNotFoundText" xml:space="preserve">
+    <value>此遊戲模式的「{0}」電源計劃不再存在。請從清單中選取新電源計劃。</value>
+  </data>
+  <data name="ApplicationErrorThermalProfileNotFoundText" xml:space="preserve">
+    <value>此遊戲模式的「{0}」溫度曲線不再存在。請從清單中選取新溫度曲線。</value>
+  </data>
+  <data name="SelectThermalText" xml:space="preserve">
+    <value>選擇這個遊戲模式的溫度曲線。</value>
+  </data>
+  <data name="ThermalHeaderText" xml:space="preserve">
+    <value>溫度曲線：</value>
+  </data>
+  <data name="ActiveThermalProfileText" xml:space="preserve">
+    <value>&lt;使用中的溫度曲線&gt;</value>
+  </data>
+  <data name="ApplicationErrorThemeNotFoundText" xml:space="preserve">
+    <value>此遊戲模式的「{0}」AlienFX 主題不再存在。請從清單中選取新主題。</value>
+  </data>
+  <data name="SelectThemeOptionsText" xml:space="preserve">
+    <value>選擇這個遊戲模式的 AlienFX 主題和選項。</value>
+  </data>
+  <data name="GameModeShortcutText" xml:space="preserve">
+    <value>捷徑資料夾：</value>
+  </data>
+  <data name="LaunchGameModeText" xml:space="preserve">
+    <value>啟動「{0}」遊戲模式。</value>
+  </data>
+  <data name="CloseAlienAdrenalineText" xml:space="preserve">
+    <value>關閉 AlienAdrenaline</value>
+  </data>
+  <data name="AudioDeviceDisabledText" xml:space="preserve">
+    <value>停用</value>
+  </data>
+  <data name="EnableTabbedBrowsingText" xml:space="preserve">
+    <value>啟用分頁瀏覽 (如支援)</value>
+  </data>
+  <data name="GamePathText" xml:space="preserve">
+    <value>可執行的檔案：</value>
+  </data>
+  <data name="ActiveThemeText" xml:space="preserve">
+    <value>&lt;使用中的主題&gt;</value>
+  </data>
+  <data name="GameExecPathDoesNotExistText" xml:space="preserve">
+    <value>遊戲的可執行檔案路徑不存在。</value>
+  </data>
+  <data name="ProfileListDescriptionText" xml:space="preserve">
+    <value>你可以建立一個可自動設定系統環境的自訂桌面捷徑，然後執行一系列操作，無論何時啟動此遊戲都可使用。
+從以下列表中選擇個人檔案，並點擊兩下該檔案以修改個人檔案的操作。</value>
+  </data>
+  <data name="RecreateGameShortcutText" xml:space="preserve">
+    <value>重新建立捷徑</value>
+  </data>
+  <data name="GameModeShortcutCreateDescriptionText" xml:space="preserve">
+    <value>遊戲模式捷徑已建立於： 
+{0}</value>
+  </data>
+  <data name="GameModeShortcutCreateErrorText" xml:space="preserve">
+    <value>在以下位置建立遊戲模式捷徑時發生錯誤： 
+{0}。</value>
+  </data>
+  <data name="GameModeShortcutCreateTitleText" xml:space="preserve">
+    <value>建立遊戲模式捷徑</value>
+  </data>
+  <data name="WantToSavePendingChangesText" xml:space="preserve">
+    <value>如要重新建立遊戲模式捷徑，必須儲存待處理的更改。你要繼續嗎？</value>
+  </data>
+  <data name="GameModeShortcutAlreadyExistsText" xml:space="preserve">
+    <value>遊戲模式捷徑已經存在於選擇的路徑。</value>
+  </data>
+  <data name="ProgressBarLoadingText" xml:space="preserve">
+    <value>正在載入 ...</value>
+  </data>
+  <data name="CloseGameModeProfileText" xml:space="preserve">
+    <value>關閉遊戲模式個人檔案</value>
+  </data>
+  <data name="EnergyBoosterDescriptionText" xml:space="preserve">
+    <value>加速器可以加速你的電腦，並暫時關閉在背景執行的不必要程序和服務，以釋放記憶體。</value>
+  </data>
+  <data name="EnergyBoosterText" xml:space="preserve">
+    <value>加速器</value>
+  </data>
+  <data name="SelectProfileText" xml:space="preserve">
+    <value>選擇個人檔案</value>
+  </data>
+  <data name="Core" xml:space="preserve">
+    <value>核心 {0}</value>
+  </data>
+  <data name="PerformanceSnapshots" xml:space="preserve">
+    <value>效能記錄</value>
+  </data>
+  <data name="RealTimePerformance" xml:space="preserve">
+    <value>實時效能監控</value>
+  </data>
+  <data name="MemoryLoadTitle" xml:space="preserve">
+    <value>記憶體載入</value>
+  </data>
+  <data name="UpdateTUDText" xml:space="preserve">
+    <value>更新定義</value>
+  </data>
+  <data name="UpdateDefStart" xml:space="preserve">
+    <value>請稍候...</value>
+  </data>
+  <data name="UpdateDefFail" xml:space="preserve">
+    <value>定義更新失敗</value>
+  </data>
+  <data name="UpdateDefNoConnect" xml:space="preserve">
+    <value>無法更新定義，沒有網絡連線</value>
+  </data>
+  <data name="UpdateDefOK" xml:space="preserve">
+    <value>定義已成功更新</value>
+  </data>
+  <data name="UpdateDefTimeout" xml:space="preserve">
+    <value>更新定義時逾時</value>
+  </data>
+  <data name="UpdateDefUpToDate" xml:space="preserve">
+    <value>定義已為最新版本</value>
+  </data>
+  <data name="UpdateDefinitionsQuestionText" xml:space="preserve">
+    <value>你要現在更新定義嗎？</value>
+  </data>
+  <data name="UpdateDefinitionsTitleText" xml:space="preserve">
+    <value>更新定義</value>
+  </data>
+  <data name="PauseText" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="PlayText" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="RecordText" xml:space="preserve">
+    <value>錄製</value>
+  </data>
+  <data name="ViewText" xml:space="preserve">
+    <value>檢視</value>
+  </data>
+  <data name="DateText" xml:space="preserve">
+    <value>攝取日期</value>
+  </data>
+  <data name="NameText" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="DeleteSnapshotQuestion" xml:space="preserve">
+    <value>你要刪除選取的錄製項目：{0} 嗎？</value>
+  </data>
+  <data name="DeleteSnapshotTitle" xml:space="preserve">
+    <value>刪除錄製項目</value>
+  </data>
+  <data name="CopyOfText" xml:space="preserve">
+    <value>{0} 的副本</value>
+  </data>
+  <data name="SaveAsSnapshotTitle" xml:space="preserve">
+    <value>儲存為錄製項目</value>
+  </data>
+  <data name="StopText" xml:space="preserve">
+    <value>停止 </value>
+  </data>
+  <data name="StartRecordingText" xml:space="preserve">
+    <value>開始錄製</value>
+  </data>
+  <data name="StopRecordingText" xml:space="preserve">
+    <value>停止錄製</value>
+  </data>
+  <data name="PerformanceSnapshotNotFound" xml:space="preserve">
+    <value>找不到效能錄影記錄</value>
+  </data>
+  <data name="ProcessIdentifier" xml:space="preserve">
+    <value>AlienAdrenaline</value>
+  </data>
+  <data name="PerformanceMonitoringDescriptionText" xml:space="preserve">
+    <value>效能監控會記錄你系統的頻寬和各種硬件組件的使用情況。</value>
+  </data>
+  <data name="PerformanceMonitoringText" xml:space="preserve">
+    <value>效能監控</value>
+  </data>
+  <data name="EnergyBoosterClickhereText" xml:space="preserve">
+    <value>點擊這裡</value>
+  </data>
+  <data name="EnergyBoosterUpsellText" xml:space="preserve">
+    <value>想要更快的速度和更好的遊戲效能？</value>
+  </data>
+  <data name="GBStr" xml:space="preserve">
+    <value>{0} GB</value>
+  </data>
+  <data name="EnergyBoosterSiteUrl" xml:space="preserve">
+    <value>http://www.iolo.com/promo/partner/alienware/get-system-mechanic/</value>
+  </data>
+  <data name="UpdateRealApplicationPathText" xml:space="preserve">
+    <value>錄製遊戲的可執行檔案</value>
+  </data>
+  <data name="InvalidGameRealPathText" xml:space="preserve">
+    <value>無效的遊戲可執行檔案</value>
+  </data>
+  <data name="UpdateGameExecutableDescriptionText" xml:space="preserve">
+    <value>有些遊戲會在啟動遊戲時使用一個可執行檔案，及使用獨立的可執行檔案來實際執行遊戲。
+如果你想這個遊戲模式個人檔案執行的操作序列自動在離開遊戲後取消，請點擊以下按鈕，然後在實際進行遊戲時按「{0}」。
+這樣就可以在遊戲進行時錄製實際可執行檔案的執行，並將其儲存在遊戲模式個人檔案中。</value>
+  </data>
+  <data name="ActionPendingConfigurationText" xml:space="preserve">
+    <value>操作尚未配置</value>
+  </data>
+  <data name="Processes" xml:space="preserve">
+    <value>程序列表</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="ProcessName" xml:space="preserve">
+    <value>程序名稱</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>中央處理器</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>圖形處理器</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>記憶體</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>網絡</value>
+  </data>
+  <data name="CloseOtherNetworkChartsText" xml:space="preserve">
+    <value>關閉其他網絡圖表</value>
+  </data>
+  <data name="OpenOtherNetworkChartsText" xml:space="preserve">
+    <value>開啟其他網絡圖表</value>
+  </data>
+  <data name="CloseText" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="DataPointToolTipText" xml:space="preserve">
+    <value>時間：{0}秒，數值： {1}</value>
+  </data>
+  <data name="CompareText" xml:space="preserve">
+    <value>比較</value>
+  </data>
+  <data name="ChartPagingHomePage" xml:space="preserve">
+    <value>主頁</value>
+  </data>
+  <data name="ChartPagingNetworkPageTitle" xml:space="preserve">
+    <value>網絡活動</value>
+  </data>
+  <data name="ChartPagingVideoPageTitle" xml:space="preserve">
+    <value>圖像活動</value>
+  </data>
+  <data name="CPUUsageAverageText" xml:space="preserve">
+    <value>中央處理器使用率 (平均)</value>
+  </data>
+  <data name="TimespanHolderTooltipText" xml:space="preserve">
+    <value>抓住以向左/右移動。點擊兩下即可重新設定。</value>
+  </data>
+  <data name="ChartHelpText" xml:space="preserve">
+    <value>圖表資訊</value>
+  </data>
+  <data name="CloseChartTooltip" xml:space="preserve">
+    <value>關閉圖表</value>
+  </data>
+  <data name="LessNetworkChartsTooltip" xml:space="preserve">
+    <value>收合所有的網絡圖表</value>
+  </data>
+  <data name="MoreNetworkChartsTooltip" xml:space="preserve">
+    <value>展開所有的網絡圖表</value>
+  </data>
+  <data name="LessVideoChartsTooltip" xml:space="preserve">
+    <value>收合所有的影片圖表</value>
+  </data>
+  <data name="MoreVideoChartsTooltip" xml:space="preserve">
+    <value>展開所有的影片圖表</value>
+  </data>
+  <data name="ChartLegendTooltip" xml:space="preserve">
+    <value>{0}
+{1} 秒</value>
+  </data>
+  <data name="ProcessListText" xml:space="preserve">
+    <value>程序列表</value>
+  </data>
+  <data name="ZoomOutChartTooltip" xml:space="preserve">
+    <value>向下還原圖表</value>
+  </data>
+  <data name="CtrlShiftF3Text" xml:space="preserve">
+    <value>CTRL+SHIFT+F3</value>
+  </data>
+  <data name="CPUUsageTitle" xml:space="preserve">
+    <value>中央處理器使用率：{0}</value>
+  </data>
+  <data name="ProcessCountTitle" xml:space="preserve">
+    <value>全部程序：{0}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="ExportSnapshotTitle" xml:space="preserve">
+    <value>匯出記錄</value>
+  </data>
+  <data name="ImportSnapshotTitle" xml:space="preserve">
+    <value>匯入記錄</value>
+  </data>
+  <data name="ImportedSnapshotExists" xml:space="preserve">
+    <value>記錄名稱已存在。你要覆寫該名稱嗎？</value>
+  </data>
+  <data name="CopySuffix" xml:space="preserve">
+    <value>{0} - 複製</value>
+  </data>
+  <data name="MaximizeChartText" xml:space="preserve">
+    <value>點擊圖表標題即可將圖表放到最大</value>
+  </data>
+  <data name="MinimizeChartText" xml:space="preserve">
+    <value>點擊圖表標題即可向下還原圖表</value>
+  </data>
+  <data name="CtrlShiftAltF10" xml:space="preserve">
+    <value>CTRL+SHIFT+ALT+F10</value>
+  </data>
+  <data name="FnF10" xml:space="preserve">
+    <value>FN+F10</value>
+  </data>
+  <data name="StartStopRecordingKeystrokes" xml:space="preserve">
+    <value>使用「{0}」開始/停止錄製</value>
+  </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>無法載入檔案。檔案格式與目前的版本不相容。</value>
+  </data>
+</root>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{434CB23C-04B3-4396-A402-974167E32759}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlienLabs.GameDiscoveryHelper</RootNamespace>
+    <AssemblyName>GameDiscoveryHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LightFXConfigurator">
+      <HintPath>..\..\bin\LightFXConfigurator.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\GameBattleNetDiscoveryClass.cs" />
+    <Compile Include="Classes\GameBattleNetWindowsClass.cs" />
+    <Compile Include="Classes\GameDataClass.cs" />
+    <Compile Include="Classes\GameGOGDiscoveryClass.cs" />
+    <Compile Include="Classes\GameGOGWindowsClass.cs" />
+    <Compile Include="Classes\GameOriginDiscoveryClass.cs" />
+    <Compile Include="Classes\GameOriginWindowsClass.cs" />
+    <Compile Include="Classes\GameSteamDiscoveryClass.cs" />
+    <Compile Include="Classes\GameSteamWindowsClass.cs" />
+    <Compile Include="Classes\GameUplayDiscoveryClass.cs" />
+    <Compile Include="GameOriginDiscovery.cs" />
+    <Compile Include="GameOriginWindows.cs" />
+    <Compile Include="GameUplayDiscovery.cs" />
+    <Compile Include="Classes\GameUplayWindowsClass.cs" />
+    <Compile Include="Classes\GameUXDiscoveryClass.cs" />
+    <Compile Include="Classes\GameUXWindowsClass.cs" />
+    <Compile Include="Classes\GameUXWMIClass.cs" />
+    <Compile Include="Classes\WScriptShortcutData.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="GameDiscovery.cs" />
+    <Compile Include="GameGOGDiscovery.cs" />
+    <Compile Include="GameGOGWindows.cs" />
+    <Compile Include="GameSteamDiscovery.cs" />
+    <Compile Include="GameSteamWindows.cs" />
+    <Compile Include="GameUplayWindows.cs" />
+    <Compile Include="GameUXDiscoverer.cs" />
+    <Compile Include="GameUXWindows.cs" />
+    <Compile Include="GameUXWMI.cs" />
+    <Compile Include="Helpers\GameSteamPathHelper.cs" />
+    <Compile Include="Helpers\GameUXPathHelper.cs" />
+    <Compile Include="Helpers\PredefinedGamesPathHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\WScriptShortcutHelper.cs" />
+    <Compile Include="GameBattleNetDiscovery.cs" />
+    <Compile Include="GameBattleNetWindows.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\Classes\AppFXGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\BattleNetGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\DataSet\GameProfiles.cs">
+      <DependentUpon>GameProfiles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\Classes\DataSet\PredefinedGames.cs">
+      <DependentUpon>PredefinedGames.xsd</DependentUpon>
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Providers\Classes\Factories\GameObjectFactory.cs" />
+    <Compile Include="Providers\Classes\GameServiceProviderClass.cs" />
+    <Compile Include="Providers\Classes\GOGGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\OriginGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\PredefinedGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\RealTimeGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\Serialization\PredefinedGamesSerializerClass.cs" />
+    <Compile Include="Providers\Classes\SteamGamesProviderClass.cs" />
+    <Compile Include="Providers\Classes\UplayGamesProviderClass.cs" />
+    <Compile Include="Providers\GameProvider.cs" />
+    <Compile Include="Providers\GameServiceProvider.cs" />
+    <Compile Include="Providers\PredefinedGamesSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsIconHelper\WindowsIconHelper.csproj">
+      <Project>{92E382A2-74B6-4342-B9D9-BE6843F2CE22}</Project>
+      <Name>WindowsIconHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Providers\Classes\DataSet\GameProfiles.xsc">
+      <DependentUpon>GameProfiles.xsd</DependentUpon>
+    </None>
+    <None Include="Providers\Classes\DataSet\GameProfiles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GameProfiles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Providers\Classes\DataSet\GameProfiles.xss">
+      <DependentUpon>GameProfiles.xsd</DependentUpon>
+    </None>
+    <None Include="Providers\Classes\DataSet\PredefinedGames.xsc">
+      <DependentUpon>PredefinedGames.xsd</DependentUpon>
+    </None>
+    <None Include="Providers\Classes\DataSet\PredefinedGames.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PredefinedGames.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Providers\Classes\DataSet\PredefinedGames.xss">
+      <DependentUpon>PredefinedGames.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

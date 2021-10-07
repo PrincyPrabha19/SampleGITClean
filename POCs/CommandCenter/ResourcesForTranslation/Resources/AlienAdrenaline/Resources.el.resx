@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessErrorText" xml:space="preserve">
+    <value>Η διαμόρφωση του λογαριασμού χρήστη δεν επιτρέπει την εκτέλεση αυτής της εφαρμογής.</value>
+  </data>
+  <data name="ActionDetailsText" xml:space="preserve">
+    <value>Ενέργεια: {0}</value>
+  </data>
+  <data name="ActionSequenceSummaryText" xml:space="preserve">
+    <value>Σύνοψη σειράς ενεργειών</value>
+  </data>
+  <data name="ActionSequenceText" xml:space="preserve">
+    <value>Σειρά ενεργειών</value>
+  </data>
+  <data name="AddActionText" xml:space="preserve">
+    <value>Προσθήκη ενέργειας</value>
+  </data>
+  <data name="ApplyText" xml:space="preserve">
+    <value>Εφαρμογή</value>
+  </data>
+  <data name="CancelText" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="CreateNewModeText" xml:space="preserve">
+    <value>Δημιουργία νέας λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="CreateNewModeTitleText" xml:space="preserve">
+    <value>Δημιουργία προφίλ νέας λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="GameModeDescriptionText" xml:space="preserve">
+    <value>Μπορείτε να δημιουργήσετε μια προσαρμοσμένη συντόμευση επιφάνειας εργασίας, η οποία θα ρυθμίζει αυτόματα το περιβάλλον του συστήματός σας και θα εκτελεί μια σειρά ενεργειών, κάθε φορά που ξεκινάτε αυτό το παιχνίδι.</value>
+  </data>
+  <data name="GameModeLearnModeLinkText" xml:space="preserve">
+    <value>Περισσότερες πληροφορίες για τις λειτουργίες παιχνιδιών</value>
+  </data>
+  <data name="GameModeNameText" xml:space="preserve">
+    <value>Όνομα προφίλ λειτουργίας παιχνιδιού:</value>
+  </data>
+  <data name="GameModesLinkText" xml:space="preserve">
+    <value>Λειτουργία παιχνιδιού</value>
+  </data>
+  <data name="GameModeTitleText" xml:space="preserve">
+    <value>Λειτουργία παιχνιδιού - {0}</value>
+  </data>
+  <data name="MoveText" xml:space="preserve">
+    <value>Κίνηση</value>
+  </data>
+  <data name="NewGameModeDescriptionText" xml:space="preserve">
+    <value>Μπορείτε να δημιουργήσετε προφίλ νέας λειτουργίας παιχνιδιού επιλέγοντας ένα ανιχνευμένο παιχνίδι από την παρακάτω λίστα ή αναζητώντας το εκτελέσιμο αρχείο του παιχνιδιού ή της εφαρμογής που επιθυμείτε. Κάντε κλικ στην επιλογή «Επόμενο» για να συνεχίσετε.</value>
+  </data>
+  <data name="NewGameModeTitleText" xml:space="preserve">
+    <value>Προφίλ νέας λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="NextText" xml:space="preserve">
+    <value>Επόμενο &gt;</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PerformanceMonitoringLinkText" xml:space="preserve">
+    <value>Παρακολούθηση απόδοσης</value>
+  </data>
+  <data name="PreviewText" xml:space="preserve">
+    <value>Προεπισκόπηση</value>
+  </data>
+  <data name="SaveAsText" xml:space="preserve">
+    <value>Αποθήκευση ως...</value>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="ActionNameText" xml:space="preserve">
+    <value>Όνομα ενέργειας:</value>
+  </data>
+  <data name="AddActionTitleText" xml:space="preserve">
+    <value>Προσθήκη ενέργειας</value>
+  </data>
+  <data name="AvailableActionsText" xml:space="preserve">
+    <value>Διαθέσιμες ενέργειες:</value>
+  </data>
+  <data name="AdditionalAppsText" xml:space="preserve">
+    <value>Πρόσθετες εφαρμογές</value>
+  </data>
+  <data name="AlienFXText" xml:space="preserve">
+    <value>AlienFX</value>
+  </data>
+  <data name="AudioOutputText" xml:space="preserve">
+    <value>Έξοδος ήχου</value>
+  </data>
+  <data name="PowerPlanText" xml:space="preserve">
+    <value>Σχέδιο παροχής ενέργειας</value>
+  </data>
+  <data name="ThermalText" xml:space="preserve">
+    <value>Θερμικό</value>
+  </data>
+  <data name="WebLinksText" xml:space="preserve">
+    <value>Συνδέσεις web</value>
+  </data>
+  <data name="FrapsText" xml:space="preserve">
+    <value>Παρακολούθηση In-Game</value>
+  </data>
+  <data name="MediaPlayerText" xml:space="preserve">
+    <value>Media Player</value>
+  </data>
+  <data name="VoIPText" xml:space="preserve">
+    <value>VoIP (Chat)</value>
+  </data>
+  <data name="PlaybackDeviceDescriptionText" xml:space="preserve">
+    <value>Επιλέξτε την προεπιλεγμένη συσκευή αναπαραγωγής κάνοντας κλικ πάνω της.</value>
+  </data>
+  <data name="AudioDeviceNotPresentText" xml:space="preserve">
+    <value>Δεν υπάρχει</value>
+  </data>
+  <data name="AudioDeviceReadyText" xml:space="preserve">
+    <value>Έτοιμο</value>
+  </data>
+  <data name="AudioDeviceUnpluggedText" xml:space="preserve">
+    <value>Δεν έχει συνδεθεί</value>
+  </data>
+  <data name="BackToActionSequenceSummaryText" xml:space="preserve">
+    <value>Επιστροφή στη σύνοψη σειράς ενεργειών</value>
+  </data>
+  <data name="WebLinksDescriptionText" xml:space="preserve">
+    <value>Εισαγάγετε μία ή περισσότερες συνδέσεις web που θα θέλατε να ανοίγουν με αυτή την ενέργεια.</value>
+  </data>
+  <data name="WebLinkItemizedText" xml:space="preserve">
+    <value>Σύνδεση web {0}:</value>
+  </data>
+  <data name="ApplicationHeaderText" xml:space="preserve">
+    <value>Εφαρμογή:</value>
+  </data>
+  <data name="BrowseAdditionalAppsText" xml:space="preserve">
+    <value>Αναζήτηση για την πρόσθετη εφαρμογή παρακάτω.</value>
+  </data>
+  <data name="BrowseText" xml:space="preserve">
+    <value>Αναζήτηση...</value>
+  </data>
+  <data name="AllFilesFilterText" xml:space="preserve">
+    <value>Όλα τα αρχεία ({0})</value>
+  </data>
+  <data name="ApplicationBehaviorText" xml:space="preserve">
+    <value>Τι θα θέλατε να κάνει αυτή η εφαρμογή;</value>
+  </data>
+  <data name="BrowseAppsText" xml:space="preserve">
+    <value>Αναζήτηση της εφαρμογής παρακάτω.</value>
+  </data>
+  <data name="ApplicationErrorPathNotFoundText" xml:space="preserve">
+    <value>Η επιλεγμένη διαδρομή εφαρμογής δεν υπάρχει, ελέγξτε ξανά τη διαδρομή ή χρησιμοποιήστε το κουμπί αναζήτησης για να βρείτε την ακριβή διαδρομή της εφαρμογής.</value>
+  </data>
+  <data name="GameApplicationPathText" xml:space="preserve">
+    <value>Διαδρομή εφαρμογής παιχνιδιού:</value>
+  </data>
+  <data name="ActionSummaryDescriptionText" xml:space="preserve">
+    <value>Κάντε κλικ σε ένα από τα κουμπιά Ενέργεια στα αριστερά για να επεξεργαστείτε τις ρυθμίσεις αυτής της ενέργειας, για να τη μετακινήσετε προς τα επάνω ή προς τα κάτω στη σειρά ή για να τη διαγράψετε.</value>
+  </data>
+  <data name="LaunchGameText" xml:space="preserve">
+    <value>Εκκίνηση / Έξοδος</value>
+  </data>
+  <data name="InvalidUrlErrorText" xml:space="preserve">
+    <value>Μη έγκυρη σύνδεση web.</value>
+  </data>
+  <data name="DeleteGameModeTitleText" xml:space="preserve">
+    <value>Διαγραφή λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="WantToDeleteGameModeText" xml:space="preserve">
+    <value>Είστε βέβαιοι ότι θέλετε να διαγράψετε τη λειτουργία παιχνιδιού "{0}";</value>
+  </data>
+  <data name="ChangeGameModeTitleText" xml:space="preserve">
+    <value>Αλλαγή λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="WantToSaveGameModeChangesToText" xml:space="preserve">
+    <value>Θέλετε να αποθηκεύσετε τις αλλαγές στο {0};</value>
+  </data>
+  <data name="PowerPlanHeaderText" xml:space="preserve">
+    <value>Σχέδιο παροχής ενέργειας:</value>
+  </data>
+  <data name="SelectPowerPlanText" xml:space="preserve">
+    <value>Επιλέξτε το σχέδιο παροχής ενέργειας γι αυτή τη λειτουργία παιχνιδιού.</value>
+  </data>
+  <data name="ActivePowerPlanText" xml:space="preserve">
+    <value>&lt;Ενεργό σχέδιο παροχής ενέργειας&gt;</value>
+  </data>
+  <data name="ApplicationErrorPowerPlanNotFoundText" xml:space="preserve">
+    <value>Το σχέδιο παροχής ενέργειας "{0}" σε αυτή τη λειτουργία παιχνιδιού δεν υπάρχει πλέον. Επιλέξτε ένα νέο σχέδιο παροχής ενέργειας από τη λίστα.</value>
+  </data>
+  <data name="ApplicationErrorThermalProfileNotFoundText" xml:space="preserve">
+    <value>Το θερμικό προφίλ "{0}" σε αυτή τη λειτουργία παιχνιδιού δεν υπάρχει πλέον. Επιλέξτε ένα νέο θερμικό προφίλ από τη λίστα.</value>
+  </data>
+  <data name="SelectThermalText" xml:space="preserve">
+    <value>Επιλέξτε το θερμικό προφίλ γι αυτή τη λειτουργία παιχνιδιού.</value>
+  </data>
+  <data name="ThermalHeaderText" xml:space="preserve">
+    <value>Θερμικό προφίλ:</value>
+  </data>
+  <data name="ActiveThermalProfileText" xml:space="preserve">
+    <value>&lt;Ενεργό θερμικό προφίλ&gt;</value>
+  </data>
+  <data name="ApplicationErrorThemeNotFoundText" xml:space="preserve">
+    <value>Το θέμα "{0}" AlienFX σε αυτή τη λειτουργία παιχνιδιού δεν υπάρχει πλέον. Επιλέξτε ένα νέο θέμα από τη λίστα.</value>
+  </data>
+  <data name="SelectThemeOptionsText" xml:space="preserve">
+    <value>Επιλέξτε το θέμα AlienFX και επιλογές γι αυτή τη λειτουργία παιχνιδιού.</value>
+  </data>
+  <data name="GameModeShortcutText" xml:space="preserve">
+    <value>Φάκελος συντόμευσης:</value>
+  </data>
+  <data name="LaunchGameModeText" xml:space="preserve">
+    <value>Έναρξη λειτουργίας παιχνιδιού "{0}".</value>
+  </data>
+  <data name="CloseAlienAdrenalineText" xml:space="preserve">
+    <value>Κλείσιμο του AlienAdrenaline</value>
+  </data>
+  <data name="AudioDeviceDisabledText" xml:space="preserve">
+    <value>Απενεργοποιημένο</value>
+  </data>
+  <data name="EnableTabbedBrowsingText" xml:space="preserve">
+    <value>Ενεργοποίηση περιήγησης με καρτέλες (αν υποστηρίζεται)</value>
+  </data>
+  <data name="GamePathText" xml:space="preserve">
+    <value>Εκτελέσιμο αρχείο:</value>
+  </data>
+  <data name="ActiveThemeText" xml:space="preserve">
+    <value>&lt;Ενεργό θέμα&gt;</value>
+  </data>
+  <data name="GameExecPathDoesNotExistText" xml:space="preserve">
+    <value>Η διαδρομή εκτελέσιμου του παιχνιδιού δεν υπάρχει.</value>
+  </data>
+  <data name="ProfileListDescriptionText" xml:space="preserve">
+    <value>Μπορείτε να δημιουργήσετε μια προσαρμοσμένη συντόμευση επιφάνειας εργασίας, η οποία θα ρυθμίζει αυτόματα το περιβάλλον του συστήματός σας και θα εκτελεί μια σειρά ενεργειών, κάθε φορά που ξεκινάτε αυτό το παιχνίδι.
+Επιλέξτε ένα προφίλ από την παρακάτω λίστα και κάντε διπλό κλικ πάνω του για να τροποποιήσετε τις ενέργειες του προφίλ.</value>
+  </data>
+  <data name="RecreateGameShortcutText" xml:space="preserve">
+    <value>Επαναδημιουργία της συντόμευσης</value>
+  </data>
+  <data name="GameModeShortcutCreateDescriptionText" xml:space="preserve">
+    <value>Η συντόμευση της λειτουργίας παιχνιδιού δημιουργήθηκε στο: 
+{0}</value>
+  </data>
+  <data name="GameModeShortcutCreateErrorText" xml:space="preserve">
+    <value>Σφάλμα κατά τη δημιουργία της συντόμευσης λειτουργίας παιχνιδιού στο: 
+{0}.</value>
+  </data>
+  <data name="GameModeShortcutCreateTitleText" xml:space="preserve">
+    <value>Δημιουργία συντόμευσης λειτουργίας παιχνιδιού</value>
+  </data>
+  <data name="WantToSavePendingChangesText" xml:space="preserve">
+    <value>Για να επαναδημιουργήσετε τη συντόμευση για τη λειτουργία παιχνιδιού, πρέπει να αποθηκευτούν οι εκκρεμείς αλλαγές. Θέλετε να συνεχίσετε;</value>
+  </data>
+  <data name="GameModeShortcutAlreadyExistsText" xml:space="preserve">
+    <value>Η συντόμευση λειτουργίας παιχνιδιού υπάρχει ήδη στην επιλεγμένη διαδρομή.</value>
+  </data>
+  <data name="ProgressBarLoadingText" xml:space="preserve">
+    <value>Φόρτωση ...</value>
+  </data>
+  <data name="CloseGameModeProfileText" xml:space="preserve">
+    <value>Κλείσιμο προφίλ Κατάστασης λειτουργίας παιχνιδιών</value>
+  </data>
+  <data name="EnergyBoosterDescriptionText" xml:space="preserve">
+    <value>Ο επιταχυντής επιταχύνει τον υπολογιστή σας και απελευθερώνει μνήμη απενεργοποιώντας προσωρινά περιττές διαδικασίες και υπηρεσίες που εκτελούνται στο παρασκήνιο.</value>
+  </data>
+  <data name="EnergyBoosterText" xml:space="preserve">
+    <value>Accelerator</value>
+  </data>
+  <data name="SelectProfileText" xml:space="preserve">
+    <value>Διαγραφή προφίλ</value>
+  </data>
+  <data name="Core" xml:space="preserve">
+    <value>Πυρήνας {0}</value>
+  </data>
+  <data name="PerformanceSnapshots" xml:space="preserve">
+    <value>Εγγραφές απόδοσης</value>
+  </data>
+  <data name="RealTimePerformance" xml:space="preserve">
+    <value>Παρακολούθηση απόδοσης πραγματικού χρόνου</value>
+  </data>
+  <data name="MemoryLoadTitle" xml:space="preserve">
+    <value>Φορτίο μνήμης</value>
+  </data>
+  <data name="UpdateTUDText" xml:space="preserve">
+    <value>Ενημέρωση ορισμών</value>
+  </data>
+  <data name="UpdateDefStart" xml:space="preserve">
+    <value>Περιμένετε...</value>
+  </data>
+  <data name="UpdateDefFail" xml:space="preserve">
+    <value>Αποτυχία ενημέρωση ορισμών</value>
+  </data>
+  <data name="UpdateDefNoConnect" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η ενημέρωση των ορισμών, δεν υπάρχει σύνδεση στο Internet</value>
+  </data>
+  <data name="UpdateDefOK" xml:space="preserve">
+    <value>Οι ορισμοί ενημερώθηκαν με επιτυχία</value>
+  </data>
+  <data name="UpdateDefTimeout" xml:space="preserve">
+    <value>Λήξη χρόνου ενημέρωσης ορισμών</value>
+  </data>
+  <data name="UpdateDefUpToDate" xml:space="preserve">
+    <value>Οι ορισμοί είναι ενημερωμένοι</value>
+  </data>
+  <data name="UpdateDefinitionsQuestionText" xml:space="preserve">
+    <value>Θέλετε να ενημερώσετε τους ορισμούς;</value>
+  </data>
+  <data name="UpdateDefinitionsTitleText" xml:space="preserve">
+    <value>Ενημέρωση ορισμών</value>
+  </data>
+  <data name="PauseText" xml:space="preserve">
+    <value>Παύση</value>
+  </data>
+  <data name="PlayText" xml:space="preserve">
+    <value>Αναπαραγωγή</value>
+  </data>
+  <data name="RecordText" xml:space="preserve">
+    <value>Εγγραφή</value>
+  </data>
+  <data name="ViewText" xml:space="preserve">
+    <value>Προβολή</value>
+  </data>
+  <data name="DateText" xml:space="preserve">
+    <value>Καταγραφή ημερομηνίας</value>
+  </data>
+  <data name="NameText" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="DeleteSnapshotQuestion" xml:space="preserve">
+    <value>Θέλετε να διαγράψετε την επιλεγμένη εγγραφή: {0}?</value>
+  </data>
+  <data name="DeleteSnapshotTitle" xml:space="preserve">
+    <value>Διαγραφή εγγραφής</value>
+  </data>
+  <data name="CopyOfText" xml:space="preserve">
+    <value>Αντίγραφο του {0}</value>
+  </data>
+  <data name="SaveAsSnapshotTitle" xml:space="preserve">
+    <value>Αποθήκευση ως εγγραφή</value>
+  </data>
+  <data name="StopText" xml:space="preserve">
+    <value>Διακοπή </value>
+  </data>
+  <data name="StartRecordingText" xml:space="preserve">
+    <value>Έναρξη εγγραφής</value>
+  </data>
+  <data name="StopRecordingText" xml:space="preserve">
+    <value>Διακοπή εγγραφής</value>
+  </data>
+  <data name="PerformanceSnapshotNotFound" xml:space="preserve">
+    <value>Δεν βρέθηκαν εγγραφές απόδοσης</value>
+  </data>
+  <data name="ProcessIdentifier" xml:space="preserve">
+    <value>AlienAdrenaline</value>
+  </data>
+  <data name="PerformanceMonitoringDescriptionText" xml:space="preserve">
+    <value>Η Παρακολούθηση απόδοσης καταγράφει το εύρος ζώνης του συστήματός σας και τη χρήση των διαφόρων εξαρτημάτων υλικού.</value>
+  </data>
+  <data name="PerformanceMonitoringText" xml:space="preserve">
+    <value>Παρακολούθηση απόδοσης</value>
+  </data>
+  <data name="EnergyBoosterClickhereText" xml:space="preserve">
+    <value>Κάντε κλικ εδώ</value>
+  </data>
+  <data name="EnergyBoosterUpsellText" xml:space="preserve">
+    <value>Θέλετε ακόμη περισσότερη ταχύτητα και καλύτερη απόδοση στα παιχνίδια;</value>
+  </data>
+  <data name="GBStr" xml:space="preserve">
+    <value>{0} GB</value>
+  </data>
+  <data name="EnergyBoosterSiteUrl" xml:space="preserve">
+    <value>http://www.iolo.com/promo/partner/alienware/get-system-mechanic/</value>
+  </data>
+  <data name="UpdateRealApplicationPathText" xml:space="preserve">
+    <value>Καταγραφή εκτελέσιμου αρχείου παιχνιδιού</value>
+  </data>
+  <data name="InvalidGameRealPathText" xml:space="preserve">
+    <value>Μη έγκυρο εκτελέσιμο αρχείο παιχνιδιού</value>
+  </data>
+  <data name="UpdateGameExecutableDescriptionText" xml:space="preserve">
+    <value>Ορισμένα παιχνίδια χρησιμοποιούν ένα εκτελέσιμο αρχείο για την εκκίνησή τους και χωριστό εκτελέσιμο αρχείο για την πραγματική εκτέλεσή τους την ώρα που παίζετε.
+Αν θέλετε να αναιρεθεί αυτόματα η ακολουθία των ενεργειών που εκτελέστηκαν κατά τη χρήση του συγκεκριμένου προφίλ λειτουργίας παιχνιδιού μετά την έξοδό σας από το παιχνίδι, κάντε κλικ στο παρακάτω κουμπί και πιέστε τα πλήκτρα {0} την ώρα που παίζετε.
+Έτσι θα καταγραφεί το εκτελέσιμο αρχείο που πράγματι χρησιμοποιείται κατά τη διάρκεια του παιχνιδιού και θα αποθηκευτεί στο προφίλ της λειτουργίας παιχνιδιού που επιλέξατε.</value>
+  </data>
+  <data name="ActionPendingConfigurationText" xml:space="preserve">
+    <value>Η ενέργεια δεν είναι διαρθρωμένη.</value>
+  </data>
+  <data name="Processes" xml:space="preserve">
+    <value>Λίστα διεργασιών</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="ProcessName" xml:space="preserve">
+    <value>Όνομα διαδικασίας</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>Κεντρική μονάδα επεξεργασίας (CPU)</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>Μονάδα επεξεργασίας γραφικών (GPU)</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Μνήμη</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Δίκτυο</value>
+  </data>
+  <data name="CloseOtherNetworkChartsText" xml:space="preserve">
+    <value>Κλείστε τα υπόλοιπα διαγράμματα δικτύου.</value>
+  </data>
+  <data name="OpenOtherNetworkChartsText" xml:space="preserve">
+    <value>Κλείστε τα υπόλοιπα διαγράμματα δικτύου.</value>
+  </data>
+  <data name="CloseText" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="DataPointToolTipText" xml:space="preserve">
+    <value>Χρόνος: {0}s, Τιμή: {1}</value>
+  </data>
+  <data name="CompareText" xml:space="preserve">
+    <value>Σύγκριση</value>
+  </data>
+  <data name="ChartPagingHomePage" xml:space="preserve">
+    <value>Αρχική σελίδα</value>
+  </data>
+  <data name="ChartPagingNetworkPageTitle" xml:space="preserve">
+    <value>Δραστηριότητα δικτύου</value>
+  </data>
+  <data name="ChartPagingVideoPageTitle" xml:space="preserve">
+    <value>Δραστηριότητα γραφικών</value>
+  </data>
+  <data name="CPUUsageAverageText" xml:space="preserve">
+    <value>Χρήση CPU (μέσος όρος)</value>
+  </data>
+  <data name="TimespanHolderTooltipText" xml:space="preserve">
+    <value>Πιάστε για μετακίνηση αριστερά/δεξιά. Κάντε διπλό κλικ για επαναφορά.</value>
+  </data>
+  <data name="ChartHelpText" xml:space="preserve">
+    <value>Πληροφορίες διαγράμματος</value>
+  </data>
+  <data name="CloseChartTooltip" xml:space="preserve">
+    <value>Κλείσιμο διαγράμματος</value>
+  </data>
+  <data name="LessNetworkChartsTooltip" xml:space="preserve">
+    <value>Σύμπτυξη όλων των διαγραμμάτων δικτύου</value>
+  </data>
+  <data name="MoreNetworkChartsTooltip" xml:space="preserve">
+    <value>Ανάπτυξη όλων των διαγραμμάτων δικτύου</value>
+  </data>
+  <data name="LessVideoChartsTooltip" xml:space="preserve">
+    <value>Σύμπτυξη όλων των διαγραμμάτων βίντεο</value>
+  </data>
+  <data name="MoreVideoChartsTooltip" xml:space="preserve">
+    <value>Ανάπτυξη όλων των διαγραμμάτων βίντεο</value>
+  </data>
+  <data name="ChartLegendTooltip" xml:space="preserve">
+    <value>{0}
+{1} δευτερόλεπτα</value>
+  </data>
+  <data name="ProcessListText" xml:space="preserve">
+    <value>Λίστα διεργασιών</value>
+  </data>
+  <data name="ZoomOutChartTooltip" xml:space="preserve">
+    <value>Αποκατάσταση κάτω διαγράμματος</value>
+  </data>
+  <data name="CtrlShiftF3Text" xml:space="preserve">
+    <value>CTRL+SHIFT+F3</value>
+  </data>
+  <data name="CPUUsageTitle" xml:space="preserve">
+    <value>Χρήση CPU: {0}</value>
+  </data>
+  <data name="ProcessCountTitle" xml:space="preserve">
+    <value>Σύνολο διαδικασιών: {0}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Εξαγωγή</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Εισαγωγή</value>
+  </data>
+  <data name="ExportSnapshotTitle" xml:space="preserve">
+    <value>Εξαγωγή εγγραφής</value>
+  </data>
+  <data name="ImportSnapshotTitle" xml:space="preserve">
+    <value>Εισαγωγή εγγραφής</value>
+  </data>
+  <data name="ImportedSnapshotExists" xml:space="preserve">
+    <value>Το όνομα της εγγραφής υπάρχει ήδη. Θέλετε να αντικατασταθεί;</value>
+  </data>
+  <data name="CopySuffix" xml:space="preserve">
+    <value>{0} - Αντιγραφή</value>
+  </data>
+  <data name="MaximizeChartText" xml:space="preserve">
+    <value>Κάντε κλικ στον τίτλο του διαγράμματος για μεγιστοποίηση του.</value>
+  </data>
+  <data name="MinimizeChartText" xml:space="preserve">
+    <value>Κάντε κλικ στον τίτλο του διαγράμματος για επαναφορά του.</value>
+  </data>
+  <data name="CtrlShiftAltF10" xml:space="preserve">
+    <value>CTRL+SHIFT+ALT+F10</value>
+  </data>
+  <data name="FnF10" xml:space="preserve">
+    <value>FN+F10</value>
+  </data>
+  <data name="StartStopRecordingKeystrokes" xml:space="preserve">
+    <value>Χρήση "{0}" για έναρξη/διακοπή εγγραφής</value>
+  </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του αρχείου. Το μορφότυπο του αρχείου δεν είναι συμβατό με την τρέχουσα έκδοση.</value>
+  </data>
+</root>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Dominator.UI.Views.MetadataDownloadView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:Dominator.UI.Properties"
+        xmlns:controls="clr-namespace:Dominator.UI.Controls"
+        mc:Ignorable="d"
+        Height="159.729" Width="413.348"
+        ResizeMode="NoResize" 
+	    WindowStartupLocation="CenterScreen" 
+	    Topmost="True"	
+        x:Name="summaryWindow"
+        Background="{DynamicResource NotifierBackgroundBrush}"  
+	    WindowStyle="None"
+	    Foreground="#FFFFFFFF" 
+	    AllowsTransparency="True">
+
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OCControls.Resources;component/Dictionaries/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+
+    <Grid>
+        <StackPanel x:Name="stackTitle" Orientation="Horizontal" VerticalAlignment="Top">
+            <Image Margin="10,10,5,10" x:Name="imageIcon" Source="/OCControls.Resources;component/Media/Icons/config-download.png" Width="16" Height="16" />
+            <Label x:Name="labelTitle" FontFamily="{DynamicResource TextTitleFontFamily}" FontSize="{DynamicResource MesssageTitleFontSize}" Foreground="{DynamicResource NotifierTextInfoForegroundBrush}" VerticalContentAlignment="Center" Content="{Binding Source={x:Static properties:Resources.ApplicationName}, Converter={StaticResource toUpperCase}}" ContentStringFormat="{x:Static properties:Resources.MetadataDownloadTitle}" VerticalAlignment="Center" MaxWidth="632" Margin="0,3,0,0" />
+        </StackPanel>
+
+        <Grid VerticalAlignment="Center" Margin="5,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding DialogText}" Style="{DynamicResource ValidationTextBlock}" VerticalAlignment="Top" TextWrapping="WrapWithOverflow" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
