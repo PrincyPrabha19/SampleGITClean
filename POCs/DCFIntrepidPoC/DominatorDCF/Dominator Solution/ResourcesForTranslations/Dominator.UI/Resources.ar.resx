@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Advanced" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>أساسي</value>
+  </data>
+  <data name="MissingComponetErrorMsg" xml:space="preserve">
+    <value>عذرًا! حدث خطأ ما. تعذّر العثور على مكون مطلوب في التطبيق. يرجى إصلاح التطبيق في البدء &gt; البرنامج والميزات.</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="OCLevel1" xml:space="preserve">
+    <value>تطبيق Stage 1 OC </value>
+  </data>
+  <data name="OCLevel2" xml:space="preserve">
+    <value>تطبيق Stage 2 OC </value>
+  </data>
+  <data name="TurnOffOC" xml:space="preserve">
+    <value>إيقاف تشغيل OC</value>
+  </data>
+  <data name="ServiceNotRunningErrorMsg" xml:space="preserve">
+    <value>توقفت خدمة مطلوبة من التطبيق. يرجى التأكد من تشغيل الخدمة عند الطلب أو تشغيل الخدمة قبل تشغيل هذا التطبيق.</value>
+  </data>
+  <data name="ServiceNotRunningQuestion" xml:space="preserve">
+    <value>توقفت خدمة مطلوبة من التطبيق. هل تريد بدء الخدمة؟</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>OC Controls</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="ProfileInputHeader" xml:space="preserve">
+    <value>يرجى تحديد اسم ملف التعريف لحفظ ملف التعريف المخصص هذا</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>اسم ملف التعريف:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="ProfileNameInUse" xml:space="preserve">
+    <value>اسم ملف التعريف هذا مستخدم مسبقًا. هل تريد تجاوزه؟</value>
+  </data>
+  <data name="OverclockingTitle" xml:space="preserve">
+    <value>OC Controls</value>
+  </data>
+  <data name="OverclockingOnOff" xml:space="preserve">
+    <value>زيادة السرعة</value>
+  </data>
+  <data name="Profiles" xml:space="preserve">
+    <value>ملفات التعريف</value>
+  </data>
+  <data name="CPUCategory" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="GPUCategory" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="MemoryCategory" xml:space="preserve">
+    <value>الذاكرة</value>
+  </data>
+  <data name="TemperatureCategory" xml:space="preserve">
+    <value>درجة الحرارة</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>درجة الحرارة</value>
+  </data>
+  <data name="Utilization" xml:space="preserve">
+    <value>الاستخدام</value>
+  </data>
+  <data name="FanSpeed" xml:space="preserve">
+    <value>المروحة</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>التردد</value>
+  </data>
+  <data name="Voltage" xml:space="preserve">
+    <value>الفولطية</value>
+  </data>
+  <data name="OC1" xml:space="preserve">
+    <value>Stage 1 OC </value>
+  </data>
+  <data name="OC2" xml:space="preserve">
+    <value>Stage 2 OC </value>
+  </data>
+  <data name="AddProfile" xml:space="preserve">
+    <value>+ إضافة ملف تعريف</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>أعد المحاولة</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="TemperatureFormat" xml:space="preserve">
+    <value>{0:0}  </value>
+  </data>
+  <data name="TemperatureCelciusFormat" xml:space="preserve">
+    <value>{0:0} درجة مئوية</value>
+  </data>
+  <data name="TemperatureFahrenheitFormat" xml:space="preserve">
+    <value>{0:0} درجة فهرنهايت</value>
+  </data>
+  <data name="UtilizationFormat" xml:space="preserve">
+    <value>{0:0}%</value>
+  </data>
+  <data name="FanSpeedFormat" xml:space="preserve">
+    <value>{0:0}%</value>
+  </data>
+  <data name="FrequencyFormat" xml:space="preserve">
+    <value>{0:‏0.0} غيغاهرتز</value>
+  </data>
+  <data name="MemoryFrequencyFormat" xml:space="preserve">
+    <value>{0:‏0.0}ميغاهرتز</value>
+  </data>
+  <data name="MemoryIndexFormat" xml:space="preserve">
+    <value>الذاكرة {0}</value>
+  </data>
+  <data name="VoltageFormat" xml:space="preserve">
+    <value>{0:0.###}فولت</value>
+  </data>
+  <data name="VoltageModeFormat" xml:space="preserve">
+    <value>({0})</value>
+  </data>
+  <data name="XMPFormat" xml:space="preserve">
+    <value>XMP {0}‎</value>
+  </data>
+  <data name="MaximumFrequencyFormat" xml:space="preserve">
+    <value>(الحد الأقصى {0}غيغاهرتز)</value>
+  </data>
+  <data name="XMP" xml:space="preserve">
+    <value>XMP</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>إيقاف التشغيل</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>الحد الأقصى</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>الحد الأدنى</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="OverallOverclocking" xml:space="preserve">
+    <value>زيادة السرعة الإجمالية</value>
+  </data>
+  <data name="MemoryThermalsCategory" xml:space="preserve">
+    <value>الذاكرة</value>
+  </data>
+  <data name="SystemThermalCategory" xml:space="preserve">
+    <value>النظام-الحراري</value>
+  </data>
+  <data name="NewCustomProfileNameFormat" xml:space="preserve">
+    <value>ملف تعريف المستخدم {0}</value>
+  </data>
+  <data name="DeleteProfileWarningMessage" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف ملف التعريف؟</value>
+  </data>
+  <data name="SaveProfileErrorMessage" xml:space="preserve">
+    <value>يتعذّر تطبيق هذه الإعدادات. يرجى ضبط القيم والمحاولة من جديد.</value>
+  </data>
+  <data name="Thermals" xml:space="preserve">
+    <value>الحرارة</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>مُعطل</value>
+  </data>
+  <data name="ThermalAggresive" xml:space="preserve">
+    <value>قاسٍ</value>
+  </data>
+  <data name="ThermalNormal" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="XMPMainFormat" xml:space="preserve">
+    <value>(XMP: {0})</value>
+  </data>
+  <data name="Freq" xml:space="preserve">
+    <value>التردد</value>
+  </data>
+  <data name="VoltageMode" xml:space="preserve">
+    <value>وضع الفولتية</value>
+  </data>
+  <data name="VoltageModeAuto" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="VoltageModeStatic" xml:space="preserve">
+    <value>ثابت</value>
+  </data>
+  <data name="VoltageOffset" xml:space="preserve">
+    <value>إزاحة الفولتية</value>
+  </data>
+  <data name="VoltageOffsetFormat" xml:space="preserve">
+    <value>{0:0}ميللي فولط</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="DataConfigError" xml:space="preserve">
+    <value>تكوين البيانات غير متوفر</value>
+  </data>
+  <data name="DataConfigMissingErrorMessage" xml:space="preserve">
+    <value>ملف تكوين البيانات مفقود أو غير صالح. يتعذر إنشاء ملفات تعريف زيادة السرعة.</value>
+  </data>
+  <data name="InvalidProfileError" xml:space="preserve">
+    <value>ملف تعريف غير صالح</value>
+  </data>
+  <data name="InvalidProfileErrorMessage" xml:space="preserve">
+    <value>واجه {0} مشكلة وتم تعطيل ملف التعريف. لإعادة تمكين الملف، يرجى ضبط الإعدادات والتأكد من صحتها.</value>
+  </data>
+  <data name="DoNotShowAgain" xml:space="preserve">
+    <value>عدم عرض هذه الرسالة مرة أخرى</value>
+  </data>
+  <data name="OCDisclaimer" xml:space="preserve">
+    <value>يمكّنك قسم الخيارات المتقدمة في {0} من تغيير إعدادات متعددة يدويًا، بما  في ذلك تردد المعالج والفولتية الخاصة به. وقد يؤدي تغيير هذه القيم إلى تغير أداء النظام، إلا أنه في بعض الحالات، قد يسبب عدم استقرار في النظام أو تجميده أو حتى تعطله. إذا أردت المتابعة، يرجى النقر فوق موافقة وإلا فانقر فوق إلغاء.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>متابعة</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>"أقبل الاتفاقية"</value>
+  </data>
+  <data name="InvalidPredefinedProfileErrorMessage" xml:space="preserve">
+    <value>لقد اكتشفنا مشكلة في إعدادات زيادة السرعة الموافق عليها من قبل Alienware. يرجى الاتصال بقسم دعم العملاء على ‎1-800-ALIENWARE أو 1‎-866-287-6727 وتحديد الخيار 4.</value>
+  </data>
+  <data name="TempUnitCelsius" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="TempUnitFahrenheit" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="BIOSInterfaceNotSupportedError" xml:space="preserve">
+    <value>لم يعثر {0} على إصدار BIOS الأدنى المطلوب لتمكين وظيفة زيادة السرعة. هل تريد تشغيل Support Assist لتنزيل أحدث إصدار من BIOS؟</value>
+  </data>
+  <data name="SummaryTitle" xml:space="preserve">
+    <value>ملخص</value>
+  </data>
+  <data name="ValidationSettingsInProgress" xml:space="preserve">
+    <value>يرجى الانتظار فيما نتحقق من صحة الإعدادات</value>
+  </data>
+  <data name="ValidationSettingsSucceeded" xml:space="preserve">
+    <value>اجتازت القيم التي حددتها عملية التحقق من الصحة بنجاح</value>
+  </data>
+  <data name="ValidationSettingsFailed" xml:space="preserve">
+    <value>لم تجتز القيم التي حددتها عملية التحقق من الصحة.
+يرجى ضبط القيم والمحاولة من جديد.</value>
+  </data>
+  <data name="LoadingCustomProfilesFailedMessage" xml:space="preserve">
+    <value>تعذّر على التطبيق تحميل بعض ملفات تعريف المستخدمين.</value>
+  </data>
+  <data name="Pump" xml:space="preserve">
+    <value>المضخة</value>
+  </data>
+  <data name="PumpOff" xml:space="preserve">
+    <value>فشل</value>
+  </data>
+  <data name="PumpOn" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="FanMin" xml:space="preserve">
+    <value>الخمول</value>
+  </data>
+  <data name="AllPredefinedProfilesMissing" xml:space="preserve">
+    <value>ملفات التعريف المحددة مسبقًا مفقودة</value>
+  </data>
+  <data name="AllPredefinedProfilesMissingMessage" xml:space="preserve">
+    <value>فشل التطبيق في تحميل ملفات التعريف المعرّفة مسبقًا، يُرجى الاتصال بالإنترنت وإعادة تشغيل التطبيق.</value>
+  </data>
+  <data name="PredefinedProfileMissing" xml:space="preserve">
+    <value>ملف التعريف المحدد مسبقًا مفقود</value>
+  </data>
+  <data name="PredefinedProfileMissingMessage" xml:space="preserve">
+    <value>فشل التطبيق في تحميل ملفات التعريف المعرّفة مسبقًا، يُرجى الاتصال بالإنترنت وإعادة تشغيل التطبيق.</value>
+  </data>
+  <data name="RestartService" xml:space="preserve">
+    <value>بدء الخدمة</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="MetadataDownloadInProgress" xml:space="preserve">
+    <value>الرجاء الانتظار بينما يتم تنزيل ملفات التكوين.</value>
+  </data>
+  <data name="MetadataDownloadFailed" xml:space="preserve">
+    <value>يتعذّر تنزيل ملفات التكوين لنظامك. ستتم إعادة المحاولة عند تشغيل التطبيق.</value>
+  </data>
+  <data name="MetadataServiceUnreachable" xml:space="preserve">
+    <value>يتعذّر تنزيل ملفات التكوين. الرجاء التحقق من اتصال الإنترنت لديك.</value>
+  </data>
+  <data name="MetadataDownloadTitle" xml:space="preserve">
+    <value>{0} الإعدادات</value>
+  </data>
+  <data name="ProfileSelectionError" xml:space="preserve">
+    <value>كشفنا عن مشكلة في ملف التعريف. الرجاء إعادة تحميل التطبيق في حال استمرّت المشكلة.</value>
+  </data>
+  <data name="RebootRequiredAtEdit" xml:space="preserve">
+    <value>يتطلّب النظام لديك إعادة التشغيل لمصادقة كل قيم OC بنجاح في النظام عندما تكون في القسم المتقدم. انقر فوق "نعم" لمتابعة عملية إعادة التشغيل.</value>
+  </data>
+  <data name="RebootRequiredAtStart" xml:space="preserve">
+    <value>يتطلّب نظامك في هذا الوقت إعادة التشغيل لتطبيق كل قيم OC بنجاح في النظام. هل تريد إعادة التشغيل الآن أو في وقت لاحق؟</value>
+  </data>
+  <data name="RebootRequiredError" xml:space="preserve">
+    <value>إعادة التشغيل مطلوبة</value>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>في وقت لاحق</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>إعادة التشغيل</value>
+  </data>
+  <data name="CPURebootRequired" xml:space="preserve">
+    <value>إعادة التشغيل مطلوبة لتطبيق إعدادات وحدة المعالجة المركزية بنجاح</value>
+  </data>
+  <data name="MemoryRebootRequired" xml:space="preserve">
+    <value>إعادة التشغيل مطلوبة لتطبيق إعدادات الذاكرة بنجاح</value>
+  </data>
+  <data name="AnotherInstanceIsRunningErrorMsg" xml:space="preserve">
+    <value>يتعذّر تحميل التطبيق.
+نسخة أخرى من التطبيق قيد التشغيل.</value>
+  </data>
+  <data name="OverallOCControls" xml:space="preserve">
+    <value>OC Controls العامة</value>
+  </data>
+  <data name="ProfileDisabled" xml:space="preserve">
+    <value>تم تعطيل ملف التعريف</value>
+  </data>
+  <data name="BIOSInterfaceNotSupportedLaunchSupportDellMessage" xml:space="preserve">
+    <value>إنّ ضوابط OC غير مدعومة على هذا النظام. يُرجى مراجعة http://support.dell.com للحصول على برنامج لنظامك.</value>
+  </data>
+  <data name="LoadingPredefinedProfileValuesFailedMessage" xml:space="preserve">
+    <value>{0} غير متوافق مع Intel XTU. لاستخدام {0}، يرجى إلغاء تثبيت XTU وإعادة تثبيت {0}.</value>
+  </data>
+  <data name="BIOSUpdateRequiredErrorMsg" xml:space="preserve">
+    <value>يتطلب النظام تحديثًا لبرنامج BIOS الأخير.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>يتم الآن التحميل ...</value>
+  </data>
+  <data name="ServiceNotFoundErrorMsg" xml:space="preserve">
+    <value>عذرًا! حدث خطأ ما. تعذّر العثور على مكوّن ضروري للتطبيق. يرجى إعادة تثبيت التطبيق.</value>
+  </data>
+</root>

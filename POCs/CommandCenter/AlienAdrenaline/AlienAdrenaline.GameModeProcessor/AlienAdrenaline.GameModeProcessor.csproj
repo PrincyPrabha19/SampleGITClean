@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{830E407D-4BDD-47A3-B5C1-A6E4CD41D5CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlienLabs.AlienAdrenaline.GameModeProcessor</RootNamespace>
+    <AssemblyName>GameModeProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlienLabsTools">
+      <HintPath>..\..\bin\AlienLabsTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Views\Xaml\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ResourceDictionaries\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\ChromeButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Xaml\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ar.Designer.cs">
+      <Link>Properties\Resources.ar.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.da.Designer.cs">
+      <Link>Properties\Resources.da.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.da.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.de.Designer.cs">
+      <Link>Properties\Resources.de.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.el.Designer.cs">
+      <Link>Properties\Resources.el.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.el.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.en-GB.Designer.cs">
+      <Link>Properties\Resources.en-GB.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.en-GB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.es.Designer.cs">
+      <Link>Properties\Resources.es.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.fi.Designer.cs">
+      <Link>Properties\Resources.fi.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.fr.Designer.cs">
+      <Link>Properties\Resources.fr.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.it.Designer.cs">
+      <Link>Properties\Resources.it.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ja.Designer.cs">
+      <Link>Properties\Resources.ja.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ko.Designer.cs">
+      <Link>Properties\Resources.ko.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ko.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.nl.Designer.cs">
+      <Link>Properties\Resources.nl.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.no.Designer.cs">
+      <Link>Properties\Resources.no.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.no.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.pl.Designer.cs">
+      <Link>Properties\Resources.pl.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.pt-BR.Designer.cs">
+      <Link>Properties\Resources.pt-BR.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ru.Designer.cs">
+      <Link>Properties\Resources.ru.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.sv.Designer.cs">
+      <Link>Properties\Resources.sv.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.tr.Designer.cs">
+      <Link>Properties\Resources.tr.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-Hans.Designer.cs">
+      <Link>Properties\Resources.zh-Hans.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-Hant.Designer.cs">
+      <Link>Properties\Resources.zh-Hant.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hant.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-HK.Designer.cs">
+      <Link>Properties\Resources.zh-HK.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-HK.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Factories\ObjectFactory.cs" />
+    <Compile Include="Controls\ProfileActionProcessorStatusControl.cs" />
+    <Compile Include="Converters\BooleanAndMultiValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\ConvertBoolToInvertedVisibility.cs" />
+    <Compile Include="Converters\ConvertBoolToVisibility.cs" />
+    <Compile Include="Converters\ConvertVisibilityToBool.cs" />
+    <Compile Include="Converters\ProfileActionStatusProgressConverter.cs" />
+    <Compile Include="Converters\ProfileActionStatusErrorInfoToVisibilityConverter.cs" />
+    <Compile Include="Converters\ProfileActionStatusToDescriptionConverter.cs" />
+    <Compile Include="Converters\ProfileActionStatusToIsEnabledConverter.cs" />
+    <Compile Include="Converters\ProfileActionStatusToVisibilityConverter.cs" />
+    <Compile Include="Converters\ConvertToItemNumber.cs" />
+    <Compile Include="MainView.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Views\Xaml\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Xaml\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlienAdrenaline.Domain\AlienAdrenaline.Domain.csproj">
+      <Project>{4B1412B6-621E-4A89-8234-A6DB63AF1F4D}</Project>
+      <Name>AlienAdrenaline.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ar.resx">
+      <Link>Properties\Resources.ar.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.da.resx">
+      <Link>Properties\Resources.da.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.da.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.de.resx">
+      <Link>Properties\Resources.de.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.el.resx">
+      <Link>Properties\Resources.el.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.el.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.en-GB.resx">
+      <Link>Properties\Resources.en-GB.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.es.resx">
+      <Link>Properties\Resources.es.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.fi.resx">
+      <Link>Properties\Resources.fi.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.fr.resx">
+      <Link>Properties\Resources.fr.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.it.resx">
+      <Link>Properties\Resources.it.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ja.resx">
+      <Link>Properties\Resources.ja.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ja.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ko.resx">
+      <Link>Properties\Resources.ko.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ko.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.nl.resx">
+      <Link>Properties\Resources.nl.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.no.resx">
+      <Link>Properties\Resources.no.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.no.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.pl.resx">
+      <Link>Properties\Resources.pl.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.pt-BR.resx">
+      <Link>Properties\Resources.pt-BR.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.ru.resx">
+      <Link>Properties\Resources.ru.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.sv.resx">
+      <Link>Properties\Resources.sv.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.tr.resx">
+      <Link>Properties\Resources.tr.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-Hans.resx">
+      <Link>Properties\Resources.zh-Hans.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-Hant.resx">
+      <Link>Properties\Resources.zh-Hant.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\ResourcesForTranslation\Resources\AlienAdrenalineProcessor\Resources.zh-HK.resx">
+      <Link>Properties\Resources.zh-HK.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-HK.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\Buttons\close_down.png" />
+    <Resource Include="Media\Buttons\close_hover.png" />
+    <Resource Include="Media\Buttons\close_normal.png" />
+    <Resource Include="Media\Buttons\executing.png" />
+    <Resource Include="Media\Buttons\failed.png" />
+    <Resource Include="Media\Buttons\executed.png" />
+    <Resource Include="Media\Buttons\minimize_down.png" />
+    <Resource Include="Media\Buttons\minimize_hover.png" />
+    <Resource Include="Media\Buttons\minimize_normal.png" />
+    <Resource Include="Media\Dialogs\Bottom_middle.png" />
+    <Resource Include="Media\Dialogs\L_Bottom_Corner_Small.png" />
+    <Resource Include="Media\Dialogs\L_side.png" />
+    <Resource Include="Media\Dialogs\L_Top_Corner_Small.png" />
+    <Resource Include="Media\Dialogs\R_Bottom_Corner_Small.png" />
+    <Resource Include="Media\Dialogs\R_side.png" />
+    <Resource Include="Media\Dialogs\R_Top_Corner_Small.png" />
+    <Resource Include="Media\Dialogs\Top_middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\Buttons\rollbacked.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

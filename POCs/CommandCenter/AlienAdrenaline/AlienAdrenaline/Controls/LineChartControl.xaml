@@ -1,0 +1,293 @@
+﻿<UserControl x:Class="AlienLabs.AlienAdrenaline.App.Controls.LineChartControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+    xmlns:Abt_Controls_SciChart_Common_Extensions="clr-namespace:Abt.Controls.SciChart.Common.Extensions;assembly=Abt.Controls.SciChart.Wpf.2.3"
+    xmlns:annotations="clr-namespace:AlienLabs.AlienAdrenaline.App.Annotations"
+             xmlns:Converters="clr-namespace:AlienLabs.AlienAdrenaline.App.Converters"
+             mc:Ignorable="d" d:DesignWidth="379" d:DesignHeight="250"
+    x:Name="userControl">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:ToHourMinuteSeconds x:Key="toHourMinuteSeconds" />
+
+            <SolidColorBrush x:Key="GridBorderBrush" Color="#6B6B6B" />
+            <Style x:Key="SciChartSurfaceStyle1" TargetType="{x:Type s:SciChartSurface}">
+                <Setter Property="Background" Value="{Binding SciChartBackground}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource GridBorderBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="2,2,2,2"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Foreground" Value="{Binding TickTextBrush}"/>
+                <Setter Property="s:Device.SnapsToDevicePixels" Value="True"/>
+                <Setter Property="ClipUnderlayAnnotations" Value="True"/>
+                <Setter Property="ClipOverlayAnnotations" Value="True"/>
+                <Setter Property="ClipModifierSurface" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type s:SciChartSurface}">
+                            <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" s:Device.SnapsToDevicePixels="True" UseLayoutRounding="True">
+                                <s:MainGrid x:Name="PART_MainGrid" s:Device.SnapsToDevicePixels="True">
+                                    <s:MainGrid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition MinWidth="10" Width="*"/>
+                                        <ColumnDefinition Width="0"/>
+                                    </s:MainGrid.ColumnDefinitions>
+                                    <s:MainGrid.RowDefinitions>
+                                        <RowDefinition Height="0"/>
+                                        <RowDefinition Height="0"/>
+                                        <RowDefinition Height="*" MinHeight="10"/>
+                                        <RowDefinition Height="0"/>
+                                    </s:MainGrid.RowDefinitions>
+                                    <!--
+								    <TextBlock Grid.Column="1" Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}" FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" Margin="0,0,0,9" Text="{TemplateBinding ChartTitle}" VerticalAlignment="Center">
+									    <TextBlock.Visibility>
+										    <Binding Path="ChartTitle" RelativeSource="{RelativeSource TemplatedParent}">
+											    <Binding.Converter>
+												    <s:CollapseIfNullOrEmptyStringConverter/>
+											    </Binding.Converter>
+										    </Binding>
+									    </TextBlock.Visibility>
+								    </TextBlock>
+								    -->
+                                    <Canvas x:Name="PART_AnnotationsUnderlaySurface" Abt_Controls_SciChart_Common_Extensions:CanvasExtensions.ClipToBounds="{TemplateBinding ClipUnderlayAnnotations}" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch"/>
+                                    <s:GridLinesPanel x:Name="PART_GridLinesArea" Grid.Column="1" HorizontalAlignment="Stretch" IsTabStop="False" Grid.Row="2" Style="{DynamicResource GridLinesPanelStyle1}" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch"/>
+                                    <ContentControl Content="{TemplateBinding RenderSurface}" Grid.Column="1" HorizontalContentAlignment="Stretch" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalContentAlignment="Stretch"/>
+                                    <Canvas x:Name="PART_AnnotationsOverlaySurface" Abt_Controls_SciChart_Common_Extensions:CanvasExtensions.ClipToBounds="{TemplateBinding ClipOverlayAnnotations}" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch"/>
+                                    <s:ChartModifierSurface x:Name="PART_ChartModifierSurface" ClipToBounds="{TemplateBinding ClipModifierSurface}" Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsTabStop="False" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <s:ChartModifierSurface.Content>
+                                            <Canvas/>
+                                        </s:ChartModifierSurface.Content>
+                                    </s:ChartModifierSurface>
+                                    <Canvas x:Name="PART_ChartAdornerLayer" Abt_Controls_SciChart_Common_Extensions:CanvasExtensions.ClipToBounds="{TemplateBinding ClipModifierSurface}" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch"/>
+                                    <Border BorderBrush="{Binding BorderBrush, ElementName=PART_GridLinesArea}" BorderThickness="{Binding BorderThickness, ElementName=PART_GridLinesArea}" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" s:Device.SnapsToDevicePixels="True" VerticalAlignment="Stretch"/>
+                                    <s:AxisArea x:Name="PART_TopAxisArea" Grid.Column="1" Orientation="Vertical" Grid.Row="1" s:Device.SnapsToDevicePixels="True">
+                                        <s:AxisArea.Style>
+                                            <Style TargetType="{x:Type s:AxisArea}">
+                                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                                <Setter Property="Background" Value="{x:Null}"/>
+                                            </Style>
+                                        </s:AxisArea.Style>
+                                    </s:AxisArea>
+                                    <s:AxisArea x:Name="PART_LeftAxisArea" Grid.Column="0" FlowDirection="RightToLeft" Orientation="Horizontal" Grid.Row="2" s:Device.SnapsToDevicePixels="True">
+                                        <s:AxisArea.Style>
+                                            <Style TargetType="{x:Type s:AxisArea}">
+                                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                                <Setter Property="Background" Value="{x:Null}"/>
+                                            </Style>
+                                        </s:AxisArea.Style>
+                                    </s:AxisArea>
+                                    <s:AxisArea x:Name="PART_BottomAxisArea" Grid.Column="1" Orientation="Vertical" Grid.Row="3" s:Device.SnapsToDevicePixels="True">
+                                        <s:AxisArea.Style>
+                                            <Style TargetType="{x:Type s:AxisArea}">
+                                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                                <Setter Property="Background" Value="{x:Null}"/>
+                                            </Style>
+                                        </s:AxisArea.Style>
+                                    </s:AxisArea>
+                                    <s:AxisArea x:Name="PART_RightAxisArea" Grid.Column="2" Orientation="Horizontal" Grid.Row="2" s:Device.SnapsToDevicePixels="True">
+                                        <s:AxisArea.Style>
+                                            <Style TargetType="{x:Type s:AxisArea}">
+                                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                                <Setter Property="Background" Value="{x:Null}"/>
+                                            </Style>
+                                        </s:AxisArea.Style>
+                                    </s:AxisArea>
+                                </s:MainGrid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="GridLinesPanelStyle1" TargetType="{x:Type s:GridLinesPanel}">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.457,0.296" StartPoint="0.459,1.296">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#373737" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            	<Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type s:SciChartSurface}}}"/>
+            	<Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type s:SciChartSurface}}}"/>
+            	<Setter Property="Template">
+            		<Setter.Value>
+            			<ControlTemplate TargetType="{x:Type s:GridLinesPanel}">
+            				<Border Background="{TemplateBinding Background}"/>
+            			</ControlTemplate>
+            		</Setter.Value>
+            	</Setter>
+            </Style>
+
+            <ControlTemplate x:Key="EllipsePointMarkerTemplate">
+                <annotations:EllipsePointMarkerExtended Fill="gray" Stroke="gray" StrokeThickness="0" Width="8" Height="8" />
+            </ControlTemplate>
+
+            <Style x:Key="CheckBoxAnnotation1Style" TargetType="{x:Type CheckBox}">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                            <Grid x:Name="Root" Opacity="100" Cursor="Hand">
+                                <Ellipse x:Name="ellipseDataPoint" Width="8" Height="8" Margin="-4.5,-4.5,0,0">
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush GradientOrigin="0.681,0.308">
+                                            <GradientStop Color="darkgray"/>
+                                            <GradientStop Color="gray" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Width" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Height" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Margin" Value="-2,-2,0,0" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Width" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Height" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Fill" TargetName="ellipseDataPoint">
+                                        <Setter.Value>
+                                            <RadialGradientBrush GradientOrigin="0.681,0.308">
+                                                <GradientStop Color="{Binding LineSeries1Color.Color, ElementName=userControl}"/>
+                                                <GradientStop Color="LightGray" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Margin" Value="-2,-2,0,0" />
+                                </Trigger>                                
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="CheckBoxAnnotation2Style" TargetType="{x:Type CheckBox}">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                            <Grid x:Name="Root" Opacity="100" Cursor="Hand">
+                                <Ellipse x:Name="ellipseDataPoint" Width="8" Height="8" Margin="-4.5,-4.5,0,0">
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush GradientOrigin="0.681,0.308">
+                                            <GradientStop Color="darkgray"/>
+                                            <GradientStop Color="gray" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Width" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Height" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Margin" Value="-2,-2,0,0" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Width" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Height" TargetName="ellipseDataPoint" Value="11"/>
+                                    <Setter Property="Fill" TargetName="ellipseDataPoint">
+                                        <Setter.Value>
+                                            <RadialGradientBrush GradientOrigin="0.681,0.308">
+                                                <GradientStop Color="{Binding LineSeries2Color.Color, ElementName=userControl}"/>
+                                                <GradientStop Color="LightGray" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Margin" Value="-2,-2,0,0" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="DataPointsAnnotationModifier1Style" TargetType="{x:Type s:CustomAnnotation}">
+                <Setter Property="BorderBrush" Value="Gray"/>                
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type s:CustomAnnotation}">
+                            <Grid x:Name="Root" Opacity="100" Cursor="Hand">
+                                <CheckBox Style="{StaticResource CheckBoxAnnotation1Style}" Background="{Binding LineSeries1Color, ElementName=userControl}" Click="dataPointCheckbox_OnClick" PreviewMouseDoubleClick="dataPointCheckbox_OnPreviewMouseDoubleClick" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="DataPointsAnnotationModifier2Style" TargetType="{x:Type s:CustomAnnotation}">
+                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type s:CustomAnnotation}">
+                            <Grid x:Name="Root" Opacity="100" Cursor="Hand">
+                                <CheckBox Style="{StaticResource CheckBoxAnnotation2Style}" Background="{Binding LineSeries2Color, ElementName=userControl}" Click="dataPointCheckbox_OnClick" PreviewMouseDoubleClick="dataPointCheckbox_OnPreviewMouseDoubleClick" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="RangeSelectorAnnotationStyle" TargetType="{x:Type s:CustomAnnotation}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type s:CustomAnnotation}">
+                            <Grid>
+                                <Border BorderThickness="1" BorderBrush="#FF909090" Background="#FF909090" CornerRadius="0" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-7,0,0,0" RenderTransformOrigin="0.5,0.5" Width="12" />
+                                <Label Content="{TemplateBinding Content, Converter={StaticResource toHourMinuteSeconds}}" Foreground="White" VerticalAlignment="Center" FontFamily="Latha" FontSize="10.667" BorderBrush="Black" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Top" Width="70" Margin="-34,0,5,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Height="20" >
+                                    <Label.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="270"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Label.RenderTransform>
+                                </Label>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <s:SciChartSurface Name="sciLineChart" Style="{DynamicResource SciChartSurfaceStyle1}">
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries x:Name="sciLineSeries1" SeriesColor="White" StrokeThickness="2" />
+                <s:FastLineRenderableSeries x:Name="sciLineSeries2" SeriesColor="White" StrokeThickness="2" />
+            </s:SciChartSurface.RenderableSeries>
+
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis DrawMajorGridLines="true" DrawMinorGridLines="false" AutoTicks="false" MajorDelta="10" MinorDelta="1" AutoRange="Once" />
+            </s:SciChartSurface.XAxis>
+
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis DrawMajorGridLines="true" DrawMinorGridLines="false" AutoTicks="false" MajorDelta="10" MinorDelta="1" AutoRange="Once"/>
+            </s:SciChartSurface.YAxis>
+
+            <s:SciChartSurface.ChartModifier>
+                <s:ModifierGroup s:MouseManager.MouseEventGroup="MyCustomGroup">
+                    <annotations:CustomAnnotationModifier x:Name="dataPointsAnnotationModifier" ReceiveHandledEvents="True"/>
+                    <annotations:ZoomExtentsModifierEx x:Name="zoomExtentsModifier" IsAnimated="False" VisibleRangeChanged="zoomExtentsModifier_OnVisibleRangeChanged" ReceiveHandledEvents="False" />
+                    <annotations:RubberBandXyZoomModifierEx x:Name="rubberBandXyZoomModifier" MinDragSensitivity="1" ReceiveHandledEvents="True" IsAnimated="False" ZoomExtentsY="False" IsXAxisOnly="True" AnnotationStyle="{StaticResource RangeSelectorAnnotationStyle}" VisibleRangeChanged="rubberBandXyZoomModifier_OnVisibleRangeChanged" />                    
+                </s:ModifierGroup>
+            </s:SciChartSurface.ChartModifier>
+        </s:SciChartSurface>        		
+    </Grid>
+</UserControl>

@@ -1,0 +1,54 @@
+;/*++
+;
+;Copyright (c) IndiLogic LLC.  All rights reserved.
+;
+;Module Name:
+;
+;    AWCC_OptionalPackage_DCHU_Component.INF
+;
+;Abstract:
+;
+;    Installation inf for one of the Alienware Control Center Optional Package
+;    AddComponent directives
+;
+;--*/
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = AWCC_OptionalPackage_DCHU_Component.cat
+DriverVer = 
+
+[Manufacturer]
+%ManufacturerName% = AWCCComponent, NT$ARCH$
+
+[AWCCComponent.NT$ARCH$]
+%DeviceName% = AWCCComponent_Install, SWC\VID001&PID0001&AWCCOPC
+
+[SourceDisksFiles]
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+AWCCComponent_CopyFiles = 13 ; copy to driverstore
+
+[AWCCComponent_Install.NT]
+CopyFiles = AWCCComponent_CopyFiles
+
+
+[AWCCComponent_Install.NT.Software]
+AddSoftware = AWCC_OptionalPackage_DCHU_Componentsoftware,, AWCCComponent_SoftwareInstall
+
+[AWCCComponent_SoftwareInstall]
+SoftwareType = 2
+SoftwareID = pfn://DellInc.6066037A8FCF7_htrsf667h5kn2
+
+[AWCCComponent_CopyFiles]
+
+[Strings]
+ManufacturerName = "Alienware"
+DiskName = "Alienware Control Center Optional Package Component Installation Disk"
+DeviceName = "Alienware Control Center Optional Package Component Device"

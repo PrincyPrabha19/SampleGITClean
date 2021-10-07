@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="AlienLabs.AlienAdrenaline.App.Views.Xaml.Actions.GameApplicationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Properties="clr-namespace:AlienLabs.AlienAdrenaline.App.Properties" 
+             xmlns:DomainProperties="clr-namespace:AlienLabs.AlienAdrenaline.Domain.Properties;assembly=AlienAdrenaline.Domain" 
+             xmlns:Converters="clr-namespace:AlienLabs.AlienAdrenaline.App.Converters" mc:Ignorable="d" Height="299"
+             x:Name="userControl" Width="482">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Brushes.xaml"/>
+                <ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/AlienwareSandbox.xaml"/>
+                <ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Button.xaml"/>
+                <ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:FileNotFoundToVisibilityConverter x:Key="fileNotFoundToVisibilityConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer x:Name="scrollViewer" Template="{DynamicResource AlienScrollViewer}" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="0" Margin="0">
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="textBlockApplicationTitle" TextWrapping="Wrap" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="18.667" Margin="0,0,0,5" LineHeight="18" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding GameTitle, ElementName=userControl}"/>
+            <TextBlock x:Name="textBlockApplicationPath" TextWrapping="Wrap" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="0" LineHeight="18" VerticalAlignment="Center" Text="{Binding GamePath, ElementName=userControl, StringFormat={x:Static DomainProperties:Resources.ApplicationPathText}}"/>
+            <Path Data="M22,176 L350,176" Fill="#FFF4F4F5" Height="1" Margin="0,10" Stretch="Fill" Stroke="{DynamicResource AlienLightGray}"/>
+            <!--
+			<TextBlock x:Name="textBlockUpdateGameExecutableDescription" Text="{x:Static Properties:Resources.UpdateGameExecutableDescriptionText}" TextWrapping="Wrap" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="0" LineHeight="18" VerticalAlignment="Center" Visibility="{Binding HideGameExecutableDescription, ElementName=userControl, Converter={StaticResource boolToVisibility}}" />	
+			-->
+            <RichTextBox x:Name="richTextBoxDescription" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" Background="Black" FontSize="13.333" Margin="0" VerticalAlignment="Center" BorderThickness="0" IsDocumentEnabled="True" IsReadOnly="True" Focusable="False" AllowDrop="False" SelectionOpacity="0" >
+                <FlowDocument>
+                    <Paragraph Padding="0,2,0,0"/>
+                </FlowDocument>
+            </RichTextBox>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{DynamicResource AppButtonStyle}" Content="{x:Static Properties:Resources.UpdateRealApplicationPathText}" FontFamily="Pill Gothic 600mg Semibd" FontSize="13" Foreground="#FF969696" VerticalAlignment="Bottom" Click="btnUpdateRealApplicationPath_Click" Height="24.6" Margin="0,10,0,8" Width="213" HorizontalAlignment="Left" />
+                <Image x:Name="imageUpdateGameRealPathStatus" Source="/AlienAdrenaline;component/Media/check.png" HorizontalAlignment="Left" Visibility="Collapsed" Width="32" Height="32" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <TextBlock x:Name="textBlockRealApplicationPath" Text="{Binding Path=GameRealPath, ElementName=userControl, StringFormat={x:Static DomainProperties:Resources.ApplicationRealPathText}}" TextWrapping="Wrap" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="0,10,0,0" LineHeight="18" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="{Binding Visibility, ElementName=imageUpdateGameRealPathStatus}" />
+
+            <StackPanel x:Name="stackPanelApplicationError" Visibility="Collapsed" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" Margin="0,10,0,0">
+                <Image x:Name="imageDeviceSelected" Width="20" Height="20" Source="/AlienAdrenaline;component/Media/Buttons/nav_right_red.png" HorizontalAlignment="Right" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Margin="0" />
+                <TextBlock TextWrapping="Wrap" Text="{x:Static Properties:Resources.InvalidGameRealPathText}" Foreground="#FFFFAEAE" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="10,0,0,0" LineHeight="18" Width="315.317"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
+
