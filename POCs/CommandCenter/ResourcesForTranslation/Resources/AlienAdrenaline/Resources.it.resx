@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessErrorText" xml:space="preserve">
+    <value>La configurazione dell'account utente non consente di eseguire questa applicazione.</value>
+  </data>
+  <data name="ActionDetailsText" xml:space="preserve">
+    <value>Azione: {0}</value>
+  </data>
+  <data name="ActionSequenceSummaryText" xml:space="preserve">
+    <value>Riepilogo sequenza azioni</value>
+  </data>
+  <data name="ActionSequenceText" xml:space="preserve">
+    <value>Sequenza azioni</value>
+  </data>
+  <data name="AddActionText" xml:space="preserve">
+    <value>Aggiungi un'azione</value>
+  </data>
+  <data name="ApplyText" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="CancelText" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="CreateNewModeText" xml:space="preserve">
+    <value>Creare una nuova game mode</value>
+  </data>
+  <data name="CreateNewModeTitleText" xml:space="preserve">
+    <value>Creare un nuovo profilo game mode</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="GameModeDescriptionText" xml:space="preserve">
+    <value>È possibile creare un collegamento sul desktop personalizzato che imposti automaticamente l'ambiente del sistema, ed esegua una sequenza di azioni, ogni volta che sia avvia questo gioco.</value>
+  </data>
+  <data name="GameModeLearnModeLinkText" xml:space="preserve">
+    <value>Ulteriori informazioni sulle Modalità gioco</value>
+  </data>
+  <data name="GameModeNameText" xml:space="preserve">
+    <value>Nome del profilo game mode:</value>
+  </data>
+  <data name="GameModesLinkText" xml:space="preserve">
+    <value>Modalità gioco</value>
+  </data>
+  <data name="GameModeTitleText" xml:space="preserve">
+    <value>Modalità gioco - {0}</value>
+  </data>
+  <data name="MoveText" xml:space="preserve">
+    <value>Sposta</value>
+  </data>
+  <data name="NewGameModeDescriptionText" xml:space="preserve">
+    <value>È possibile creare un nuovo profilo di game mode selezionando un gioco rilevato nella lista in basso o cercando il file eseguibile di un gioco o un'applicazione desiderati. Fare clic su avanti per continuare.</value>
+  </data>
+  <data name="NewGameModeTitleText" xml:space="preserve">
+    <value>Nuovo profilo game mode</value>
+  </data>
+  <data name="NextText" xml:space="preserve">
+    <value>Avanti &gt;</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PerformanceMonitoringLinkText" xml:space="preserve">
+    <value>Monitoraggio prestazioni</value>
+  </data>
+  <data name="PreviewText" xml:space="preserve">
+    <value>Anteprima</value>
+  </data>
+  <data name="SaveAsText" xml:space="preserve">
+    <value>Salva con nome...</value>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="ActionNameText" xml:space="preserve">
+    <value>Nome azione:</value>
+  </data>
+  <data name="AddActionTitleText" xml:space="preserve">
+    <value>Aggiungi un'azione</value>
+  </data>
+  <data name="AvailableActionsText" xml:space="preserve">
+    <value>Azioni disponibili:</value>
+  </data>
+  <data name="AdditionalAppsText" xml:space="preserve">
+    <value>Altre applicazioni</value>
+  </data>
+  <data name="AlienFXText" xml:space="preserve">
+    <value>AlienFX</value>
+  </data>
+  <data name="AudioOutputText" xml:space="preserve">
+    <value>Uscita audio</value>
+  </data>
+  <data name="PowerPlanText" xml:space="preserve">
+    <value>Combinazione per il risparmio di energia</value>
+  </data>
+  <data name="ThermalText" xml:space="preserve">
+    <value>Termica</value>
+  </data>
+  <data name="WebLinksText" xml:space="preserve">
+    <value>Collegamenti Web</value>
+  </data>
+  <data name="FrapsText" xml:space="preserve">
+    <value>Monitoraggio gioco</value>
+  </data>
+  <data name="MediaPlayerText" xml:space="preserve">
+    <value>Lettore multimediale</value>
+  </data>
+  <data name="VoIPText" xml:space="preserve">
+    <value>VoIP (Chat)</value>
+  </data>
+  <data name="PlaybackDeviceDescriptionText" xml:space="preserve">
+    <value>Selezionare il dispositivo di riproduzione predefinito facendo clic su di esso.</value>
+  </data>
+  <data name="AudioDeviceNotPresentText" xml:space="preserve">
+    <value>Non presente</value>
+  </data>
+  <data name="AudioDeviceReadyText" xml:space="preserve">
+    <value>Pronto</value>
+  </data>
+  <data name="AudioDeviceUnpluggedText" xml:space="preserve">
+    <value>Non collegato</value>
+  </data>
+  <data name="BackToActionSequenceSummaryText" xml:space="preserve">
+    <value>Torna a Riepilogo sequenza azioni</value>
+  </data>
+  <data name="WebLinksDescriptionText" xml:space="preserve">
+    <value>Immettere un/dei collegamento/i Web che si desidera aprire con questa azione.</value>
+  </data>
+  <data name="WebLinkItemizedText" xml:space="preserve">
+    <value>Collegamento Web {0}:</value>
+  </data>
+  <data name="ApplicationHeaderText" xml:space="preserve">
+    <value>Applicazione:</value>
+  </data>
+  <data name="BrowseAdditionalAppsText" xml:space="preserve">
+    <value>Cercare l'altra applicazione in basso.</value>
+  </data>
+  <data name="BrowseText" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="AllFilesFilterText" xml:space="preserve">
+    <value>Tutti i file ({0})</value>
+  </data>
+  <data name="ApplicationBehaviorText" xml:space="preserve">
+    <value>Cosa deve fare quest'applicazione?</value>
+  </data>
+  <data name="BrowseAppsText" xml:space="preserve">
+    <value>Cercare l'applicazione in basso.</value>
+  </data>
+  <data name="ApplicationErrorPathNotFoundText" xml:space="preserve">
+    <value>Il percorso dell'applicazione selezionata non esiste, controllare nuovamente il percorso o utilizzare il pulsante Sfoglia per ottenere l'esatto percorso dell'applicazione.</value>
+  </data>
+  <data name="GameApplicationPathText" xml:space="preserve">
+    <value>Percorso applicazione gioco:</value>
+  </data>
+  <data name="ActionSummaryDescriptionText" xml:space="preserve">
+    <value>Fare clic su uno dei pulsanti Azioni a sinistra per modificare le impostazioni di quell'azione, per spostarla su o giù nella sequenza o per eliminarla.</value>
+  </data>
+  <data name="LaunchGameText" xml:space="preserve">
+    <value>Avvio / Uscita</value>
+  </data>
+  <data name="InvalidUrlErrorText" xml:space="preserve">
+    <value>Collegamento Web non valido.</value>
+  </data>
+  <data name="DeleteGameModeTitleText" xml:space="preserve">
+    <value>Elimina modalità gioco</value>
+  </data>
+  <data name="WantToDeleteGameModeText" xml:space="preserve">
+    <value>Eliminare la modalità di gioco "{0}"?</value>
+  </data>
+  <data name="ChangeGameModeTitleText" xml:space="preserve">
+    <value>Modifica modalità gioco</value>
+  </data>
+  <data name="WantToSaveGameModeChangesToText" xml:space="preserve">
+    <value>Salvare le modifiche a {0}?</value>
+  </data>
+  <data name="PowerPlanHeaderText" xml:space="preserve">
+    <value>Combinazione per il risparmio di energia:</value>
+  </data>
+  <data name="SelectPowerPlanText" xml:space="preserve">
+    <value>Selezionare la combinazione per il risparmio di energia per questa modalità di gioco.</value>
+  </data>
+  <data name="ActivePowerPlanText" xml:space="preserve">
+    <value>&lt;Combinazione attiva per il risparmio di energia&gt;</value>
+  </data>
+  <data name="ApplicationErrorPowerPlanNotFoundText" xml:space="preserve">
+    <value>La combinazione per il risparmio di energia "{0}" in questa modalità di gioco non esiste più. Selezionare una nuova combinazione per il risparmio di energia dall'elenco.</value>
+  </data>
+  <data name="ApplicationErrorThermalProfileNotFoundText" xml:space="preserve">
+    <value>Il profilo termico "{0}" in questa modalità di gioco non esiste più. Selezionare un nuovo profilo termico dall'elenco.</value>
+  </data>
+  <data name="SelectThermalText" xml:space="preserve">
+    <value>Selezionare il profilo termico per questa modalità di gioco.</value>
+  </data>
+  <data name="ThermalHeaderText" xml:space="preserve">
+    <value>Profilo termico:</value>
+  </data>
+  <data name="ActiveThermalProfileText" xml:space="preserve">
+    <value>&lt;Profilo termico attivo&gt;</value>
+  </data>
+  <data name="ApplicationErrorThemeNotFoundText" xml:space="preserve">
+    <value>Il tema AlienFX "{0}" in questa modalità di gioco non esiste più. Selezionare un nuovo tema dall'elenco.</value>
+  </data>
+  <data name="SelectThemeOptionsText" xml:space="preserve">
+    <value>Selezionare il tema AlienFX e le opzioni per questa modalità di gioco.</value>
+  </data>
+  <data name="GameModeShortcutText" xml:space="preserve">
+    <value>Cartella collegamento:</value>
+  </data>
+  <data name="LaunchGameModeText" xml:space="preserve">
+    <value>Avviare modalità di gioco "{0}".</value>
+  </data>
+  <data name="CloseAlienAdrenalineText" xml:space="preserve">
+    <value>Chiudi AlienAdrenaline</value>
+  </data>
+  <data name="AudioDeviceDisabledText" xml:space="preserve">
+    <value>Disabilitata</value>
+  </data>
+  <data name="EnableTabbedBrowsingText" xml:space="preserve">
+    <value>Attiva esplorazione a schede (se supportato)</value>
+  </data>
+  <data name="GamePathText" xml:space="preserve">
+    <value>File eseguibile:</value>
+  </data>
+  <data name="ActiveThemeText" xml:space="preserve">
+    <value>&lt;Tema attivo&gt;</value>
+  </data>
+  <data name="GameExecPathDoesNotExistText" xml:space="preserve">
+    <value>Il percorso del gioco eseguibile non esiste.</value>
+  </data>
+  <data name="ProfileListDescriptionText" xml:space="preserve">
+    <value>È possibile creare un collegamento sul desktop personalizzato che imposti automaticamente l'ambiente del sistema, ed esegua una sequenza di azioni, ogni volta che sia avvia questo gioco.
+Selezionare un profilo dall'elenco in basso e fare doppio clic su di esso per modificare le azioni del profilo.</value>
+  </data>
+  <data name="RecreateGameShortcutText" xml:space="preserve">
+    <value>Ricrea collegamento</value>
+  </data>
+  <data name="GameModeShortcutCreateDescriptionText" xml:space="preserve">
+    <value>Il collegamento della modalità di gioco è stato creato a: 
+{0}</value>
+  </data>
+  <data name="GameModeShortcutCreateErrorText" xml:space="preserve">
+    <value>Errore durante la creazione del collegamento della modalità di gioco a: 
+{0}.</value>
+  </data>
+  <data name="GameModeShortcutCreateTitleText" xml:space="preserve">
+    <value>Crea collegamento modalità gioco</value>
+  </data>
+  <data name="WantToSavePendingChangesText" xml:space="preserve">
+    <value>Per ricreare il collegamento della modalità di gioco, è necessario salvare le modifiche in sospeso. Procedere?</value>
+  </data>
+  <data name="GameModeShortcutAlreadyExistsText" xml:space="preserve">
+    <value>Il collegamento della modalità di gioco esiste già nel percorso selezionato.</value>
+  </data>
+  <data name="ProgressBarLoadingText" xml:space="preserve">
+    <value>Caricamento in corso...</value>
+  </data>
+  <data name="CloseGameModeProfileText" xml:space="preserve">
+    <value>Chiudi profilo Modalità gioco</value>
+  </data>
+  <data name="EnergyBoosterDescriptionText" xml:space="preserve">
+    <value>Accelerator velocizza il PC e libera memoria disattivando temporaneamente i processi e i servizi non necessari in esecuzione in background.</value>
+  </data>
+  <data name="EnergyBoosterText" xml:space="preserve">
+    <value>Accelerator</value>
+  </data>
+  <data name="SelectProfileText" xml:space="preserve">
+    <value>Seleziona profilo</value>
+  </data>
+  <data name="Core" xml:space="preserve">
+    <value>Core {0}</value>
+  </data>
+  <data name="PerformanceSnapshots" xml:space="preserve">
+    <value>Registrazioni prestazioni</value>
+  </data>
+  <data name="RealTimePerformance" xml:space="preserve">
+    <value>Monitoraggio prestazioni in tempo reale</value>
+  </data>
+  <data name="MemoryLoadTitle" xml:space="preserve">
+    <value>Carico memoria</value>
+  </data>
+  <data name="UpdateTUDText" xml:space="preserve">
+    <value>Aggiorna definizioni</value>
+  </data>
+  <data name="UpdateDefStart" xml:space="preserve">
+    <value>Attendere...</value>
+  </data>
+  <data name="UpdateDefFail" xml:space="preserve">
+    <value>Aggiornamento delle definizioni non riuscito</value>
+  </data>
+  <data name="UpdateDefNoConnect" xml:space="preserve">
+    <value>Impossibile aggiornare le definizioni, nessuna connessione Internet.</value>
+  </data>
+  <data name="UpdateDefOK" xml:space="preserve">
+    <value>Aggiornamento delle definizioni completato</value>
+  </data>
+  <data name="UpdateDefTimeout" xml:space="preserve">
+    <value>Timeout di aggiornamento delle definizioni</value>
+  </data>
+  <data name="UpdateDefUpToDate" xml:space="preserve">
+    <value>Le definizioni sono aggiornate.</value>
+  </data>
+  <data name="UpdateDefinitionsQuestionText" xml:space="preserve">
+    <value>Aggiornare le definizioni ora?</value>
+  </data>
+  <data name="UpdateDefinitionsTitleText" xml:space="preserve">
+    <value>Aggiorna definizioni</value>
+  </data>
+  <data name="PauseText" xml:space="preserve">
+    <value>Sospendi</value>
+  </data>
+  <data name="PlayText" xml:space="preserve">
+    <value>Riproduci</value>
+  </data>
+  <data name="RecordText" xml:space="preserve">
+    <value>Registra</value>
+  </data>
+  <data name="ViewText" xml:space="preserve">
+    <value>Visualizza</value>
+  </data>
+  <data name="DateText" xml:space="preserve">
+    <value>Acquisizione data</value>
+  </data>
+  <data name="NameText" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="DeleteSnapshotQuestion" xml:space="preserve">
+    <value>Eliminare la registrazione selezionata: {0}?</value>
+  </data>
+  <data name="DeleteSnapshotTitle" xml:space="preserve">
+    <value>Elimina registrazione</value>
+  </data>
+  <data name="CopyOfText" xml:space="preserve">
+    <value>Copia di {0}</value>
+  </data>
+  <data name="SaveAsSnapshotTitle" xml:space="preserve">
+    <value>Salva come registrazione</value>
+  </data>
+  <data name="StopText" xml:space="preserve">
+    <value>Interrompi </value>
+  </data>
+  <data name="StartRecordingText" xml:space="preserve">
+    <value>Avvia registrazione</value>
+  </data>
+  <data name="StopRecordingText" xml:space="preserve">
+    <value>Interrompi registrazione</value>
+  </data>
+  <data name="PerformanceSnapshotNotFound" xml:space="preserve">
+    <value>Nessuna registrazione delle prestazioni trovata</value>
+  </data>
+  <data name="ProcessIdentifier" xml:space="preserve">
+    <value>AlienAdrenaline</value>
+  </data>
+  <data name="PerformanceMonitoringDescriptionText" xml:space="preserve">
+    <value>Monitoraggio prestazioni effettua una registrazione della larghezza di banda e dell'utilizzo del sistema di vari componenti hardware.</value>
+  </data>
+  <data name="PerformanceMonitoringText" xml:space="preserve">
+    <value>Monitoraggio prestazioni</value>
+  </data>
+  <data name="EnergyBoosterClickhereText" xml:space="preserve">
+    <value>Fare clic qui</value>
+  </data>
+  <data name="EnergyBoosterUpsellText" xml:space="preserve">
+    <value>Si desiderano maggiore velocità e prestazioni di gioco migliori?</value>
+  </data>
+  <data name="GBStr" xml:space="preserve">
+    <value>{0} GB</value>
+  </data>
+  <data name="EnergyBoosterSiteUrl" xml:space="preserve">
+    <value>http://www.iolo.com/it-it/promo/partner/alienware/acquista-system-mechanic/</value>
+  </data>
+  <data name="UpdateRealApplicationPathText" xml:space="preserve">
+    <value>Cattura del gioco eseguibile</value>
+  </data>
+  <data name="InvalidGameRealPathText" xml:space="preserve">
+    <value>File eseguibile di gioco non valido</value>
+  </data>
+  <data name="UpdateGameExecutableDescriptionText" xml:space="preserve">
+    <value>Alcuni giochi utilizzano un file eseguibile per avviare il gioco ed uno separato per l'effettiva esecuzione dello stesso, durante l'esperienza di gioco.
+
+Se si desidera annullare automaticamente la sequenza di azioni eseguite durante questo profilo game mode all'uscita dal gioco, fare clic sul pulsante in basso e premere {0} durante l'effettiva esperienza di gioco.
+
+La sequenza permette di acquisire il file eseguibile in esecuzione durante il gioco e salvarlo all'interno del proprio profilo game mode .</value>
+  </data>
+  <data name="ActionPendingConfigurationText" xml:space="preserve">
+    <value>Azione non configurata</value>
+  </data>
+  <data name="Processes" xml:space="preserve">
+    <value>Elenco processi</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="ProcessName" xml:space="preserve">
+    <value>Nome processo</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Rete</value>
+  </data>
+  <data name="CloseOtherNetworkChartsText" xml:space="preserve">
+    <value>Chiudi gli altri grafici di rete</value>
+  </data>
+  <data name="OpenOtherNetworkChartsText" xml:space="preserve">
+    <value>Apri altri grafici di rete</value>
+  </data>
+  <data name="CloseText" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="DataPointToolTipText" xml:space="preserve">
+    <value>Tempo: {0} s, Valore: {1}</value>
+  </data>
+  <data name="CompareText" xml:space="preserve">
+    <value>Confronta</value>
+  </data>
+  <data name="ChartPagingHomePage" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ChartPagingNetworkPageTitle" xml:space="preserve">
+    <value>Attività rete</value>
+  </data>
+  <data name="ChartPagingVideoPageTitle" xml:space="preserve">
+    <value>Attività grafica</value>
+  </data>
+  <data name="CPUUsageAverageText" xml:space="preserve">
+    <value>Utilizzo CPU (medio)</value>
+  </data>
+  <data name="TimespanHolderTooltipText" xml:space="preserve">
+    <value>Tenere premuto per spostare a destra/sinistra Fare doppio clic per il ripristino.</value>
+  </data>
+  <data name="ChartHelpText" xml:space="preserve">
+    <value>Informazioni grafico</value>
+  </data>
+  <data name="CloseChartTooltip" xml:space="preserve">
+    <value>Chiudi grafici</value>
+  </data>
+  <data name="LessNetworkChartsTooltip" xml:space="preserve">
+    <value>Comprimi tutti i grafici di rete</value>
+  </data>
+  <data name="MoreNetworkChartsTooltip" xml:space="preserve">
+    <value>Espandi tutti i grafici di rete</value>
+  </data>
+  <data name="LessVideoChartsTooltip" xml:space="preserve">
+    <value>Comprimi tutti i grafici video</value>
+  </data>
+  <data name="MoreVideoChartsTooltip" xml:space="preserve">
+    <value>Espandi tutti i grafici video</value>
+  </data>
+  <data name="ChartLegendTooltip" xml:space="preserve">
+    <value>{0}
+{1} sec</value>
+  </data>
+  <data name="ProcessListText" xml:space="preserve">
+    <value>Elenco processi</value>
+  </data>
+  <data name="ZoomOutChartTooltip" xml:space="preserve">
+    <value>Ripristinare il grafico in basso</value>
+  </data>
+  <data name="CtrlShiftF3Text" xml:space="preserve">
+    <value>CTRL+SHIFT+F3</value>
+  </data>
+  <data name="CPUUsageTitle" xml:space="preserve">
+    <value>Utilizzo CPU: {0}</value>
+  </data>
+  <data name="ProcessCountTitle" xml:space="preserve">
+    <value>Totale processi: {0}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Esporta</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importa</value>
+  </data>
+  <data name="ExportSnapshotTitle" xml:space="preserve">
+    <value>Esporta registrazione</value>
+  </data>
+  <data name="ImportSnapshotTitle" xml:space="preserve">
+    <value>Importa registrazione</value>
+  </data>
+  <data name="ImportedSnapshotExists" xml:space="preserve">
+    <value>Nome registrazione già esistente. Sostituire?</value>
+  </data>
+  <data name="CopySuffix" xml:space="preserve">
+    <value>{0} - Copia</value>
+  </data>
+  <data name="MaximizeChartText" xml:space="preserve">
+    <value>Fare clic sul titolo del grafico per ingrandire</value>
+  </data>
+  <data name="MinimizeChartText" xml:space="preserve">
+    <value>Fare clic sul titolo del grafico per ripristinare in basso</value>
+  </data>
+  <data name="CtrlShiftAltF10" xml:space="preserve">
+    <value>CTRL+SHIFT+ALT+F10</value>
+  </data>
+  <data name="FnF10" xml:space="preserve">
+    <value>FN+F10</value>
+  </data>
+  <data name="StartStopRecordingKeystrokes" xml:space="preserve">
+    <value>Utilizzare "{0}" per avviare/interrompere la registrazione</value>
+  </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Impossibile caricare il file. Formato del file non compatibile con la versione corrente.</value>
+  </data>
+</root>

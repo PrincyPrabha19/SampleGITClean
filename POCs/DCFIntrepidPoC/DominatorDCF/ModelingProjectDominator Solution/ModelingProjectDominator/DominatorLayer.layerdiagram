@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="426ecc1e-6dd7-4d2b-aee0-ee34088fa5fc" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="6ff799b9-b686-4da9-9733-4b35e634b5ea" name="Comment1">
+      <body>CPU-OC
+A table per platform will be required in order adjust internally the Voltage required per oc Frequency SET 
+- Multiplier range vs VR Cap.
+Data Structure supporting info in Turbo over Extreme OC.
+i.e : MinFreq1-MaxFreq1 --&gt; Turbo, Max Override Voltage1
+       MinFreq2-MaxFreq2--&gt; Extreme OC, Override Voltage
+-Need to find out the as-shipped Max Turbo Freq.</body>
+    </comment>
+    <comment Id="27e18a11-ee38-4ae5-9591-b7d8a8554714" name="Comment2">
+      <body>Support DifferentViews.
+-  Profiles
+- Basic Tuning
+- Advanced Tuning
+</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="a9ac8280-642d-4e39-b7e7-f94da3b25ed6" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="e97fe56e-dcf5-4af8-888f-e0e7f2caf660" name="Comment3">
+      <body>	-----MVVM Pattern----     
+View--Model-View--
+Model
+View: encapsulates the UI and UI logic; 
+
+View-Model: encapsulates presentation logic and state
+Model: encapsulates the application's business logic and data.</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="21b30262-fdfc-4652-8aff-164508be5f71" name="Presentation Components -  [Composite-View WPF-Form]  -- MVVM" requiredNamespace="Dominator.UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5f0daf0f-ddd5-460d-8c41-63a98375ccc0" direction="Bidirectional">
+          <layerMoniker Id="4a65fc53-b450-4b9e-8f51-d1dca6d4d91e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a9ac8280-642d-4e39-b7e7-f94da3b25ed6" name="OC- UI CPU Component" />
+        <layer Id="837a9f31-acd4-402e-863b-9ad938d27ac7" name="GPU- UI OC Component" />
+        <layer Id="77b5a618-09d4-410d-9244-76275d9b08a0" name="UI - Process Components (Model-View)" />
+        <layer Id="3a9c7832-fed2-467f-9c7e-7bc868dafd77" name="Memory -UI Component" />
+      </childLayers>
+    </layer>
+    <layer Id="4a65fc53-b450-4b9e-8f51-d1dca6d4d91e" name="Business Layer - Model" requiredNamespace="Dominator.Domain">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9c2802dc-007f-4f51-9eb8-33681712ff06" direction="Bidirectional">
+          <layerMoniker Id="53aaea38-ad1d-4b94-ae7d-6cfb03cde123" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e2390aaa-db83-45c9-946f-23a377f97671" direction="Bidirectional">
+          <layerMoniker Id="2b2c4b88-ef1f-4a2b-b67d-33835dcb6f80" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="3d62fd51-f33a-41e8-a6ca-6339922c0c73" name="Overclocking-CPU-Memory Controller" />
+        <layer Id="ffda4395-4ef2-489a-a515-f28f3dccb9cf" name="Overclocking-GPU Controller" />
+      </childLayers>
+    </layer>
+    <layer Id="4f4bf429-1472-4bff-b74d-96b73ef4a862" name="Intel XTU API - SDK - Managed">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="332d9470-1206-4fb4-9603-f6185b93ef0e" direction="Bidirectional">
+          <layerMoniker Id="d00d5791-dda3-44cc-b617-8257acb9be22" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a2db6f57-99a2-48de-9475-98da95153b4d" name="Graphic - Vendor ">
+      <childLayers>
+        <layer Id="8f7d419b-9208-4049-8046-c3c63cc2cd4e" name="NVidia API " />
+      </childLayers>
+    </layer>
+    <layer Id="213d8986-cd27-4a11-b333-8a24a8d57eef" name="AMD API " />
+    <layer Id="00ee4616-32b0-405d-9f51-feb361a6210d" name="CPU&#xD;&#xA;MSR/MMIO/PCI/HPET/CPUID" />
+    <layer Id="d00d5791-dda3-44cc-b617-8257acb9be22" name="XTU-Driver">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="42301c9e-b950-484b-b329-7acf77296cf4" direction="Bidirectional">
+          <layerMoniker Id="00ee4616-32b0-405d-9f51-feb361a6210d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="aa3e9a4f-0319-45f3-962c-92c115dc8e3f" direction="Bidirectional">
+          <layerMoniker Id="afbcecaf-a973-4f4a-b3d7-8dabff2e08b0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="eb20d5c6-6b76-4e82-a857-5176ef448be4" name="GPU-Driver">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b241457a-c80a-41cb-9921-85e557b1ad5a" direction="Bidirectional">
+          <layerMoniker Id="a2db6f57-99a2-48de-9475-98da95153b4d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="cc5594ec-1198-4f69-a4c0-d188d505a9a6" name="Discrete-GPU">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5fc95f78-9263-4378-a180-635bcc387a05" direction="Bidirectional">
+          <layerMoniker Id="eb20d5c6-6b76-4e82-a857-5176ef448be4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8a66c78b-1bfa-4049-83a6-88a135b99783" name="FW/HW" />
+    <layer Id="afbcecaf-a973-4f4a-b3d7-8dabff2e08b0" name="BIOS/ACPI" />
+    <layer Id="9d26f01f-ac19-4fe8-b95e-6c029884f389" name="Custom Profiles &#xD;&#xA;( leverage DPO Format ?)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="37b23bbd-ac7a-472b-b57e-10f47538c71b" direction="Bidirectional">
+          <layerMoniker Id="53aaea38-ad1d-4b94-ae7d-6cfb03cde123" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="33d25eed-8529-4f62-9958-120b0e5d6aae" name="Profile1" />
+        <layer Id="b3629858-5170-4d1f-a102-b782dfd0dfc7" name="Profile2" />
+        <layer Id="7d3b393d-207e-406a-8720-081de6f62b9c" name="ProfileN" />
+      </childLayers>
+    </layer>
+    <layer Id="63843010-fa99-47e7-9a59-90a73051f7f6" name="XTU Profiles">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c13b6272-83f3-4422-b353-9d52144f1b8f" direction="Bidirectional">
+          <layerMoniker Id="53aaea38-ad1d-4b94-ae7d-6cfb03cde123" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="0aeab0a3-12fb-4249-8fb1-aa250a339e04" name="Profile1" />
+        <layer Id="72645bbd-1e85-49bb-a6cf-5cd81fb2775e" name="Profile2" />
+        <layer Id="ef5279dc-38ef-4c12-831c-4f9206f069d4" name="ProfileN" />
+      </childLayers>
+    </layer>
+    <layer Id="53aaea38-ad1d-4b94-ae7d-6cfb03cde123" name="Data Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a37d833f-1fc1-4652-90b3-84f7193c1690" direction="Bidirectional">
+          <layerMoniker Id="2b2c4b88-ef1f-4a2b-b67d-33835dcb6f80" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="cffff13e-7f34-4ef8-9a10-3b630c2c41ba" name="Profile Manager Agent " requiredNamespace="Dominator.ServiceData.Profiles" />
+      </childLayers>
+    </layer>
+    <layer Id="2b2c4b88-ef1f-4a2b-b67d-33835dcb6f80" name="Service  Layer" requiredNamespace="Dominator.Service">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0af51fd8-f4f0-4350-943e-382ab6591500" direction="Bidirectional">
+          <layerMoniker Id="1cf3852f-f031-4fd3-a2f7-3852fd01346e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="ac49c1ee-4bf7-41b6-a3f2-851af7c0dae7" name="CPU -Overclocking -Service Agent &#xD;&#xA;[Singleton/ UAC Required">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="65aa03e5-6486-4fd0-9593-dbeda8b1ed88" direction="Bidirectional">
+              <layerMoniker Id="4f4bf429-1472-4bff-b74d-96b73ef4a862" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="c10aec8d-9c55-4288-a357-2f3d6af8f405" name="GPU -Overclocking -Service Agent &#xD;&#xA;[Singleton/UAC Required]">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="18559fff-7d0c-4be3-b1d4-1fe53a03d688" direction="Bidirectional">
+              <layerMoniker Id="a2db6f57-99a2-48de-9475-98da95153b4d" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="7d68650f-e1b1-465a-8b0c-473cb4ea7714" name="Telemetry Service Agent" />
+      </childLayers>
+    </layer>
+    <layer Id="1cf3852f-f031-4fd3-a2f7-3852fd01346e" name="Web/App Tier">
+      <childLayers>
+        <layer Id="ced1ed20-f0e8-471e-b0bf-e10b858cd18c" name="DAWS Web/App&#xD;&#xA;Server" />
+      </childLayers>
+    </layer>
+    <layer Id="33301d85-d508-4964-9692-60e4013252fb" name="Client Tier " />
+    <layer Id="dda26a8e-c49f-4d33-93e1-30af043c16aa" name="Server Tier" />
+  </layers>
+</layerModel>

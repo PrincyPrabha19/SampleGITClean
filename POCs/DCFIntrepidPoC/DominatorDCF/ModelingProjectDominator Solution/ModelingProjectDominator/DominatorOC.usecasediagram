@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="2692ab07-2a0c-4ad5-9037-8c9ff8940b24" name="DominatorOC" linkedPackageId="c10391f1-094b-463a-b319-44f44664beec" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="41e36b17-6d0d-4d9f-b4c1-d1f36c457002">
+      <elementDefinition Id="8398a3f6-45d0-4db2-80e4-9ce7df22e006" />
+      <body>US-TDOM4 and 5</body>
+      <annotatedElements>
+        <useCaseMoniker Id="194ce01e-11d1-4aeb-bf3a-c74a6d3e3f9e" LastKnownName="Apply OC1, OC2 Profile" />
+        <useCaseMoniker Id="0c8fa8db-1092-46cf-bd56-5d1b122e94ac" LastKnownName="Turn Off OC" />
+      </annotatedElements>
+    </comment>
+    <comment Id="d067bb30-2145-4a98-82c8-6391142b4983">
+      <elementDefinition Id="8827c48c-fc12-412a-8987-bf3b6b4aff8c" />
+      <body>US-TDOM11</body>
+      <annotatedElements>
+        <useCaseMoniker Id="a7f992f2-363f-4405-9a74-84a94261d0bd" LastKnownName="Set to Always Show or Only one time" />
+      </annotatedElements>
+    </comment>
+    <comment Id="f84c63bb-e181-44c1-8459-4c94d4384b0d">
+      <elementDefinition Id="8dd32350-fa60-4e50-a72b-5010c1c50f99" />
+      <body>US-TDOM14</body>
+    </comment>
+    <comment Id="21547ac3-f994-4031-a0b3-5176cd02a2c3">
+      <elementDefinition Id="d5ae8159-1d10-4518-b8f4-f60f7f267447" />
+      <body>US-TDOM15</body>
+      <annotatedElements>
+        <useCaseMoniker Id="babd2bf6-b84e-4eff-be17-99ef0db412b3" LastKnownName="For All" />
+      </annotatedElements>
+    </comment>
+    <comment Id="675e4de1-7c1e-402f-a3bb-aa19a1809f88">
+      <elementDefinition Id="4ebaa82b-c37b-4f7b-8bd6-9f0d1bb44252" />
+      <body>US-TDOM16</body>
+      <annotatedElements>
+        <useCaseMoniker Id="5973b83b-2763-4715-8ace-2447b871f8e2" LastKnownName="Auto Setup" />
+        <useCaseMoniker Id="67c7c6f9-8e43-4349-bb66-836ba54d13fb" LastKnownName="Discrete Value Setup" />
+      </annotatedElements>
+    </comment>
+    <comment Id="79990908-9fec-41f9-bc94-e1ebc93f36c3">
+      <elementDefinition Id="f37d2304-4788-4c04-816a-eaed1c27be99" />
+      <body>US-TDOM17</body>
+      <annotatedElements>
+        <useCaseMoniker Id="ef35a029-6ea2-40d3-a002-268131416560" LastKnownName="Show Output Frequency Options" />
+      </annotatedElements>
+    </comment>
+    <comment Id="1d6fa3fc-c9cb-40e2-8469-afa1b64d271b">
+      <elementDefinition Id="580d7b63-fdb7-455c-b0c5-1a837064e87b" />
+      <body>US-TDOM7
+# Record and display CPU temperature
+# Record and display CPU Voltage per core
+# Record and display CPU Effective MHz
+# Record and display CPU actual MHz
+# Record and display CPU fan RPM
+# Record and display CPU Usage per core</body>
+      <annotatedElements>
+        <useCaseMoniker Id="efa5af9d-37d8-4954-aef5-a98099036a1e" LastKnownName="Monitoring -Values" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="9832c819-b92a-44d5-ad30-3889d86baafc" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="67629886-c9f7-46a1-9858-8aab8d29dd15" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="133ddffe-6a22-47d4-b79f-8a9411f2990d">
+          <propertyInstance Id="fd83b197-9295-460a-83f0-4f31672f21f4" name="BaseName">
+            <elementDefinition Id="0939084c-4ca6-4096-95d7-323702f6d421" />
+          </propertyInstance>
+          <elementDefinition Id="5ceb5add-c248-44cf-8a71-d61c7b17e86b" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="c6f1b1a0-6862-4652-a6c1-49ce220df6f6">
+          <propertyInstance Id="9dd18c4f-441c-49a6-b34a-39af2dc1d86e" name="ClrAttributes">
+            <elementDefinition Id="0f39737b-fd1c-4956-bba9-b218dcb55c25" />
+          </propertyInstance>
+          <elementDefinition Id="6673a0e9-fb78-4b36-847a-3c1148b1130d" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d49914d7-8daf-44d9-839c-c190964de732">
+          <propertyInstance Id="4daedfc2-2c74-49db-91ce-03957b597200" name="Usings">
+            <elementDefinition Id="e71aa607-4a83-422c-89b2-5b66890f19ef" />
+          </propertyInstance>
+          <elementDefinition Id="11e17527-43ae-4820-a1be-7229af581865" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="4fa1c568-0c22-4407-a865-7451483ca3de" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="cc3018b3-5549-4a61-a495-ec328e122a6d" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="f5792791-f58b-48ed-abb1-5d02c0e42e44">
+          <propertyInstance Id="c52fcdf2-539d-4b15-9187-3547c9a5ba54" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="5ea24537-9d1e-4dfc-84ac-2ba0ee9f9607" />
+          </propertyInstance>
+          <elementDefinition Id="c2624394-6ee5-4295-9a9e-786224f27a46" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="9f9b75d0-947d-4960-8cb5-e97425402774">
+          <propertyInstance Id="6bcabed5-fee8-47ca-9684-e40d33bc8eed" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="a46bd0bc-c43d-40e8-8cbf-71b11e5c6def" />
+          </propertyInstance>
+          <elementDefinition Id="f79a7958-2e63-42be-a50c-a7526865eed1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d4e41b4d-44f9-4033-9a5c-0a889dc6a740">
+          <propertyInstance Id="780a9a0a-9560-4993-a3e7-5bbc31660683" name="ProjectPath" value="ClassTemplate=..\ModelingProjectDominatorLib\ModelingProjectDominatorLib.csproj|EnumTemplate=..\ModelingProjectDominatorLib\ModelingProjectDominatorLib.csproj|InterfaceTemplate=..\ModelingProjectDominatorLib\ModelingProjectDominatorLib.csproj|StructTemplate=..\ModelingProjectDominatorLib\ModelingProjectDominatorLib.csproj">
+            <elementDefinition Id="0f74d8ff-fff0-42c4-98d1-8e2227cd5351" />
+          </propertyInstance>
+          <elementDefinition Id="05f35172-2175-4637-92e7-73841e4edef2" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="45f462f5-76c8-427d-9d55-2d6c73822547">
+          <propertyInstance Id="275206ec-1422-4b13-9800-5c44a4a2ea78" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="7fd3e0c9-7328-45af-9ee6-89bd84b1b926" />
+          </propertyInstance>
+          <elementDefinition Id="21b88700-8ca1-4e96-a145-e7d12e91baaa" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="19e39bb6-9dce-418c-b690-fbcfe4535d02">
+          <propertyInstance Id="7489e3ca-d1ed-413e-8e62-860d778c1b91" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="45c29d11-67d7-4191-9ef8-2af5ac35f13b" />
+          </propertyInstance>
+          <elementDefinition Id="40c3ed51-62c3-4f87-9b54-750604690115" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="dc6207e2-a925-4014-84f1-5ec43f07110f">
+          <propertyInstance Id="ca3bd861-06f4-40e7-9eec-ec1bc8ae5660" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="3d02a32b-8b7c-48ec-a926-a72321ed2a1e" />
+          </propertyInstance>
+          <elementDefinition Id="915a6dca-8dd3-4942-97d7-3a9dc78a4ed2" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="096be090-7036-4f01-9b65-6ae3cfc06e9c">
+          <propertyInstance Id="33bc276b-7922-434e-b18c-80e88e4633f7" name="Parameters">
+            <elementDefinition Id="b9ceca42-448f-4710-86f5-f55ea81ac00a" />
+          </propertyInstance>
+          <elementDefinition Id="bc7be723-dfb3-450c-830f-1eafa084ec6c" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="cdfe10bc-11f8-4488-bc76-43ba53c189b6">
+      <profileInstance Id="9fa410bf-6fbc-447d-8da2-00e21aad5723" name="CSharpProfile">
+        <elementDefinition Id="6457b24e-a080-4695-94b2-d9b8271dd3c9" />
+      </profileInstance>
+      <elementDefinition Id="6e537055-9114-48f6-949a-71763e7536b6" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="724d6eea-c000-4e6b-9b4e-43b5fc713591">
+      <profileInstance Id="5ea42bad-cbc3-4c2b-ac10-79bc2759535c" name="TextTemplateBindings">
+        <elementDefinition Id="db323cf6-e96f-476c-851d-d4486cb2ea20" />
+      </profileInstance>
+      <elementDefinition Id="36497012-a5b9-4b04-bcce-7921c51c2bcb" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="e5225ea2-1801-4203-9d84-b204a1fd2ecf" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="428d1b9e-7e9c-4e47-8abf-6c61e7cee311" />
+        <targetEnds>
+          <association Id="acf24462-c1f6-4b4d-8f84-4bb5c798758a" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Turn Off OC" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0c8fa8db-1092-46cf-bd56-5d1b122e94ac" LastKnownName="Turn Off OC" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e145148c-fb74-4c92-86a9-aa6cd0705acd" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d506c9bd-1d88-4d54-a9c0-adcfc4e0ae78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="78ed7bce-566d-429d-a419-a72f3bf32d6a" name="Turn Off OC" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f23c06b8-6882-4535-8e80-b8a8083c7d71" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e5a3154-5cbb-4179-bf3c-aa595e2a0eb0" />
+          </association>
+          <association Id="e937e0c0-c68c-4d73-ba50-8fce729ec4cd" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Apply OC1, OC2 Profile" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="194ce01e-11d1-4aeb-bf3a-c74a6d3e3f9e" LastKnownName="Apply OC1, OC2 Profile" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c680cfa4-93bf-4945-8ea1-3c3c1a25ce64" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b93e6d5d-811d-451a-a435-5c7202f2ddfd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d183d7fe-aa5c-4eb2-b56c-4d780e738c97" name="Apply OC1, OC2 Profile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b738702-d367-4918-95a3-2d91456d00ce" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="69d7467e-8154-47ac-8d52-68aebfaaafa4" />
+          </association>
+          <association Id="c2e56c49-9baa-4812-8b34-8b07dd6ea1e6" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Create Profiles" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10217c8d-0e80-4d47-95b6-a7f9f461d9db" LastKnownName="Create Profiles" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27db69e4-af9e-49b6-bd0c-e84dd61b1484" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="25640acc-2973-473b-a294-d3fc50147a63" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a96d809-1279-43f4-bf15-3275d7d69137" name="Create Profiles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="96e45832-bae2-44a9-ab20-fdf62cada84b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b6c8c7f2-f2b7-4579-8e7b-68a81ddcbf11" />
+          </association>
+          <association Id="dfab59a8-f209-492c-a0fd-777cdba0feb9" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Make OC Settings persistent through Reboot Cycles" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b9fda135-d0e8-4b89-a9ec-5a6fcd77867f" LastKnownName="Maintain OC Settings through reset/restart/shutdown" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="769880ca-d954-4d41-a8d8-0b7f95aa1ca1" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="97a21712-2a35-4a82-964b-6282c690d861" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f61205ad-0031-46ab-9f43-e03a8c389f34" name="Make OC Settings persistent through Reboot Cycles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="255a37cf-fe01-40a9-8f12-c683cfec8f9d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0b54628d-443d-4113-80ec-b7546dafeafc" />
+          </association>
+          <association Id="0cb1f5fc-3804-454e-aa7d-66dd9c12e904" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Make OC Settings persistent through Reboot Cycles1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0bf4d494-7346-4f03-b1bd-4d050c75e557" LastKnownName="Make OC Settings persistent through Reboot Cycles1" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e2e4fc3a-96e1-4b6e-a1ac-c78af91ed6c7" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="565dd5d5-88ef-49d8-bfec-5e701ff589d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fb591f9a-229b-42e7-99c4-64d6eea112b1" name="Make OC Settings persistent through Reboot Cycles1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ab6d182d-f5d3-49e3-bd84-b7b3548bb8cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d8aabcf4-fc6f-46ae-bd07-cf2981605dd1" />
+          </association>
+          <association Id="c743fca4-d93f-44d9-b40e-700e2cc1e817" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Set XMP1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d823425e-fb43-4bc9-bd05-341310d941c0" LastKnownName="Set XMP1 On or Off" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ed42cb13-8cd4-4ff5-a3bd-28cedaf31a70" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ccc5c242-aa8d-438b-8fa6-3fcd2bc953a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="007a3b08-f726-42d2-af40-a23a49241442" name="Set XMP1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a96ef041-eac4-428e-a3fc-26dfcba145a9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="079a03b8-bb85-461c-97f9-b10c65af5dda" />
+          </association>
+          <association Id="9c505f5d-e372-4beb-b507-5bebbca7eb7e" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Set XMP1 On or Off" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3d1cf370-77c4-4686-8bc4-f2219dbf8453" LastKnownName="Set XMP2 On or Off" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2dcbd4de-a8f4-4921-991b-cdbf8b6454d2" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="138c79c9-77ce-46fd-8122-084f7cb72af1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd908e9d-e409-478a-8223-4e164e7a7f71" name="Set XMP1 On or Off" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9f5f0c79-978d-4019-9f2e-fd158c138ca4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e130ede-5b47-4841-94b5-82d8800054e6" />
+          </association>
+          <association Id="2c6b4d34-ac01-4bd6-ab92-166cd1d51d59" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Monitoring -Values" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="efa5af9d-37d8-4954-aef5-a98099036a1e" LastKnownName="Monitoring -Values" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a8e599de-84c9-4dc1-a7d7-9edfc6c598bf" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="58d77389-5832-4157-bb81-b895b11d2795" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6bc535a3-1839-49b1-b5b1-aec6c421f97d" name="Monitoring -Values" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cbbbd416-b25c-4c03-a8c5-cb78d91ff9fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="876053f7-7b57-40cb-b3d1-0906f0f7ce2c" />
+          </association>
+          <association Id="2b2cb5eb-1942-4ab4-96a1-2f4488615712" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Warn User of the risk of OC" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3a66c18a-ed60-445e-ae95-838a85e09985" LastKnownName="Warn User of the risk of OC" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0dbff14-1da2-419d-92e7-7753a9ed6af9" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="775ebbb0-5841-47c0-880f-2ca11d44fd88" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3f9c751-9ed0-412e-9e13-fc6bd5ed2e4e" name="Warn User of the risk of OC" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a13aa650-5240-4faa-9632-d9a356dce2e9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="418af4eb-c158-4722-bad9-d39f5c92b7c5" />
+          </association>
+          <association Id="d6f6f3ee-0dc3-4444-9679-e53bb2ea84cd" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Manual Tuning " isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10b8774e-9aac-4b46-928a-f71b06fd285c" LastKnownName="Manual Tuning " />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="760e5d80-e180-4c35-a39b-c78873a4bf46" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c4c62f3-8580-46f9-a9ed-3b24a3424bb0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="adaf080f-308f-4192-9e18-4117896ea3b5" name="Manual Tuning " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fd916880-9e83-4098-aa1a-d13c061784c9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2ce20663-c5d0-4ed7-a43f-b6f392097732" />
+          </association>
+          <association Id="0f96d180-3b08-44d9-b82d-29a23079f5f1" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Monitoring Memory Parameter Values" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="290f1c34-a414-4b5c-bf07-65e2847681f5" LastKnownName="Monitoring Memory Parameter Values" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="851c9ff7-d30a-4980-9c58-12efebc7a04a" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ca4e9679-4da1-409b-bfcb-99c353c1539b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a7ad72e-4e3a-4504-9571-33cdbffc4351" name="Monitoring Memory Parameter Values" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cf55c3cd-3207-459e-a5f3-dda3c9587b18" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2d45897e-063d-459e-a151-bce81047b06d" />
+          </association>
+          <association Id="d62ee5da-eed4-4a44-8814-186e7680410f" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Select Predefined Thermal Profiles" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a2e716d2-a569-4f7f-b89c-e568019f7623" LastKnownName="Select Predefined Thermal Profiles" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee6298e5-67c1-442b-a57e-bc5aa902b292" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="76192b64-cfde-465f-8f25-a2b549e3a08b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6edfa50d-cb1a-437f-a0c6-d8dc1a43f108" name="Select Predefined Thermal Profiles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cc19cb45-46be-4b5e-8604-c6b4ea8e9a7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="13446192-2ab5-4807-ade4-8c5fa9d917fe" />
+          </association>
+          <association Id="5e352765-2e37-445c-81a3-d09e2f7cc57d" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Select Custom Thermal Profile" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4da1d6f2-8199-497b-9024-8379722b5b3a" LastKnownName="Select Custom Thermal Profile" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb344e41-4e33-4b8c-96b6-804818e93ad5" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bb0bafde-0345-448f-9c4c-07e3a33f2258" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e348aa2-c540-4b52-b2cc-b9fbedd8a8df" name="Select Custom Thermal Profile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8c599b92-79cb-41c4-8d9c-fd96c7046745" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="09ab8d96-1cd7-4a24-a944-e66a555790f1" />
+          </association>
+          <association Id="160761b3-dfc3-4551-a386-21cc464e0d71" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Create/Modify Thermal Profile" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c9f0adb9-5a2c-462c-8997-24d332e9f421" LastKnownName="Create/Modify Thermal Profile" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87e42152-29cd-4516-849e-4b2adc8472d6" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0f5af6e5-1a8f-4a20-8cfd-1510d4768ea7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="579ff01c-3363-4040-8633-49f45f99319c" name="Create/Modify Thermal Profile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="15a72e8d-6cd9-47af-835e-21c242d5fe3a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1b443f99-b01a-422f-bfe1-1513355ec36d" />
+          </association>
+          <association Id="54b0a282-9e58-4536-bb5b-fa182872a43f" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Delete Thermal Profile" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0f4c994d-2efb-423c-a75a-f2f5c755da28" LastKnownName="Delete Thermal Profile" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f03368e3-e735-42c8-be5c-4adcef2c7f2f" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b819c6fc-931a-4d39-ace7-263d28ce3ca0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a66bb23-7fd0-4157-a32d-26d2f24858ae" name="Delete Thermal Profile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="decc8356-6bdb-44a0-a693-dbae00b7f838" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="db13140b-89cb-48e1-8808-cf426eaba530" />
+          </association>
+          <association Id="1dde978f-9d4b-4ad6-9880-6a05f19d9390" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Show Sensors" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d8c4feb4-246d-4a7b-af38-38fe061c6454" LastKnownName="Show Sensors" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d46dfc24-57d3-4515-a31a-666ab080597d" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dc6acbe4-c3bb-47c6-a1b0-5a63362ae021" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="602c5d79-e835-45b8-acd1-23a85f238c36" name="Show Sensors" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0cd6fc6c-e4cc-4249-a43a-299d6d27405d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="42680f9c-3577-46b2-8f8d-241c2ec3042a" />
+          </association>
+          <association Id="4b80df88-52a3-4774-a910-5964e30d1425" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Show Fans" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7ade0b90-9bcb-4264-86c7-93e6fa5dc9a8" LastKnownName="Show Fans" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e01c4f95-8d70-4015-8afa-327c4bb8b78d" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="91f33e28-e00d-4c49-ae53-de3822119700" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1d5ceb79-bbe1-46b1-93da-728d5a67c26b" name="Show Fans" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d4912c5b-c07f-46a2-b050-39b878640ea7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3c8e9886-0839-4cf0-a702-16bc6d55bf90" />
+          </association>
+          <association Id="319a02be-093b-4776-b8db-130ff946e25f" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Show Fans1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5a740f51-2273-42bf-8d1c-d5048c8a97ef" LastKnownName="Show Fans1" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b82da84b-ab32-4f2f-87be-1eb9dd8864ca" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9841f26d-0c0c-4951-983e-adbe12aad99c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c60f179-0bb2-4507-915b-583c0ac897d3" name="Show Fans1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9921bfe0-e7c9-44e5-9944-9580d01a0a0a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2c8348f2-5a64-4682-bbb2-c597d9c77665" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="194ce01e-11d1-4aeb-bf3a-c74a6d3e3f9e" name="Apply OC1, OC2 Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cdfdf1f8-5b51-49b5-b0db-9484fb8b0b8e" />
+        <additions>
+          <include Id="91dd0123-6c36-4e22-9f86-19e3d04a5ca2">
+            <useCaseMoniker Id="5fa07813-88ca-4475-94dc-d85085f4592a" LastKnownName="Apply without rebooting" />
+            <elementDefinition Id="db1057eb-cfe1-4acb-a412-70385bf39f52" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="9be73cfb-b9c7-47c0-a976-9f8de37230ef" LastKnownName="Basic-Mode" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0c8fa8db-1092-46cf-bd56-5d1b122e94ac" name="Turn Off OC" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ab9663f-76e1-46ea-a584-2ca436480e58" />
+        <subjects>
+          <subsystemMoniker Id="9be73cfb-b9c7-47c0-a976-9f8de37230ef" LastKnownName="Basic-Mode" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="9be73cfb-b9c7-47c0-a976-9f8de37230ef" name="Basic-Mode" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1e7727f1-f237-441a-aedf-369fd3bcbb86" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5fa07813-88ca-4475-94dc-d85085f4592a" name="Apply without rebooting" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9635e53e-2032-4054-bd09-bf361c34ad64" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="f0efc15d-ee25-4f16-939a-437011441c78" name="Advanced -Mode-CPU OC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedCommentsInternal>
+          <comment Id="876c4b82-1d76-4f3d-899c-64f277740a3a">
+            <elementDefinition Id="4c0e545c-f58b-4981-a6f7-52d56aae52dc" />
+            <body>US-TDOM4</body>
+            <annotatedElements>
+              <useCaseMoniker Id="10217c8d-0e80-4d47-95b6-a7f9f461d9db" LastKnownName="Create Profiles" />
+            </annotatedElements>
+          </comment>
+          <comment Id="d6fe9cfa-efda-4f21-b947-80b01e603910">
+            <elementDefinition Id="94e6a321-3a49-4023-9dbe-dbe34664ba80" />
+            <body>US-TDOM6</body>
+            <annotatedElements>
+              <useCaseMoniker Id="b9fda135-d0e8-4b89-a9ec-5a6fcd77867f" LastKnownName="Maintain OC Settings through reset/restart/shutdown" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="ba9efa4c-daa4-48af-b7df-020feb883ab8" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="10217c8d-0e80-4d47-95b6-a7f9f461d9db" name="Create Profiles" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2ad99f15-f160-4274-8cfd-8ea2059a7f87" />
+        <subjects>
+          <subsystemMoniker Id="f0efc15d-ee25-4f16-939a-437011441c78" LastKnownName="Advanced -Mode-CPU OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b9fda135-d0e8-4b89-a9ec-5a6fcd77867f" name="Maintain OC Settings through reset/restart/shutdown" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8d83d072-5d17-4a7e-a839-d618b71dba08" />
+        <subjects>
+          <subsystemMoniker Id="f0efc15d-ee25-4f16-939a-437011441c78" LastKnownName="Advanced -Mode-CPU OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0bf4d494-7346-4f03-b1bd-4d050c75e557" name="Make OC Settings persistent through Reboot Cycles1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea530a0e-8710-47e2-ad1f-b775d9ace172" />
+        <subjects>
+          <subsystemMoniker Id="9be73cfb-b9c7-47c0-a976-9f8de37230ef" LastKnownName="Basic-Mode" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="efa5af9d-37d8-4954-aef5-a98099036a1e" name="Monitoring -Values" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4e25089a-2338-4545-bad4-875211a3af05" />
+        <additions>
+          <include Id="c61daa67-2757-4118-97ca-641aa9639082">
+            <useCaseMoniker Id="217a7425-1766-4a35-94d7-b055c7c84b1f" LastKnownName="Show Core Frequency" />
+            <elementDefinition Id="c7339b75-65cc-4423-acce-f10106b97f89" />
+          </include>
+          <include Id="a00c54f1-fbf7-4889-aab5-198f58c5b41d">
+            <useCaseMoniker Id="a7fba52e-a438-4932-b212-5f5d1762f5fd" LastKnownName="Show Core Temperature" />
+            <elementDefinition Id="11d51168-e000-40a8-ac91-c26d4f986919" />
+          </include>
+          <include Id="fafdc255-ae38-4065-96ab-1e912d12d500">
+            <useCaseMoniker Id="0daacec1-2fd8-4fe6-9e73-4d639239e941" LastKnownName="Show CPU Usage" />
+            <elementDefinition Id="6a9ffb33-1881-48ff-b311-74e58c7c2ca6" />
+          </include>
+          <include Id="ab63aee0-20e5-482d-a26c-e0447e9df9b4">
+            <useCaseMoniker Id="bf44c97b-4706-4371-bdf3-923264c6138e" LastKnownName="Show Fan RPM / Pump Status" />
+            <elementDefinition Id="4243fc46-d5cc-4cda-aa54-566ee5b3d643" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="f0efc15d-ee25-4f16-939a-437011441c78" LastKnownName="Advanced -Mode-CPU OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="eb19e484-b11c-41ea-9c5e-1a26fe537eec" name="Memory OC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedCommentsInternal>
+          <comment Id="7e05d731-55b7-46d2-bfa9-545cb2b24a23">
+            <elementDefinition Id="a33b0680-eb96-4274-be38-ae0f52b15823" />
+            <body>US-TDOM9</body>
+            <annotatedElements>
+              <useCaseMoniker Id="d823425e-fb43-4bc9-bd05-341310d941c0" LastKnownName="Set XMP1 On or Off" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="9a155365-22f6-4893-a5b6-fc590c4d5d27" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="d823425e-fb43-4bc9-bd05-341310d941c0" name="Set XMP1 On or Off" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="211a68b6-688c-4548-a3f1-0999296de924" />
+        <subjects>
+          <subsystemMoniker Id="eb19e484-b11c-41ea-9c5e-1a26fe537eec" LastKnownName="Memory OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3d1cf370-77c4-4686-8bc4-f2219dbf8453" name="Set XMP2 On or Off" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3750ef79-fceb-4017-9e3d-5c2201c92f0d" />
+        <subjects>
+          <subsystemMoniker Id="eb19e484-b11c-41ea-9c5e-1a26fe537eec" LastKnownName="Memory OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3a66c18a-ed60-445e-ae95-838a85e09985" name="Warn User of the risk of OC" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2dc046f3-35b2-4cfd-ac99-2ea4c99d90fd" />
+        <additions>
+          <include Id="c492e6e5-eb87-40a6-b123-ab74d8729913">
+            <useCaseMoniker Id="a7f992f2-363f-4405-9a74-84a94261d0bd" LastKnownName="Set to Always Show or Only one time" />
+            <elementDefinition Id="f0a2ed7f-b643-4520-b36f-a383624c17ee" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="f0efc15d-ee25-4f16-939a-437011441c78" LastKnownName="Advanced -Mode-CPU OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a7f992f2-363f-4405-9a74-84a94261d0bd" name="Set to Always Show or Only one time" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bed9404-61d6-4108-a20a-83ba4340a790" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="10b8774e-9aac-4b46-928a-f71b06fd285c" name="Manual Tuning " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2a27c32d-d1a9-4d9b-bacc-3a57f13d6cf5" />
+        <additions>
+          <include Id="07bb4cec-49c5-42cc-9c74-ad269d0a136f">
+            <useCaseMoniker Id="572bb591-0bea-44b7-8e36-2b3952212610" LastKnownName="Voltage" />
+            <elementDefinition Id="af66efce-128d-4951-a856-9b4859970469" />
+          </include>
+          <include Id="230b11a7-9a0d-4e09-9875-84c8954d4c66">
+            <useCaseMoniker Id="1e558c2b-844b-4bda-8464-74ab3c2266a9" LastKnownName="Frequency" />
+            <elementDefinition Id="af70d322-9726-4a33-a4d0-998cabb7f36c" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="f0efc15d-ee25-4f16-939a-437011441c78" LastKnownName="Advanced -Mode-CPU OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="572bb591-0bea-44b7-8e36-2b3952212610" name="Voltage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b3ca4d47-f3d5-4478-b414-83390b0f112d" />
+        <additions>
+          <include Id="02de45d3-90bf-4b34-8a49-6e35df9970c9">
+            <useCaseMoniker Id="5973b83b-2763-4715-8ace-2447b871f8e2" LastKnownName="Auto Setup" />
+            <elementDefinition Id="079fe9c0-9770-443e-847d-6b379f68f9b4" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1e558c2b-844b-4bda-8464-74ab3c2266a9" name="Frequency" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8e02ceb8-4dd5-4064-8fe3-c5dfea5716c1" />
+        <additions>
+          <include Id="4d2cfbf2-ac56-482e-aa9c-48d4bdd2e87b">
+            <useCaseMoniker Id="babd2bf6-b84e-4eff-be17-99ef0db412b3" LastKnownName="For All" />
+            <elementDefinition Id="a916f1d3-dcd3-4a0b-a3ec-2db4164d342a" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7504d1f0-47f0-4345-9bc5-2d0cbca7d0f7" name="Apply  changes" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="af21f312-07ab-4735-b056-cd65aa32c3db" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="522761c3-4d45-41ea-a188-97bbca99c9de" name="Manual Tunnig" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="290fb224-b895-4e06-bdc6-fdc88d79d60d" />
+        <additions>
+          <include Id="c0514201-02f0-4088-9f20-c2db8cd44e0f">
+            <useCaseMoniker Id="c0c55974-5e7d-4d63-ac46-673d096e8f1f" LastKnownName="Memory Frequency" />
+            <elementDefinition Id="0f7e788f-9b65-4353-a259-2c802be00f78" />
+          </include>
+          <include Id="96ca9ad7-8237-4fb1-bb00-0e8fdba22a41">
+            <useCaseMoniker Id="453e6d78-a0bd-464b-a167-8657fa0915cc" LastKnownName="Memory Multiplier(within a range)" />
+            <elementDefinition Id="7ea0fe07-c3b1-4567-95f1-a2e803bf0ddb" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="eb19e484-b11c-41ea-9c5e-1a26fe537eec" LastKnownName="Memory OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="290f1c34-a414-4b5c-bf07-65e2847681f5" name="Monitoring Memory Parameter Values" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="48d8ba93-becc-4fb3-a070-0e59cc2e888a" />
+        <additions>
+          <include Id="2cb17635-cbde-4127-8c73-76057aef3104">
+            <useCaseMoniker Id="768df653-8668-43b0-843f-e63c4954acf9" LastKnownName="Current Frequency" />
+            <elementDefinition Id="48554ab7-f202-483b-a64b-c0a0d98c3452" />
+          </include>
+          <include Id="fbb99b68-3fc2-4ecc-9c3b-b3716e96cf3f">
+            <useCaseMoniker Id="c0a45cdd-db54-4b8d-8cdd-009d37d1b6b1" LastKnownName="Current Voltage" />
+            <elementDefinition Id="eb1b19fe-67a0-4cd8-bb68-51f0f30dedec" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="eb19e484-b11c-41ea-9c5e-1a26fe537eec" LastKnownName="Memory OC" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c0c55974-5e7d-4d63-ac46-673d096e8f1f" name="Memory Frequency" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d54178ff-089a-4b15-998c-2fd95e8354f7" />
+        <additions>
+          <include Id="0689682c-cd07-4889-be83-e6e4123896fa">
+            <useCaseMoniker Id="ca3c89df-d489-45c1-b5f4-6600df7a3352" LastKnownName="Apply Chnages" />
+            <elementDefinition Id="6833816c-61e7-4e22-87ca-b39a407dfaed" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="453e6d78-a0bd-464b-a167-8657fa0915cc" name="Memory Multiplier(within a range)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea30ec8c-b9c1-4f0b-ac2b-56bf02172872" />
+        <additions>
+          <include Id="9c071d49-f182-4132-989d-e23613d71b81">
+            <useCaseMoniker Id="ca3c89df-d489-45c1-b5f4-6600df7a3352" LastKnownName="Apply Chnages" />
+            <elementDefinition Id="090b5415-9aac-4164-b17a-1be9558bb6ca" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="768df653-8668-43b0-843f-e63c4954acf9" name="Current Frequency" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d1b9bc1d-cc84-4c65-ac67-a0442ee74345" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c0a45cdd-db54-4b8d-8cdd-009d37d1b6b1" name="Current Voltage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b252e9f-bf68-42d1-a4aa-cd946e0162ad" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ca3c89df-d489-45c1-b5f4-6600df7a3352" name="Apply Chnages" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="55891be9-5a1a-4b6f-8a2d-e5b0d29eb474" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="babd2bf6-b84e-4eff-be17-99ef0db412b3" name="For All" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f7645fd8-5924-41a8-972c-a8ba99cf6a68" />
+        <extendedCases>
+          <extend Id="1473027d-72cf-4375-b9f3-b939205fd201">
+            <useCaseMoniker Id="ef35a029-6ea2-40d3-a002-268131416560" LastKnownName="Show Output Frequency Options" />
+            <elementDefinition Id="55a7128a-ba41-4431-b51b-dce57e0b4a1d" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="4ae5f356-d26b-43a7-9720-050b283c461c">
+            <useCaseMoniker Id="7504d1f0-47f0-4345-9bc5-2d0cbca7d0f7" LastKnownName="Apply  changes" />
+            <elementDefinition Id="7372ea76-b124-42f6-9eac-aacf9cedc53f" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5973b83b-2763-4715-8ace-2447b871f8e2" name="Auto Setup" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="515c1b71-e403-466c-b4cb-13eb806af100" />
+        <extendedCases>
+          <extend Id="7103d584-02f0-44c2-bc15-2b2c35a674a7">
+            <useCaseMoniker Id="67c7c6f9-8e43-4349-bb66-836ba54d13fb" LastKnownName="Discrete Value Setup" />
+            <elementDefinition Id="06e2dbb0-44c7-4163-9e60-3282abf3f67b" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="14165327-d179-40b7-93d8-ac5df32d5bd3">
+            <useCaseMoniker Id="7504d1f0-47f0-4345-9bc5-2d0cbca7d0f7" LastKnownName="Apply  changes" />
+            <elementDefinition Id="ab294f14-4042-4ef4-aae4-92104982bbee" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="67c7c6f9-8e43-4349-bb66-836ba54d13fb" name="Discrete Value Setup" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="97be0cc6-198f-4177-bfcc-1876dbb46c1e" />
+        <additions>
+          <include Id="dc23dd90-ab34-478d-afc1-a0adecb4818e">
+            <useCaseMoniker Id="7504d1f0-47f0-4345-9bc5-2d0cbca7d0f7" LastKnownName="Apply  changes" />
+            <elementDefinition Id="25367c6f-257a-4b0c-bcc9-b8c4cff6970f" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ef35a029-6ea2-40d3-a002-268131416560" name="Show Output Frequency Options" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="029079cf-d084-4807-8198-a1dc74e7ffc6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a7fba52e-a438-4932-b212-5f5d1762f5fd" name="Show Core Temperature" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e0c8df9-1d1a-4438-a8f0-dd4382317414" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0daacec1-2fd8-4fe6-9e73-4d639239e941" name="Show CPU Usage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5f4d5dfc-9c37-4367-b41d-3dfd05e7996d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bf44c97b-4706-4371-bdf3-923264c6138e" name="Show Fan RPM / Pump Status" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="78f27ed5-9a9d-4426-8d5e-305c11e17d5d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="217a7425-1766-4a35-94d7-b055c7c84b1f" name="Show Core Frequency" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="78246bed-c8c9-42d7-bca2-d02a3f8cf98b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="47b72217-c685-4d61-a255-b6ccf25d0987" name="Thermal Controls" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fd52025a-191d-43f6-84e2-b090bbd40cd1" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d8c4feb4-246d-4a7b-af38-38fe061c6454" name="Show Sensors" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="63ec18b3-dbae-4f61-ad0e-fb4611ad60e8" />
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7ade0b90-9bcb-4264-86c7-93e6fa5dc9a8" name="Show Fans" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eccc8483-e892-4109-bf3f-0f83c1539527" />
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d58448cf-06cb-499f-8ffe-59eb9dca7a69" name="Eco, Normal, Aggresive" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1b4f9945-24f9-4801-8c8f-0aada5da52f3" />
+        <extendedCases>
+          <extend Id="64a21447-fd8c-4c6b-a29c-89dc7cec1c34">
+            <useCaseMoniker Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" LastKnownName="Apply Thermal Profile" />
+            <elementDefinition Id="577f0b3c-9a1e-4a6f-a21c-6cc7cbb132e7" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="a2e716d2-a569-4f7f-b89c-e568019f7623" name="Select Predefined Thermal Profiles" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b28b8bee-3955-4bb0-aeed-8ef59267eb7b" />
+        <additions>
+          <include Id="f6a02a60-b970-483d-b6df-e4d53f750afe">
+            <useCaseMoniker Id="d58448cf-06cb-499f-8ffe-59eb9dca7a69" LastKnownName="Eco, Normal, Aggresive" />
+            <elementDefinition Id="fced7201-fa9a-4a5d-9ca6-03f158677ebe" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c9f0adb9-5a2c-462c-8997-24d332e9f421" name="Create/Modify Thermal Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="813f9871-e6de-402b-974e-d167e2b34fa1" />
+        <extendedCases>
+          <extend Id="1dd8a9e3-e66c-4e7c-9535-573e20ad2f58">
+            <useCaseMoniker Id="764dc844-17ad-43f1-b0ae-4a7f277b504c" LastKnownName="Set Mode" />
+            <elementDefinition Id="7098588b-4efb-4d35-b8cf-e1585733d43f" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4da1d6f2-8199-497b-9024-8379722b5b3a" name="Select Custom Thermal Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a3d3c73c-9b48-433f-8084-b6c3b6031548" />
+        <extendedCases>
+          <extend Id="75cf8f84-eb9a-4ad0-92c1-01b06c7bf99c">
+            <useCaseMoniker Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" LastKnownName="Apply Thermal Profile" />
+            <elementDefinition Id="d7e73c4b-b563-4084-8de4-ad7f353beb49" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e5f90811-022a-4692-81e2-6430dcce09d4" name="Auto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9fa79fd7-1760-4380-85fd-698cc651340f" />
+        <extendedCases>
+          <extend Id="9415148b-54a3-47c0-b1e6-68c62b7be681">
+            <useCaseMoniker Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" LastKnownName="Apply Thermal Profile" />
+            <elementDefinition Id="258075c9-e68d-4fdd-93c7-3e37391a07b0" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="830db672-e1f1-45fd-baed-c366b689506b" name="Manual" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7f44879f-b2f8-4244-b72b-75b521ae17ef" />
+        <additions>
+          <include Id="d8e4e9f9-7930-4b7d-a1d3-833b16f35e42">
+            <useCaseMoniker Id="5cb167e8-da3b-494f-8c62-f5349347fafc" LastKnownName="Set Fixed RPM Values" />
+            <elementDefinition Id="65947461-7964-482d-ba8e-dfc5b7edff0a" />
+          </include>
+          <include Id="ab164508-9c11-4f2b-9c9a-525a46a45a7e">
+            <useCaseMoniker Id="a27a8f97-490e-4d59-9174-43c7fe7af936" LastKnownName="Adjust RPM - Temp Curve" />
+            <elementDefinition Id="7f0b4f00-3ca7-4370-b6b6-3ee55ff55962" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="764dc844-17ad-43f1-b0ae-4a7f277b504c" name="Set Mode" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bde597d-107d-4564-963b-a95251585228" />
+        <additions>
+          <include Id="2558fcdb-f769-4e5d-91b0-1bd32dbec750">
+            <useCaseMoniker Id="e5f90811-022a-4692-81e2-6430dcce09d4" LastKnownName="Auto" />
+            <elementDefinition Id="3a788ffe-60a6-4408-be18-2ad57435603d" />
+          </include>
+          <include Id="a83caf09-6c0c-460a-b653-2c84fe553453">
+            <useCaseMoniker Id="830db672-e1f1-45fd-baed-c366b689506b" LastKnownName="Manual" />
+            <elementDefinition Id="e9249bf4-8a63-40e7-b9ef-fa3afb4f8d98" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5cb167e8-da3b-494f-8c62-f5349347fafc" name="Set Fixed RPM Values" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="22104f23-0559-4ee6-be63-d9e221d920b7" />
+        <extendedCases>
+          <extend Id="8eba726a-e04c-46e0-9a69-831c970c1d93">
+            <useCaseMoniker Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" LastKnownName="Apply Thermal Profile" />
+            <elementDefinition Id="c5451a71-bdba-4ef9-b1a1-d9cee938684c" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a27a8f97-490e-4d59-9174-43c7fe7af936" name="Adjust RPM - Temp Curve" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3811e1d1-f9fd-4df6-a04c-79d5d7e8095a" />
+        <extendedCases>
+          <extend Id="b9e9d92c-4b0a-4f70-bf39-7686ba0987eb">
+            <useCaseMoniker Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" LastKnownName="Apply Thermal Profile" />
+            <elementDefinition Id="ed7759b8-e47e-426e-8484-c95284003188" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7707a411-5691-4e58-a9ca-b3f6067a0f22" name="Apply Thermal Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="669da38c-542a-45e4-9474-2e1401c74b75" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="0f4c994d-2efb-423c-a75a-f2f5c755da28" name="Delete Thermal Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="54f15161-2703-4e02-be34-2d5b11309b70" />
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5a740f51-2273-42bf-8d1c-d5048c8a97ef" name="Show Fans1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0bcf458-e511-4a36-b4a9-b26af107b32f" />
+        <subjects>
+          <subsystemMoniker Id="47b72217-c685-4d61-a255-b6ccf25d0987" LastKnownName="Thermal Controls" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="c10391f1-094b-463a-b319-44f44664beec" name="ModelingProjectDominator">
+    <elementDefinition Id="836a20f9-247c-4e52-82a9-6df9dd640bbd" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6dc5e00f-70f4-43ce-b422-f6117bf6bf20">
+        <profileInstance Id="7ea226ac-15bb-4e96-9898-eb1ee921fb56" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5ac188d5-6087-4c02-813e-82f369717c3b">
+        <profileInstance Id="5b5a2069-27ec-47f4-811d-df07a2e82b25" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

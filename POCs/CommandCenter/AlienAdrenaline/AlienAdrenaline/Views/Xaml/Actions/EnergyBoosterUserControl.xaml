@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="AlienLabs.AlienAdrenaline.App.Views.Xaml.Actions.EnergyBoosterUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Properties="clr-namespace:AlienLabs.AlienAdrenaline.App.Properties" 
+             xmlns:Converters="clr-namespace:AlienLabs.AlienAdrenaline.App.Converters"
+             xmlns:Navigation="clr-namespace:AlienLabs.AlienAdrenaline.App.Classes.Navigation" mc:Ignorable="d" Height="299"
+             x:Name="userControl" Width="482">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/AlienwareSandbox.xaml"/>
+				<ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Common.xaml"/>
+				<ResourceDictionary Source="/AlienAdrenaline;component/ResourceDictionaries/Link.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<Style x:Key="AppButtonStyle" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Grid>
+								<Path x:Name="pathFill" Width="Auto" Height="Auto" Stretch="Fill" Fill="#FF040707" Data="F1 M 419.651,457.275L 301.95,457.275C 298.52,457.275 295.732,460.064 295.732,463.493L 295.732,494.039C 295.732,497.469 298.52,500.257 301.95,500.257L 419.651,500.257C 423.079,500.257 425.868,497.469 425.868,494.039L 425.868,463.493C 425.868,460.064 423.079,457.275 419.651,457.275 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+								<Path x:Name="pathChrome" Stretch="Fill" Data="F1 M468.812,458.877 C466.273,458.877 464.17917,461.83368 464.17917,464.37368 L464.23867,493.08712 C464.23867,495.62712 466.52562,498.655 469.06462,498.655 L586.515,498.655 C589.053,498.655 591.15443,495.67893 591.15443,493.13893 L591.11475,464.10176 C591.11475,461.56176 589.053,458.877 586.515,458.877 L468.812,458.877 z" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.500088,-0.015279" EndPoint="0.500088,1.00857">
+											<GradientStop Color="#FF2C2C2F" Offset="0"/>
+											<GradientStop Color="#FF2C2C2F" Offset="0.446243"/>
+											<GradientStop Color="#FF1F2022" Offset="0.465076"/>
+											<GradientStop Color="#FF121415" Offset="0.483871"/>
+											<GradientStop Color="#FF121415" Offset="1"/>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+								<Path x:Name="pathBorderTop" Width="Auto" Height="5.151" Stretch="Fill" Fill="#FF6D6E71" Data="F1 M 748.381,458.878L 630.68,458.878C 628.14,458.878 626.065,460.955 626.065,463.494L 626.065,464.028C 626.065,461.49 628.14,459.412 630.68,459.412L 748.381,459.412C 750.92,459.412 752.996,461.49 752.996,464.028L 752.996,463.494C 752.996,460.955 750.92,458.878 748.381,458.878 Z " HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+								<Path x:Name="pathBorderBot" Data="M3.6358253,0 L96.364149,0 C98.364454,5.7997326E-07 99.999982,2.077391 99.999982,4.6168752 L99.999982,5.1510032 C99.999982,2.6124963 98.364454,0.53409858 96.364149,0.53409828 L3.6358253,0.53409828 C1.634756,0.53409858 -1.2195275E-07,2.6124963 4.5474727E-13,5.1510032 L4.5474727E-13,4.6168752 C-1.2195275E-07,2.077391 1.634756,5.7997326E-07 3.6358253,0 z" Fill="#FF6D6E71" HorizontalAlignment="Stretch" Height="5.151" Margin="0" RenderTransformOrigin="0.499999873718474,0.49999845527272" Stretch="Fill" VerticalAlignment="Bottom" Width="Auto">
+									<Path.RenderTransform>
+										<TransformGroup>
+											<ScaleTransform ScaleY="-1" ScaleX="1"/>
+											<SkewTransform AngleY="0" AngleX="0"/>
+											<RotateTransform Angle="0"/>
+											<TranslateTransform/>
+										</TransformGroup>
+									</Path.RenderTransform>
+								</Path>
+								<Label Margin="0,0,0,0" x:Name="labelCaption" VerticalAlignment="Stretch" Content="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" Foreground="{DynamicResource AlienLightGray}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,3,0,0"/>
+								<Path x:Name="pathBorderMouseOver" Stretch="Fill" Data="F1 M 467.551,344.1C 464.452,344.1 461.933,346.619 461.933,349.716L 461.933,380.261C 461.933,383.357 464.452,385.876 467.551,385.876L 585.248,385.876C 588.345,385.876 590.864,383.357 590.864,380.261L 590.864,349.716C 590.864,346.619 588.345,344.1 585.248,344.1L 585.248,344.1M 463.932,380.261L 463.932,349.716C 463.932,347.721 465.555,346.099 467.551,346.099L 585.248,346.099C 587.241,346.099 588.864,347.721 588.864,349.716L 588.864,380.261C 588.864,382.253 587.241,383.875 585.248,383.875L 467.551,383.875C 465.555,383.875 463.932,382.253 463.932,380.261 Z " HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Visibility="Collapsed">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.18177,1.48215" EndPoint="2.24661,1.48215">
+											<LinearGradientBrush.RelativeTransform>
+												<TransformGroup>
+													<SkewTransform CenterX="0.18177" CenterY="1.48215" AngleX="-54.0934" AngleY="0"/>
+													<RotateTransform CenterX="0.18177" CenterY="1.48215" Angle="-72.0467"/>
+												</TransformGroup>
+											</LinearGradientBrush.RelativeTransform>
+											<GradientStop Color="#FF4DC9F3" Offset="0"/>
+											<GradientStop Color="#FF277499" Offset="1"/>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsMouseOver" Value="True">
+									<Setter Property="Foreground" TargetName="labelCaption" Value="#FFFFFFFF"/>
+									<Setter Property="Visibility" TargetName="pathBorderMouseOver" Value="Visible"/>
+								</Trigger>
+								<Trigger Property="IsPressed" Value="True">
+									<Setter Property="Foreground" TargetName="labelCaption" Value="#FFFFFFFF"/>							
+								</Trigger>
+								<Trigger Property="IsEnabled" Value="False">
+									<Setter Property="Foreground" TargetName="labelCaption" Value="#FF878787"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>				
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+    <Grid x:Name="ActionSequence">
+        <TextBlock TextWrapping="Wrap" Text="{x:Static Properties:Resources.EnergyBoosterDescriptionText}" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="0" LineHeight="18" VerticalAlignment="Top"/>
+        <Button x:Name="buttonUpdate" Style="{DynamicResource AppButtonStyle}" Content="{x:Static Properties:Resources.UpdateTUDText}" FontFamily="Pill Gothic 600mg Semibd" FontSize="13" Foreground="#FF969696" HorizontalAlignment="Center" VerticalAlignment="Top" Width="178" Click="buttonUpdate_Click"  Height="24.6" Margin="0,61.4,0,0" RenderTransformOrigin="0.047,0.634" IsEnabled="{Binding IsUpdateDefinitionsEnabled, ElementName=userControl}" />		        
+		<TextBlock TextWrapping="Wrap" Text="{Binding UpdateDefinitionsStatus, ElementName=userControl}" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" Margin="0,94,0,0" LineHeight="18" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+		<StackPanel Orientation="Horizontal" Margin="0,273,0,0" VerticalAlignment="Top">
+			<TextBlock TextWrapping="Wrap" Text="{x:Static Properties:Resources.EnergyBoosterUpsellText}" Foreground="{DynamicResource AlienLightGray}" FontFamily="{DynamicResource DefaultFont}" FontSize="13.333" Margin="0" LineHeight="18" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <Navigation:Link x:Name="linkClickhere" Content="{x:Static Properties:Resources.EnergyBoosterClickhereText}" Foreground="{DynamicResource AlienBlue}" HoverColor="{DynamicResource AlienWhite}" PressedColor="{DynamicResource AlienLightGray}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="4,0,14,0" Click="linkClickhere_Click" FontSize="13.333" />
+		</StackPanel>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Dominator.UI.Views.HeaderOCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:properties="clr-namespace:Dominator.UI.Properties"
+             mc:Ignorable="d"              
+             Background="{x:Null}"
+             d:DesignHeight="483" d:DesignWidth="1030">
+    
+    <Grid>
+        <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SeparatorLineColor}" Margin="20,0">
+            <StackPanel Orientation="Vertical">
+                <Image x:Name="imageLogo" Source="/OCControls.Resources;component/Media/Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" Height="25.783" Width="17.956" />
+                <TextBlock Text="{x:Static properties:Resources.ApplicationName}" Style="{DynamicResource XLargeTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

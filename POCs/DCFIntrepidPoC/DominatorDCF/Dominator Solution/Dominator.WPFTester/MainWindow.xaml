@@ -1,0 +1,140 @@
+﻿<Window x:Class="DominatorTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls1="clr-namespace:DominatorTester.Controls"
+        xmlns:views="clr-namespace:OCControls.AWCCPlugin.Views;assembly=OCControls.AWCCPlugin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="502.667" Width="699">
+    
+    <Window.Resources>
+
+        <Style x:Key="ColourPickerButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="Transparent" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="ColourSliderStyle" TargetType="{x:Type Slider}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Slider}">
+                        <Grid x:Name="grid" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" MinHeight="20" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" 
+								Height="{TemplateBinding Height}" 
+								MinHeight="20"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+                                Opacity="1">
+                                <Border Margin="0,2" Background="{TemplateBinding Background}" />
+                            </Border>
+                            <Track Grid.Row="0" x:Name="PART_Track" Margin="0">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton 
+										Style="{StaticResource ColourPickerButtonStyle}"
+										Command="Slider.DecreaseLarge" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="12">
+                                        <Thumb.Template>
+                                            <ControlTemplate>
+                                                <Grid>
+                                                    <Rectangle x:Name="thumbRect" Fill="#FF2EB8FF" StrokeStartLineCap="Flat" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton 
+										Style="{StaticResource ColourPickerButtonStyle}"
+										Command="Slider.IncreaseLarge" />
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="grid" Property="Opacity" Value="0.4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    
+    <Grid>
+        <TabControl>
+            <TabItem Header="BIOS Tester">
+                <Grid>
+                    <GroupBox Header="Initialization Status" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="127" Width="256" Margin="0,21,387,0" FontSize="16" FontWeight="Bold">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton x:Name="radioButtonInitSuccessfull" Content="Successful" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="InitStatus" FontSize="12" Click="radioButtonInitSuccessfull_Click" />
+                            <RadioButton x:Name="radioButtonInitFailed" Content="Failed" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="InitStatus" FontSize="12" Click="radioButtonInitFailed_Click" />
+                            <RadioButton x:Name="radioButtonInitNotSupportedBIOSInterface" Content="Not Supported BIOS Interface" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="InitStatus" FontSize="12" Click="radioButtonInitNotSupportedBIOSInterface_Click" />
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Failsafe Flag" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="256" Margin="42,183,0,0" FontSize="16" FontWeight="Bold">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton x:Name="radioButtonFailsafeFlagON" Content="ON" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="FailsafeFlag" FontSize="12" Click="radioButtonFailsafeFlagON_Click"/>
+                            <RadioButton x:Name="radioButtonFailsafeFlagOFF" Content="OFF" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="FailsafeFlag" FontSize="12" Click="radioButtonFailsafeFlagOFF_Click"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="OCUIBIOSControl Flag" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="127" Width="255" Margin="0,184,49,0" FontSize="16" FontWeight="Bold" IsEnabled="True">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton x:Name="radioButtonOCUIBIOSControlFlagON" Content="ON" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="OCUIBIOSControlFlag" FontSize="12" Click="OCUIBIOSControlFlagON_Click" />
+                            <RadioButton x:Name="radioButtonOCUIBIOSControlFlagOFF" Content="OFF" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Normal" GroupName="OCUIBIOSControlFlag" FontSize="12" Click="OCUIBIOSControlFlagOFF_Click"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Button x:Name="buttonRefreshFlags" Content="Refresh Flags" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="276,381,289,0" Click="buttonRefreshFlags_Click" RenderTransformOrigin="0.4,6.8" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Basic Stress Test">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                        <Button x:Name="buttonStartStressTest" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="buttonStartStressTest_Click" Margin="0,0,10,0" />
+                        <Button x:Name="buttonStopStressTest" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="2.949,0.417" Click="buttonStopStressTest_Click" Margin="10,0,0,0"/>
+                    </StackPanel>
+
+                    <controls1:ValidationControl2 x:Name="validationControl2" Width="100" Height="100" Margin="0,20,0,0"/>
+                    <Label x:Name="labelStressTest" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="System Info" Margin="0.301,0,-4.301,-2">
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="buttonGetSystemInfo" Content="Read System Info" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Click="buttonGetSystemInfo_Click" Margin="0,10,0,0" />
+                    <TextBlock x:Name="textBlockSystemInfo" Margin="0,10,0,0" />
+                    <Button x:Name="buttonPushNotification" Content="Push Notification" IsCancel="True" Margin="0" Width="120" Click="buttonPushNotification_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Sliders" Margin="0.301,0,-4.301,-2">
+                <StackPanel Orientation="Vertical" >
+                    <controls1:DynamicColourSlider x:Name="sl" Decimals="2" Height="30" VerticalAlignment="Top"  Style="{DynamicResource ColourSliderStyle}" IsEnabled="True" />
+                    <Label Content="{Binding SelectedValue, ElementName=sl, NotifyOnSourceUpdated=True}" />
+                
+                    <!--<views:PlugInControl />-->
+                    <!--<views:PlugInControl Height="300" Width="300"/>-->
+                </StackPanel>
+                
+                
+            </TabItem>
+            
+        </TabControl>
+    </Grid>
+</Window>

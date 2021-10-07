@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessErrorText" xml:space="preserve">
+    <value>لا يسمح تكوين حساب المستخدم بتشغيل هذا التطبيق.</value>
+  </data>
+  <data name="ActionDetailsText" xml:space="preserve">
+    <value>الإجراء: {0}</value>
+  </data>
+  <data name="ActionSequenceSummaryText" xml:space="preserve">
+    <value>معلومات تلخيصية عن تسلسل الإجراء</value>
+  </data>
+  <data name="ActionSequenceText" xml:space="preserve">
+    <value>تسلسل الإجراء</value>
+  </data>
+  <data name="AddActionText" xml:space="preserve">
+    <value>أضف إجراءً</value>
+  </data>
+  <data name="ApplyText" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="CancelText" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CreateNewModeText" xml:space="preserve">
+    <value>إنشاء وضع ألعاب جديدة</value>
+  </data>
+  <data name="CreateNewModeTitleText" xml:space="preserve">
+    <value>إنشاء ملف تعريف وضع ألعاب جديد</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="GameModeDescriptionText" xml:space="preserve">
+    <value>ربما تقوم بإنشاء اختصار مخصص موجود على سطح المكتب والذي سوف يقوم بشكل تلقائي بإعداد بيئة النظام الخاص بك وتنفيذ تسلسل من الإجراءات، كلما تقوم ببدء هذه اللعبة.</value>
+  </data>
+  <data name="GameModeLearnModeLinkText" xml:space="preserve">
+    <value>أخبرني بالمزيد حول أوضاع اللعبة</value>
+  </data>
+  <data name="GameModeNameText" xml:space="preserve">
+    <value>اسم ملف تعريف وضع الألعاب:</value>
+  </data>
+  <data name="GameModesLinkText" xml:space="preserve">
+    <value>وضع اللعبة</value>
+  </data>
+  <data name="GameModeTitleText" xml:space="preserve">
+    <value>وضع اللعبة - {0}</value>
+  </data>
+  <data name="MoveText" xml:space="preserve">
+    <value>نقل</value>
+  </data>
+  <data name="NewGameModeDescriptionText" xml:space="preserve">
+    <value>يمكنك إنشاء ملف تعريف وضع ألعاب جديد بواسطة تحديد لعبة مكتشفة من القائمة التالية أو بواسطة البحث عن ملف قابل للتنفيذ للعبة أو لتطبيق مطلوب. انقر فوق التالي للمتابعة.</value>
+  </data>
+  <data name="NewGameModeTitleText" xml:space="preserve">
+    <value>ملف تعريف وضع ألعاب جديد</value>
+  </data>
+  <data name="NextText" xml:space="preserve">
+    <value>التالي &gt;</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="PerformanceMonitoringLinkText" xml:space="preserve">
+    <value>مراقبة الأداء</value>
+  </data>
+  <data name="PreviewText" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="SaveAsText" xml:space="preserve">
+    <value>حفظ باسم...</value>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="ActionNameText" xml:space="preserve">
+    <value>اسم الإجراء:</value>
+  </data>
+  <data name="AddActionTitleText" xml:space="preserve">
+    <value>إضافة إجراء</value>
+  </data>
+  <data name="AvailableActionsText" xml:space="preserve">
+    <value>إجراءات متاحة:</value>
+  </data>
+  <data name="AdditionalAppsText" xml:space="preserve">
+    <value>تطبيقات إضافية</value>
+  </data>
+  <data name="AlienFXText" xml:space="preserve">
+    <value>برنامج تشغيل AlienFX</value>
+  </data>
+  <data name="AudioOutputText" xml:space="preserve">
+    <value>نقل الصوت</value>
+  </data>
+  <data name="PowerPlanText" xml:space="preserve">
+    <value>Power Plan (خطة استخدام الطاقة)</value>
+  </data>
+  <data name="ThermalText" xml:space="preserve">
+    <value>حراري</value>
+  </data>
+  <data name="WebLinksText" xml:space="preserve">
+    <value>روابط الويب</value>
+  </data>
+  <data name="FrapsText" xml:space="preserve">
+    <value>المراقبة داخل اللعبة</value>
+  </data>
+  <data name="MediaPlayerText" xml:space="preserve">
+    <value>برنامج Media Player</value>
+  </data>
+  <data name="VoIPText" xml:space="preserve">
+    <value>برنامج المحادثة VoIP (Chat)</value>
+  </data>
+  <data name="PlaybackDeviceDescriptionText" xml:space="preserve">
+    <value>قم بتحديد جهاز التشغيل الافتراضي بالنقر عليه.</value>
+  </data>
+  <data name="AudioDeviceNotPresentText" xml:space="preserve">
+    <value>غير موجود</value>
+  </data>
+  <data name="AudioDeviceReadyText" xml:space="preserve">
+    <value>مستعد</value>
+  </data>
+  <data name="AudioDeviceUnpluggedText" xml:space="preserve">
+    <value>غير موصل بالكهرباء</value>
+  </data>
+  <data name="BackToActionSequenceSummaryText" xml:space="preserve">
+    <value>الرجوع إلى ملخص تسلسل الإجراء</value>
+  </data>
+  <data name="WebLinksDescriptionText" xml:space="preserve">
+    <value>أدخل رابط أو روابط الويب التي ترغب في فتحها باستخدام هذا الإجراء.</value>
+  </data>
+  <data name="WebLinkItemizedText" xml:space="preserve">
+    <value>رابط ويب {0}:</value>
+  </data>
+  <data name="ApplicationHeaderText" xml:space="preserve">
+    <value>التطبيق:</value>
+  </data>
+  <data name="BrowseAdditionalAppsText" xml:space="preserve">
+    <value>استعراض لإيجاد التطبيق الإضافي بالأسفل.</value>
+  </data>
+  <data name="BrowseText" xml:space="preserve">
+    <value>استعراض...</value>
+  </data>
+  <data name="AllFilesFilterText" xml:space="preserve">
+    <value>كل الملفات ({0})</value>
+  </data>
+  <data name="ApplicationBehaviorText" xml:space="preserve">
+    <value>ما الذي ترغب أن يقوم هذا التطبيق بالقيام به؟</value>
+  </data>
+  <data name="BrowseAppsText" xml:space="preserve">
+    <value>استعراض لإيجاد التطبيق بالأسفل.</value>
+  </data>
+  <data name="ApplicationErrorPathNotFoundText" xml:space="preserve">
+    <value>لا يوجد مسار التطبيق الذي تم تحديده، برجاء التحقق من المسار مرة أخرى أو قم باستخدام زر الاستعراض للحصول على مسار التطبيق الصحيح.</value>
+  </data>
+  <data name="GameApplicationPathText" xml:space="preserve">
+    <value>مسار تطبيق اللعبة:</value>
+  </data>
+  <data name="ActionSummaryDescriptionText" xml:space="preserve">
+    <value>انقر فوق أحد أزرار الإجراء الموجودة على اليسار لتعديل إعدادات هذا الإجراء، لتحريكه لأعلى أو لأسفل في التسلسل أو لحذفه.</value>
+  </data>
+  <data name="LaunchGameText" xml:space="preserve">
+    <value>تشغيل/ إنهاء</value>
+  </data>
+  <data name="InvalidUrlErrorText" xml:space="preserve">
+    <value>رابط ويب غير صالح.</value>
+  </data>
+  <data name="DeleteGameModeTitleText" xml:space="preserve">
+    <value>حذف وضع اللعبة</value>
+  </data>
+  <data name="WantToDeleteGameModeText" xml:space="preserve">
+    <value>هل أنت متأكد من أنك تريد حذف وضع اللعبة "{0}"؟</value>
+  </data>
+  <data name="ChangeGameModeTitleText" xml:space="preserve">
+    <value>تغيير وضع اللعبة</value>
+  </data>
+  <data name="WantToSaveGameModeChangesToText" xml:space="preserve">
+    <value>هل تريد حفظ التغييرات التي تمت في {0}؟</value>
+  </data>
+  <data name="PowerPlanHeaderText" xml:space="preserve">
+    <value>خطة الطاقة:</value>
+  </data>
+  <data name="SelectPowerPlanText" xml:space="preserve">
+    <value>اختر خطة الطاقة الخاصة بوضع اللعبة هذا.</value>
+  </data>
+  <data name="ActivePowerPlanText" xml:space="preserve">
+    <value>&lt; خطة الطاقة النشطة&gt;</value>
+  </data>
+  <data name="ApplicationErrorPowerPlanNotFoundText" xml:space="preserve">
+    <value>خطة الطاقة "{0}" في وضع اللعبة هذا لم تعد موجودة. حدد خطة طاقة جديدة من القائمة.</value>
+  </data>
+  <data name="ApplicationErrorThermalProfileNotFoundText" xml:space="preserve">
+    <value>ملف التعريف الحراري "{0}" في وضع اللعبة هذا لم يعد موجودًا. حدد ملف تعريف حراريًا جديدًا من القائمة.</value>
+  </data>
+  <data name="SelectThermalText" xml:space="preserve">
+    <value>اختر ملف التعريف الحراري الخاص بوضع اللعبة هذا.</value>
+  </data>
+  <data name="ThermalHeaderText" xml:space="preserve">
+    <value>ملف التعريف الحراري:</value>
+  </data>
+  <data name="ActiveThermalProfileText" xml:space="preserve">
+    <value>&lt; ملف تعريف حراري نشط&gt;</value>
+  </data>
+  <data name="ApplicationErrorThemeNotFoundText" xml:space="preserve">
+    <value>سمة AlienFX "{0}" في وضع اللعبة هذا لم تعد موجودة. حدد سمة جديدة من القائمة.</value>
+  </data>
+  <data name="SelectThemeOptionsText" xml:space="preserve">
+    <value>اختر سمة وخيارات برنامج AlienFX الخاصة بوضع اللعبة هذا.</value>
+  </data>
+  <data name="GameModeShortcutText" xml:space="preserve">
+    <value>مجلد الاختصار:</value>
+  </data>
+  <data name="LaunchGameModeText" xml:space="preserve">
+    <value>بدء وضع لعبة "{0}".</value>
+  </data>
+  <data name="CloseAlienAdrenalineText" xml:space="preserve">
+    <value>إغلاق برنامج AlienAdrenaline</value>
+  </data>
+  <data name="AudioDeviceDisabledText" xml:space="preserve">
+    <value>مُعطل</value>
+  </data>
+  <data name="EnableTabbedBrowsingText" xml:space="preserve">
+    <value>تمكين الاستعراض المبوب (إذا كان مدعوماً)</value>
+  </data>
+  <data name="GamePathText" xml:space="preserve">
+    <value>مسار اللعبة:</value>
+  </data>
+  <data name="ActiveThemeText" xml:space="preserve">
+    <value>&lt;السمة النشطة&gt;</value>
+  </data>
+  <data name="GameExecPathDoesNotExistText" xml:space="preserve">
+    <value>لا يوجد مسار اللعبة القابل للتنفيذ.</value>
+  </data>
+  <data name="ProfileListDescriptionText" xml:space="preserve">
+    <value>ربما تقوم بإنشاء اختصار مخصص موجود على سطح المكتب والذي سوف يقوم بشكل تلقائي بإعداد بيئة النظام الخاص بك وتنفيذ تسلسل من الإجراءات، كلما تقوم ببدء هذه اللعبة. 
+حدد ملف تعريف من القائمة الموجودة بالأسفل ثم انقر نقراً مزدوجاً عليه لتعديل إجراءات ملف التعريف.</value>
+  </data>
+  <data name="RecreateGameShortcutText" xml:space="preserve">
+    <value>إعادة إنشاء اختصار</value>
+  </data>
+  <data name="GameModeShortcutCreateDescriptionText" xml:space="preserve">
+    <value>تم إنشاء اختصار وضع اللعبة في: 
+{0}</value>
+  </data>
+  <data name="GameModeShortcutCreateErrorText" xml:space="preserve">
+    <value>خطأ في إنشاء وضع اللعبة في: 
+{0}.</value>
+  </data>
+  <data name="GameModeShortcutCreateTitleText" xml:space="preserve">
+    <value>إنشاء اختصار وضع لعبة</value>
+  </data>
+  <data name="WantToSavePendingChangesText" xml:space="preserve">
+    <value>لإعادة إنشاء اختصار وضع اللعبة، يجب حفظ التغييرات المعلّقة. هل تريد المتابعة؟</value>
+  </data>
+  <data name="GameModeShortcutAlreadyExistsText" xml:space="preserve">
+    <value>يوجد اختصار وضع اللعبة بالفعل في المسار المحدد.</value>
+  </data>
+  <data name="ProgressBarLoadingText" xml:space="preserve">
+    <value>يتم الآن التحميل ...</value>
+  </data>
+  <data name="CloseGameModeProfileText" xml:space="preserve">
+    <value>نمط الاستخدام الخاص بالوضع المقرّب للألعاب</value>
+  </data>
+  <data name="EnergyBoosterDescriptionText" xml:space="preserve">
+    <value>يعمل المُعجّل على زيادة سرعة جهاز الكمبيوتر الخاص بك وتحرير مساحات في الذاكرة من خلال الإيقاف المؤقت للعمليات والخدمات غير الضرورية والتي تكون قيد التشغيل في الخلفية.</value>
+  </data>
+  <data name="EnergyBoosterText" xml:space="preserve">
+    <value>Accelerator</value>
+  </data>
+  <data name="SelectProfileText" xml:space="preserve">
+    <value>تحديد ملف تعريف</value>
+  </data>
+  <data name="Core" xml:space="preserve">
+    <value>نواة {0}</value>
+  </data>
+  <data name="PerformanceSnapshots" xml:space="preserve">
+    <value>تسجيلات الأداء</value>
+  </data>
+  <data name="RealTimePerformance" xml:space="preserve">
+    <value>مراقبة الأداء خلال الوقت الحقيقي</value>
+  </data>
+  <data name="MemoryLoadTitle" xml:space="preserve">
+    <value>حِمل الذاكرة</value>
+  </data>
+  <data name="UpdateTUDText" xml:space="preserve">
+    <value>تحديث التعريفات</value>
+  </data>
+  <data name="UpdateDefStart" xml:space="preserve">
+    <value>يُرجى الانتظار...</value>
+  </data>
+  <data name="UpdateDefFail" xml:space="preserve">
+    <value>فشل تحديث التعريفات</value>
+  </data>
+  <data name="UpdateDefNoConnect" xml:space="preserve">
+    <value>تعذر تحديث التعريفات، لعدم وجود اتصال بالإنترنت</value>
+  </data>
+  <data name="UpdateDefOK" xml:space="preserve">
+    <value>تم تحديث التعريفات بنجاح</value>
+  </data>
+  <data name="UpdateDefTimeout" xml:space="preserve">
+    <value>المهلة الخاصة بتحديث التعريفات</value>
+  </data>
+  <data name="UpdateDefUpToDate" xml:space="preserve">
+    <value>التعريفات محدّثة</value>
+  </data>
+  <data name="UpdateDefinitionsQuestionText" xml:space="preserve">
+    <value>هل ترغب في تحديث التعريفات الآن؟</value>
+  </data>
+  <data name="UpdateDefinitionsTitleText" xml:space="preserve">
+    <value>تحديث التعريفات</value>
+  </data>
+  <data name="PauseText" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="PlayText" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="RecordText" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
+  <data name="ViewText" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="DateText" xml:space="preserve">
+    <value>التقاط البيانات</value>
+  </data>
+  <data name="NameText" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="DeleteSnapshotQuestion" xml:space="preserve">
+    <value>هل ترغب في حذف التسجيل المحدد: {0}?</value>
+  </data>
+  <data name="DeleteSnapshotTitle" xml:space="preserve">
+    <value>حذف التسجيل</value>
+  </data>
+  <data name="CopyOfText" xml:space="preserve">
+    <value>نسخة من {0}</value>
+  </data>
+  <data name="SaveAsSnapshotTitle" xml:space="preserve">
+    <value>حفظ كتسجيل</value>
+  </data>
+  <data name="StopText" xml:space="preserve">
+    <value>إيقاف </value>
+  </data>
+  <data name="StartRecordingText" xml:space="preserve">
+    <value>بدء التسجيل</value>
+  </data>
+  <data name="StopRecordingText" xml:space="preserve">
+    <value>إيقاف التسجيل</value>
+  </data>
+  <data name="PerformanceSnapshotNotFound" xml:space="preserve">
+    <value>لم يتم العثور على أي تسجيلات للأداء</value>
+  </data>
+  <data name="ProcessIdentifier" xml:space="preserve">
+    <value>AlienAdrenaline</value>
+  </data>
+  <data name="PerformanceMonitoringDescriptionText" xml:space="preserve">
+    <value>تتطلب مراقبة الأداء تسجيل عرض النطاق الترددي والاستخدام الخاصين بمختلف مكونات الأجهزة في النظام لديك.</value>
+  </data>
+  <data name="PerformanceMonitoringText" xml:space="preserve">
+    <value>مراقبة الأداء</value>
+  </data>
+  <data name="EnergyBoosterClickhereText" xml:space="preserve">
+    <value>انقر هنا</value>
+  </data>
+  <data name="EnergyBoosterUpsellText" xml:space="preserve">
+    <value>هل ترغب في المزيد من السرعة والأداء الأفضل في اللعبة؟</value>
+  </data>
+  <data name="GBStr" xml:space="preserve">
+    <value>{0} جيجابايت</value>
+  </data>
+  <data name="EnergyBoosterSiteUrl" xml:space="preserve">
+    <value>http://www.iolo.com/promo/partner/alienware/get-system-mechanic/</value>
+  </data>
+  <data name="UpdateRealApplicationPathText" xml:space="preserve">
+    <value>التقاط الملف القابل للتنفيذ للألعاب</value>
+  </data>
+  <data name="InvalidGameRealPathText" xml:space="preserve">
+    <value>الملف القابل للتنفيذ للعبة غير صالح</value>
+  </data>
+  <data name="UpdateGameExecutableDescriptionText" xml:space="preserve">
+    <value>تستخدم بعض الألعاب ملف قابل للتنفيذ واحد فقط لتشغيل اللعبة وملف قابل للتنفيذ منفصل لتشغيل اللعبة بشكل فعلي أثناء ممارسة اللعبة.
+إذا كنت ترغب لتسلسل الأحداث الذي يتم تنفيذه أثناء ملف تعريف وضع الألعاب هذا أن يتم التراجع عنه تلقائيًا بعد إنهاء اللعبة، انقر فوق الزر التالي واضغط على {0} أثناء ممارسة اللعبة.
+سيؤدي ذلك إلى التقاط الملف القابل للتنفيذ الفعلي الذي يجري تشغيله أثناء ممارسة اللعبة وتخزينه في ملف تعريف وضع الألعاب الخاص بك.</value>
+  </data>
+  <data name="ActionPendingConfigurationText" xml:space="preserve">
+    <value>لم يتم تهيئة الإجراء</value>
+  </data>
+  <data name="Processes" xml:space="preserve">
+    <value>قائمة العمليات</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="ProcessName" xml:space="preserve">
+    <value>اسم العملية</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>الذاكرة</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="CloseOtherNetworkChartsText" xml:space="preserve">
+    <value>إغلاق مخططات الشبكة الأخرى</value>
+  </data>
+  <data name="OpenOtherNetworkChartsText" xml:space="preserve">
+    <value>فتح مخططات الشبكة الأخرى</value>
+  </data>
+  <data name="CloseText" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="DataPointToolTipText" xml:space="preserve">
+    <value>الوقت: {0} من الثواني، القيمة: {1}</value>
+  </data>
+  <data name="CompareText" xml:space="preserve">
+    <value>مقارنة</value>
+  </data>
+  <data name="ChartPagingHomePage" xml:space="preserve">
+    <value>الأعمال التي تتم في المنزل</value>
+  </data>
+  <data name="ChartPagingNetworkPageTitle" xml:space="preserve">
+    <value>نشاط الشبكة</value>
+  </data>
+  <data name="ChartPagingVideoPageTitle" xml:space="preserve">
+    <value>نشاط الرسومات</value>
+  </data>
+  <data name="CPUUsageAverageText" xml:space="preserve">
+    <value>استخدام CPU (المتوسط)</value>
+  </data>
+  <data name="TimespanHolderTooltipText" xml:space="preserve">
+    <value>اضغط للانتقال لليسار/لليمين. انقر نقرًا مزدوجًا لإعادة التعيين.</value>
+  </data>
+  <data name="ChartHelpText" xml:space="preserve">
+    <value>معلومات المخطط</value>
+  </data>
+  <data name="CloseChartTooltip" xml:space="preserve">
+    <value>إغلاق المخطط</value>
+  </data>
+  <data name="LessNetworkChartsTooltip" xml:space="preserve">
+    <value>طي كل مخططات الشبكة</value>
+  </data>
+  <data name="MoreNetworkChartsTooltip" xml:space="preserve">
+    <value>توسيع كل مخططات الشبكة</value>
+  </data>
+  <data name="LessVideoChartsTooltip" xml:space="preserve">
+    <value>طي كل مخططات الفيديو</value>
+  </data>
+  <data name="MoreVideoChartsTooltip" xml:space="preserve">
+    <value>توسيع كل مخططات الفيديو</value>
+  </data>
+  <data name="ChartLegendTooltip" xml:space="preserve">
+    <value>{0}
+{1} ثوانٍ</value>
+  </data>
+  <data name="ProcessListText" xml:space="preserve">
+    <value>قائمة العملية</value>
+  </data>
+  <data name="ZoomOutChartTooltip" xml:space="preserve">
+    <value>استعادة مخطط لأسفل</value>
+  </data>
+  <data name="CtrlShiftF3Text" xml:space="preserve">
+    <value>CTRL+SHIFT+F3</value>
+  </data>
+  <data name="CPUUsageTitle" xml:space="preserve">
+    <value>استخدام CPU: {0}</value>
+  </data>
+  <data name="ProcessCountTitle" xml:space="preserve">
+    <value>إجمالي العمليات: {0}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="ExportSnapshotTitle" xml:space="preserve">
+    <value>تصدير تسجيل</value>
+  </data>
+  <data name="ImportSnapshotTitle" xml:space="preserve">
+    <value>استيراد تسجيل</value>
+  </data>
+  <data name="ImportedSnapshotExists" xml:space="preserve">
+    <value>اسم التسجيل موجود بالفعل. هل ترغب في التخطي?</value>
+  </data>
+  <data name="CopySuffix" xml:space="preserve">
+    <value>{0} - نسخ</value>
+  </data>
+  <data name="MaximizeChartText" xml:space="preserve">
+    <value>انقر فوق عنوان المخطط لتكبير المخطط</value>
+  </data>
+  <data name="MinimizeChartText" xml:space="preserve">
+    <value>انقر فوق عنوان المخطط لاستعادة المخطط لأسفل</value>
+  </data>
+  <data name="CtrlShiftAltF10" xml:space="preserve">
+    <value>CTRL+SHIFT+ALT+F10</value>
+  </data>
+  <data name="FnF10" xml:space="preserve">
+    <value>FN+F10</value>
+  </data>
+  <data name="StartStopRecordingKeystrokes" xml:space="preserve">
+    <value>استخدم "{0}" لبدء/إيقاف التسجيل</value>
+  </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>يتعذر تحميل الملف. تنسيق الملف غير متوافق مع الإصدار الحالي.</value>
+  </data>
+</root>

@@ -1,0 +1,29 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"	
+	mc:Ignorable="d"
+	x:Class="AlienLabs.AlienAdrenaline.App.Views.Xaml.PerformanceMonitoringControl"
+	xmlns:controls="clr-namespace:AlienLabs.AlienAdrenaline.App.Controls"
+	xmlns:properties="clr-namespace:AlienLabs.AlienAdrenaline.App.Properties"
+	xmlns:Converters="clr-namespace:AlienLabs.AlienAdrenaline.App.Converters"
+	x:Name="userControl" >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:ToHourMinuteSeconds x:Key="toHourMinuteSeconds" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <controls:ChartPagingControl x:Name="chartPagingControl" Margin="0" />
+		<TextBlock x:Name="textBoxTimeElapsed" Text="{Binding TimeElapsedSeconds, ElementName=userControl, Converter={StaticResource toHourMinuteSeconds}}" HorizontalAlignment="Right" Foreground="#FFC8C8C8" FontFamily="Courier New" Margin="0,0,38,0" Visibility="Collapsed" VerticalAlignment="Bottom" />						
+		<!--
+		<TextBlock x:Name="textBoxTimeElapsed" Text="0:01:27" HorizontalAlignment="Right" Foreground="#FFC8C8C8" FontFamily="Courier New" Margin="0,0,38,2" Visibility="Visible" VerticalAlignment="Bottom" />						
+		-->
+    </Grid>
+</UserControl>

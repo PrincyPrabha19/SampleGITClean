@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	
+	
+	<Style TargetType="{x:Type CheckBox}">
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="Background" Value="#F4F4F4"/>
+		<Setter Property="BorderBrush" Value="#8E8F8F"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type CheckBox}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="OnMouseEnter"/>
+						<Storyboard x:Key="OnMouseLeave"/>
+					</ControlTemplate.Resources>
+					<Grid VerticalAlignment="Top">						
+						<Rectangle HorizontalAlignment="Left" Margin="0" x:Name="rectangleCheckbox" Width="14" Height="14" VerticalAlignment="Top" Opacity="1" Stroke="{DynamicResource Stroke_CheckBox}" Fill="{DynamicResource Fill_CheckBox}"/>
+						<Label Margin="20,3,0,0" VerticalAlignment="Top"   x:Name="labelCaption" Height="Auto" Content="{TemplateBinding Content}" FontFamily="Pill Gothic 600mg Light" Foreground="{DynamicResource AlienLightGray}" HorizontalContentAlignment="Left" Padding="0,0,0,0" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="12" />
+						<Path x:Name="check_bottom" Stretch="Fill" HorizontalAlignment="Left" Margin="2.501,2.25,0,0" Width="9.416" Data="M10.175442,15.237302 L12.728095,19.689718 19.276698,9.6503184" Fill="{x:Null}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeThickness="2.5" Visibility="Collapsed" Height="9.665" VerticalAlignment="Top" Stroke="#FF1D1D1D"/>
+						<Path x:Name="check_top" Stretch="Fill" HorizontalAlignment="Left" Margin="2.875,2.75,0,0" Width="8.447" Data="M9.75,15.123001 L12.648649,20.099745 19.5,9.3730011" Fill="{x:Null}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeThickness="1.5" Visibility="Collapsed" Height="8.583" VerticalAlignment="Top" Stroke="{DynamicResource Stroke_Check}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" TargetName="labelCaption" Value="#FF7E7E7E"/>
+							<Setter Property="Stroke" TargetName="rectangleCheckbox" Value="{DynamicResource Stroke_CheckboxIsEnabled}"/>
+							<Setter Property="Stroke" TargetName="check_top" Value="#FF5C5C5C"/>
+						</Trigger>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Foreground" TargetName="labelCaption" Value="{DynamicResource AlienLightGray}"/>
+							<Setter Property="Opacity" TargetName="rectangleCheckbox" Value="0.845"/>
+							<Setter Property="Visibility" TargetName="check_top" Value="Visible"/>
+							<Setter Property="Visibility" TargetName="check_bottom" Value="Visible"/>
+							<Setter Property="Stroke" TargetName="check_bottom" Value="#FF1D1D1D"/>
+							<Setter Property="Stroke" TargetName="rectangleCheckbox" Value="{DynamicResource Stroke_CheckboxIsChecked}"/>
+							<Setter Property="Fill" TargetName="rectangleCheckbox" Value="{DynamicResource Fill_CheckboxIsChecked}"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Foreground" TargetName="labelCaption" Value="{DynamicResource AlienWhite}"/>
+							<Setter Property="Stroke" TargetName="rectangleCheckbox" Value="{DynamicResource AlienBlue}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	
+</ResourceDictionary>
