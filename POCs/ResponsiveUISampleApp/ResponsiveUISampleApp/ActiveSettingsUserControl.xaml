@@ -1,0 +1,68 @@
+﻿<UserControl
+    x:Class="ResponsiveUISampleApp.ActiveSettingsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1142">
+
+    <Grid Background="{StaticResource colorBrushActiveSettings}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState_500">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_500}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="opsPanel.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="opsPanel.(RelativePanel.AlignVerticalCenterWith)" Value="{x:Null}"/>
+                        <Setter Target="opsPanel.(RelativePanel.Below)" Value="fxOpPanel"/>
+                        <Setter Target="opsPanel.(FrameworkElement.Margin)" Value="0,0,0,6"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_720">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_720}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="opsPanel.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="opsPanel.(RelativePanel.AlignVerticalCenterWith)" Value="{x:Null}"/>
+                        <Setter Target="opsPanel.(RelativePanel.Below)" Value="fxOpPanel"/>
+                        <Setter Target="opsPanel.(FrameworkElement.Margin)" Value="0,0,0,6"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_1024}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="opsPanel.(RelativePanel.RightOf)" Value="fxOpPanel"/>
+                        <Setter Target="opsPanel.(RelativePanel.AlignVerticalCenterWith)" Value="fxOpPanel"/>
+                        <Setter Target="opsPanel.(RelativePanel.Below)" Value="{x:Null}"/>                        
+                    </VisualState.Setters>                    
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <RelativePanel>
+            <TextBlock x:Name="titleTextBlock" Text="/// SYSTEM" FontSize="40" Margin="0,0,0,20" Style="{StaticResource Style_TextBlock_Pill600_Light}" />
+
+            <StackPanel x:Name="fxOpPanel" Margin="0,0,0,6" Orientation="Horizontal" Width="555" Height="100" RelativePanel.Below="titleTextBlock" Background="Crimson">
+                <Image Source="/Media/SettingsImage (0).png"/>
+                <Image Source="/Media/SettingsImage (9).png" />
+            </StackPanel>
+
+            <!--<StackPanel x:Name="opsPanel" Margin="0,0,0,6" Orientation="Horizontal" Width="555" Height="100" Background="DodgerBlue" RelativePanel.AlignTopWith="fxOpPanel" RelativePanel.AlignRightWithPanel="True" HorizontalAlignment="Right">
+                <Image x:Name="op1" Source="/Media/SettingsImage (2).png" Height="100" />
+            </StackPanel>-->
+
+            <StackPanel x:Name="opsPanel" Margin="32,0,0,6" Orientation="Horizontal" RelativePanel.RightOf="fxOpPanel" RelativePanel.AlignVerticalCenterWith="fxOpPanel">
+                <Image x:Name="op1" Source="/Media/SettingsImage (2).png" Height="89" />
+                <Image x:Name="op2" Source="/Media/SettingsImage (3).png" Height="89" Margin="6,0,0,0" />
+                <Image x:Name="op3" Source="/Media/SettingsImage (4).png" Height="89" Margin="6,0,0,0" />
+                <Image x:Name="op4" Source="/Media/SettingsImage (5).png" Height="89" Margin="6,0,0,0" />
+                <Image x:Name="op5" Source="/Media/SettingsImage (6).png" Height="89" Margin="6,0,0,0" />
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+</UserControl>

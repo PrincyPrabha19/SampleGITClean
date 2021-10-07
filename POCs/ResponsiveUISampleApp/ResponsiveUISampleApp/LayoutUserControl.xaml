@@ -1,0 +1,171 @@
+﻿<UserControl
+    x:Class="ResponsiveUISampleApp.LayoutUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ResponsiveUISampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="using:System"
+    mc:Ignorable="d" SizeChanged="MainPage_OnSizeChanged"
+    x:Name="userControl">
+
+    <Grid Background="LightGray">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState_500">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_500}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=4}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=4}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=4}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="gameSettings"/>
+
+                        <Setter Target="model.Visibility" Value="Collapsed"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="{x:Null}"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="activeSettings.(RelativePanel.Below)" Value="{x:Null}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_720">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_720}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="model.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=3}" />
+                        <Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=5}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="gameSettings"/>
+
+                        <Setter Target="model.Visibility" Value="Visible"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+
+                        <Setter Target="games.Width" Value="{StaticResource Dashboard5GamesWidth}"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="VisualState_960">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_960}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="model.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=3}" />
+                        <Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=5}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="gameSettings"/>
+
+                        <Setter Target="model.Visibility" Value="Visible"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+
+                        <Setter Target="games.Width" Value="{StaticResource Dashboard5GamesWidth}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_1024}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=5}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=6}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=12}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="gameSettings"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="{x:Null}"/>
+
+                        <Setter Target="model.Visibility" Value="Collapsed"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="{x:Null}"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="{x:Null}"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="activeSettings.(RelativePanel.Below)" Value="{x:Null}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_1366">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_1366}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="model.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=4}" />
+                        <Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=6}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=5}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="gameSettings"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="{x:Null}"/>
+
+                        <Setter Target="model.Visibility" Value="Visible"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_1920">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource Width_1920}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="model.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=4}" />
+                        <Setter Target="gameSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=6}" />
+                        <Setter Target="dashboardGames.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=5}" />
+                        <Setter Target="activeSettings.Width" Value="{Binding ColumnTuple, Converter={StaticResource widthConverter}, ConverterParameter=8}" />-->
+
+                        <Setter Target="dashboardGames.(RelativePanel.RightOf)" Value="gameSettings"/>
+                        <Setter Target="dashboardGames.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="dashboardGames.(RelativePanel.Below)" Value="{x:Null}"/>
+
+                        <Setter Target="model.Visibility" Value="Visible"/>
+                        <Setter Target="activeSettings.(RelativePanel.RightOf)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignBottomWith)" Value="model"/>
+                        <Setter Target="activeSettings.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <ScrollViewer VerticalScrollMode="Auto">
+            <RelativePanel>
+                <RelativePanel x:Name="panelTop" Width="{Binding ContentWidth, ElementName=userControl}" Background="{StaticResource colorBrushPanelTop}">
+                    <Viewbox x:Name="gameSettings" Width="{Binding GameSettingsWidth, ElementName=userControl}" SizeChanged="GameSettings_OnSizeChanged">
+                        <local:GameSettingsUserControl x:Name="gameSettingsUserControl" />
+                    </Viewbox>
+                    <Viewbox x:Name="dashboardGames" Width="{Binding DashboardGamesWidth, ElementName=userControl}" RelativePanel.RightOf="gameSettings" HorizontalAlignment="Right">
+                        <local:DashboardGamesUserControl x:Name="games" Width="{StaticResource Dashboard4GamesWidth}" />
+                    </Viewbox>
+                </RelativePanel>
+                <RelativePanel x:Name="panelBottom" Width="{Binding ContentWidth, ElementName=userControl}" Margin="0,-40,0,0" RelativePanel.Below="panelTop" Background="{StaticResource colorBrushPanelBottom}">
+                    <Viewbox x:Name="model" Width="{Binding ModelWidth, ElementName=userControl}">
+                        <local:ModelUserControl />
+                    </Viewbox>
+                    <Viewbox x:Name="activeSettings" Width="{Binding ActiveSettingsWidth, ElementName=userControl}" RelativePanel.RightOf="model" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWith="model" HorizontalAlignment="Right">
+                        <local:ActiveSettingsUserControl />
+                    </Viewbox>
+                </RelativePanel>
+            </RelativePanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
+
+
+
+
+
+
+
