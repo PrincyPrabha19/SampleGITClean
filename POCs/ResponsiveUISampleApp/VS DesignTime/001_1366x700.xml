@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Device name="Custom" width="1366" height="768" scale="100" size="" default="true" resize="true" icon="Assets/desktop_icon.ico" generic="Generic/generic.xaml" MinVersion="10.0.0.0">
+	<Device.Qualifiers>
+		<Qualifier Name="DeviceFamily">Laptop</Qualifier>
+	</Device.Qualifiers>
+</Device>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

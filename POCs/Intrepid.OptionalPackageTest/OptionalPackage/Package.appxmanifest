@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" 
+         IgnorableNamespaces="uap mp uap3">
+
+
+  <Identity
+    Name="6d2a4a64-825b-48b3-8bad-2067793857fa"
+    Publisher="CN=Poorvaja_PC"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="6d2a4a64-825b-48b3-8bad-2067793857fa" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>OptionalPackage</DisplayName>
+    <PublisherDisplayName>Poorvaja_PC</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.15063.0" MaxVersionTested="10.0.15063.0" />
+    <uap3:MainPackageDependency Name="ea164e2c-5e03-42eb-8ad8-6d1dcabbcc0a" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="op"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="OptionalPackage.op">
+      <uap:VisualElements
+        AppListEntry="none"
+        DisplayName="OptionalPackage"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="OptionalPackage"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>
