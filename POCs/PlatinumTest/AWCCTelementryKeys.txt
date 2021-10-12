@@ -1,2 +1,0 @@
-Application Name	Description			Api Key					Secret Key
-AWCC			Alienware Command Center	3BEB43C0-5102-4148-A939-AE91C9D90A12	C4F19E6A-BBFE-4444-B577-A82629F02E09 
