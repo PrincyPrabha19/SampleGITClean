@@ -1,0 +1,1 @@
+robocopy "D:\DEVGIT\Intrepid\Installer\Files" "\\atom.us.dell.com\Development\CC5.0\ISFiles" /MIR /XD "AWCCDriver" /XD "DELL_EULA" /XD "DFUDriver" /XD "Firmware" /XD "PackageBundle" /XD "Tools"
