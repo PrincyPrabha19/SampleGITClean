@@ -1,0 +1,957 @@
+#include "ifx.h"
+
+export prototype StartAWCCService(STRING);
+export prototype StopAWCCService(STRING);
+
+export prototype STRING GetInstalledPackageVersion(HWND);
+export prototype STRING GetProvisionedPackageVersion(HWND);
+export prototype NUMBER InstallAppxBundle(HWND);
+export prototype NUMBER ProvisionAppxBundle(HWND);
+export prototype NUMBER UninstallAppxBundle(HWND);
+
+export prototype NUMBER InstallDriver(HWND);
+export prototype NUMBER UninstallDriver(HWND);
+export prototype NUMBER InstallDFUDriver(HWND);
+export prototype NUMBER UninstallDFUDriver(HWND);
+export prototype NUMBER UninstallSTtubeDFUDriver(HWND);
+export prototype NUMBER UpgradeFirmware(HWND);
+export prototype NUMBER UpgradeDarfonFirmware(HWND);
+export prototype NUMBER SetPredefinedAnimations(HWND);
+export prototype NUMBER RegisterDevices(HWND);
+export prototype NUMBER RepairRegisterDevices(HWND);
+export prototype NUMBER UnregisterDevices(HWND);
+export prototype STRING DetectDarfonKeyboardCode(HWND);
+export prototype SetDarfonKeyboardCode(STRING);
+
+export prototype NUMBER DeleteCalderaShortcut(HWND);
+export prototype NUMBER UpdateInstallVersion(HWND);
+export prototype NUMBER CreateInstallDriverRegistry(HWND);
+export prototype NUMBER DeleteInstallDriverRegistry(HWND);
+export prototype NUMBER DeleteInstallDaidRegistry(HWND); 
+export prototype ValidateBradBurySupportedPlatform();
+export prototype NUMBER InstallAudioDriver(HWND);
+export prototype SCServiceEnableAutoStartService(HWND);
+export prototype NUMBER RunHiddenApplicationGetReturnCode(STRING,STRING, STRING);
+#define DCM_SERVICE_NAME     "DellClientManagementService"       
+prototype BOOL IsELCPresent(HWND);
+prototype NUMBER GetELCUpdateResult(HWND);
+
+//export prototype NUMBER BackupIntrepidData(HWND);
+//export prototype NUMBER RestoreIntrepidData(HWND);
+
+#define DEBUG_
+#define WINDOWS_STORE_APPX
+
+function NUMBER InstallAppxBundle(hMSI)
+	STRING strFileName, strFileName2, strDependencies, strCommandLine, strSupportDirPath, strPackagePath, strResult, strVersion;
+	NUMBER nResult, nPathBuffer, nCertInstallResult;
+	BOOL bELCPresent;
+begin     
+	if (IsFIDAParam(hMSI) || IsDRIVERParam(hMSI) || IsNOUWPParam(hMSI) || IsSystemAccount(hMSI)) then
+		return 0;
+	endif;
+	
+	strVersion = GetInstalledPackageVersion(hMSI);
+	if (strVersion != "") then
+		return 0;
+	endif;			
+	
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then	
+		return ERROR_FUNCTION_FAILED;
+	endif;						
+	
+	strFileName = strSupportDirPath ^ "PackageInstaller.exe";
+	strPackagePath = strSupportDirPath ^ "Package";	
+	strCommandLine = " -installpkgpath #" + strPackagePath + "#";
+
+	strFileName2 = strSupportDirPath ^ "PackageInstallerConfig.json";
+	strCommandLine = strCommandLine + " -config #" + strFileName2 + "#";
+	
+	bELCPresent = IsELCPresent(hMSI);
+	if (bELCPresent) then
+		strCommandLine = strCommandLine + " -elcpresent";
+	endif;
+		
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then		
+		return 0;	
+	endif;	
+	
+	#ifdef DEBUG
+	if (LAAW_PARAMETERS.nLaunchResult != 0) then
+		NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+		MessageBox("Install AWCC.appxbundle failed with error code: " + strResult, INFORMATION);
+	endif;
+	#endif		
+	
+	return LAAW_PARAMETERS.nLaunchResult;
+end;  
+
+
+function NUMBER ProvisionAppxBundle(hMSI)
+	STRING strFileName, strFileName2, strDependencies, strCommandLine, strCommandLine2, strSupportDirPath, strPackagePath, strResult, strVersion;
+	NUMBER nResult, nPathBuffer, nCertInstallResult;
+	BOOL bELCPresent;
+begin     
+	if (IsFIDAParam(hMSI) || IsNOUWPParam(hMSI)) then
+		return 0;
+	endif;
+	
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then	
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	
+	if (IsDRIVERParam(hMSI)) then
+		/*
+		strVersion = GetProvisionedPackageVersion(hMSI);
+		if (strVersion = "") then								
+			strFileName = strSupportDirPath ^ "PackageInstaller.exe";
+			strPackagePath = strSupportDirPath ^ "Package";	
+			strCommandLine = " -provisionpkgpath #" + strPackagePath + "#";	
+			strFileName2 = strSupportDirPath ^ "PackageInstallerConfig.json";
+			strCommandLine = strCommandLine + " -config #" + strFileName2 + "# -skiplicense";
+			
+			bELCPresent = IsELCPresent(hMSI);	
+			if (bELCPresent) then
+				strCommandLine = strCommandLine + " -elcpresent";
+			endif;
+				
+			if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then		
+				return 0;	
+			endif;
+			
+			#ifdef DEBUG
+			if (LAAW_PARAMETERS.nLaunchResult != 0) then
+				NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+				MessageBox("ProvisionAppxBundle-Provisioning failed with error code: " + strResult, INFORMATION);
+			endif;
+			#endif		
+			
+			//return LAAW_PARAMETERS.nLaunchResult;
+		endif;
+		*/
+		return 0;
+	endif;		
+				
+	nResult = InstallAppxBundle(hMSI);		
+	return nResult;
+end;
+
+
+function NUMBER UninstallAppxBundle(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, szUpgradeProductCode, strResult;
+	NUMBER nResult, nPathBuffer;
+begin 
+	if (IsFIDAParam(hMSI) || IsDRIVERParam(hMSI) || IsNOUWPParam(hMSI)) then
+		return 0;
+	endif;
+	
+	// Intrepid >= 5.1.15 will not uninstall appxbundle on upgrading
+	if (IsUpgradingProduct(hMSI)) then
+		return 0;
+	endif;
+			    
+	//strFileName = "powershell.exe";
+	//strCommandLine = " -NoProfile -NonInteractive -WindowStyle Hidden -InputFormat None -ExecutionPolicy Bypass -Command \"Get-AppxPackage -Name 'DellInc.AlienwareCommandCenter' -AllUsers | Remove-AppXPackage -AllUsers\"";
+	
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then	
+		return ERROR_FUNCTION_FAILED;
+	endif;						
+	
+	strFileName = strSupportDirPath ^ "PackageInstaller.exe";
+	strCommandLine = " -removepkg #DellInc.AlienwareCommandCenter_htrsf667h5kn2#";	
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	#ifdef DEBUG
+	if (LAAW_PARAMETERS.nLaunchResult != 0) then
+		NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+		MessageBox("Uninstall AWCC.appxbundle failed with error code: " + strResult, INFORMATION);
+	endif;
+	#endif
+	   
+	return LAAW_PARAMETERS.nLaunchResult;
+end; 
+
+
+function STRING GetInstalledPackageVersion(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, strVersion;
+	NUMBER nResult, nPathBuffer, nFileHandle;
+begin
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return "";
+	endif;
+				
+	strFileName = "powershell.exe";
+	strFileName2 = strSupportDirPath ^ "installed_version.txt";
+	strCommandLine = " -NoProfile -NonInteractive -WindowStyle Hidden -InputFormat None -ExecutionPolicy Bypass -Command \"(Get-AppxPackage -Name 'DellInc.AlienwareCommandCenter').Version | Tee-Object -FilePath '" + strFileName2 + "'\"";						
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return "";
+	endif;
+	
+	OpenFileMode(FILE_MODE_NORMAL);
+	if (OpenFile(nFileHandle, strSupportDirPath, "installed_version.txt") < 0) then
+		return "";
+	endif;
+	GetLine(nFileHandle, strVersion);
+	CloseFile(nFileHandle);
+	
+	#ifdef DEBUG
+	MessageBox("GetInstalledPackageVersion: " + strVersion, INFORMATION);
+	#endif
+		
+	return strVersion;
+end; 
+
+
+function STRING GetProvisionedPackageVersion(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, strVersion;
+	NUMBER nResult, nPathBuffer, nFileHandle;
+begin
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return "";
+	endif;
+		
+	strFileName = "powershell.exe";
+	strFileName2 = strSupportDirPath ^ "provisioned_version.txt";
+	strCommandLine = " -NoProfile -NonInteractive -WindowStyle Hidden -InputFormat None -ExecutionPolicy Bypass -Command \"(Get-AppXProvisionedPackage -Online | Where-Object -Property DisplayName -eq 'DellInc.AlienwareCommandCenter').Version | Tee-Object -FilePath '" + strFileName2 + "'\"";						
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return "";
+	endif;
+	
+	OpenFileMode(FILE_MODE_NORMAL);
+	if (OpenFile(nFileHandle, strSupportDirPath, "provisioned_version.txt") < 0) then
+		return "";
+	endif;
+	GetLine(nFileHandle, strVersion);
+	CloseFile(nFileHandle);
+	
+	#ifdef DEBUG
+	MessageBox("GetProvisionedPackageVersion: " + strVersion, INFORMATION);
+	#endif
+		
+	return strVersion;
+end;
+
+
+function NUMBER InstallDriver(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+		
+	strFileName = strSupportDirPath ^ "IndiDriverInstallUtilx64.exe";
+	strFileName2 = strSupportDirPath ^ "AWCCDriver.inf";	
+	strCommandLine = " install " + strFileName2 + " Root\\AWCC";	
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	//return LAAW_PARAMETERS.nLaunchResult;
+	return 0;
+end;   
+
+
+function NUMBER UninstallDriver(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+		
+	StopAWCCService("AWCCService");
+	
+	strFileName = strSupportDirPath ^ "IndiDriverInstallUtilx64.exe";
+	strCommandLine = " remove Root\\AWCC";
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	//return LAAW_PARAMETERS.nLaunchResult;
+	return 0;
+end;
+
+
+function NUMBER InstallDFUDriver(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	
+	strFileName = strSupportDirPath ^ "pnputil.exe";
+    strFileName2 = strSupportDirPath ^ "STM32Bootloader.inf";
+    strCommandLine = " -i -a " + strFileName2;
+
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+
+	//return LAAW_PARAMETERS.nLaunchResult;
+	return 0;
+end;   
+
+//Uninstall Old STTube driver if it exists in system.
+function NUMBER UninstallSTtubeDFUDriver(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;	
+	
+	strFileName = strSupportDirPath ^ "dpinst_amd64.exe";
+	strFileName2 = strSupportDirPath ^ "STtube.inf";
+	strCommandLine = " /Q /D /U \"" + strFileName2 + "\"";	
+			
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+
+	//return LAAW_PARAMETERS.nLaunchResult;
+	return 0;
+end;
+
+function NUMBER UninstallDFUDriver(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+
+	strFileName  = strSupportDirPath ^ "pnputil.exe";
+    strFileName2 = strSupportDirPath ^ "STM32Bootloader.inf";
+    strCommandLine = " /delete-driver " + strFileName2 + " /force";
+	
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	//return LAAW_PARAMETERS.nLaunchResult;
+	return 0;
+end;
+
+function NUMBER UpgradeFirmware(hMSI)
+	STRING strFileName, strFileName2, strSupportDirPath, szModel, szCmdLine, strCommandLine;//, strResult;
+	NUMBER nPathBuffer, nELCResult;
+begin           
+	if (IsFIDAParam(hMSI) || IsNOFIRMWAREParam(hMSI) || IsDRIVERParam(hMSI) || !IsELCPresent(hMSI)) then
+		return 0;
+	endif;
+
+	nPathBuffer = MAX_PATH;		
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return 0;
+	endif;
+	
+	strFileName = strSupportDirPath ^ "ElcUpdate.exe";
+	strFileName2 = strSupportDirPath ^ "elc-iar-v1.1.4.hex";
+	
+	nELCResult = GetELCUpdateResult(hMSI);
+	
+	if (nELCResult < 0) then
+		return 0;
+	endif;
+		
+	if (nELCResult > 0)	then
+		strCommandLine = " -c -f \"" + strFileName2 + "\"";
+	else
+		strCommandLine = " -f \"" + strFileName2 + "\"";
+	endif;
+
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		//NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+		//MessageBox("(ELCUpdate) failed 1st attempt nLaunchResult =  " + strResult, INFORMATION);
+		return 0;
+	endif;
+	
+	if (nELCResult = 0) then
+		//MessageBox("RepairRegisterDevices call.",INFORMATION);
+		RepairRegisterDevices(hMSI);	
+	endif;
+	
+	Delay(5);
+	
+	if (LAAW_PARAMETERS.nLaunchResult != 0) then
+		if (LaunchAppAndWait(strFileName, strCommandLine,  LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+			//NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+			//MessageBox("(ELCUpdate) failed 2nd attempt nLaunchResult =  " + strResult, INFORMATION);
+			return 0;
+		endif;
+	endif;
+
+	//NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+	//MessageBox("(ELCUpdate) nLaunchResult =  " + strResult, INFORMATION);
+	
+	return 0;
+end;
+
+
+// ELC is not found if ELCUpdate result >= 0
+function BOOL IsELCPresent(hMSI)
+	STRING strFileName, strSupportDirPath, szModel, szCmdLine, strCommandLine, strResult;
+	NUMBER nPathBuffer;
+	HWND stdOutput;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;
+	
+	strFileName = strSupportDirPath ^ "ElcUpdate.exe";
+    strCommandLine = " -p";
+        
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return FALSE;
+	endif;
+		
+	if (LAAW_PARAMETERS.nLaunchResult >= 0) then
+		return TRUE;
+	endif;	
+	
+	return FALSE;
+end;
+
+
+// -1 ELC not found, 0 BIOS has support but no version found, > 0 current version
+function NUMBER GetELCUpdateResult(hMSI)
+	STRING strFileName, strSupportDirPath, szModel, szCmdLine, strCommandLine;
+	NUMBER nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;
+	
+	strFileName = strSupportDirPath ^ "ElcUpdate.exe";
+    strCommandLine = " -p";        
+
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return -1;
+	endif;
+
+	return LAAW_PARAMETERS.nLaunchResult;
+end;
+
+
+function NUMBER UpgradeDarfonFirmware(hMSI)
+	STRING strFileName, strFileName2, szCmdLine, strSupportDirPath, szModel, strCommandLine, szKeyboardCode;
+	NUMBER nPathBuffer;
+begin
+	if (IsFIDAParam(hMSI) || IsNOFIRMWAREParam(hMSI) || IsDRIVERParam(hMSI)) then
+		return 0;
+	endif;
+	           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SYS_MODEL", szModel, nPathBuffer) != ERROR_SUCCESS) then
+		return 0;
+	endif;	
+	
+	szKeyboardCode = "0";
+	if (MsiGetProperty(hMSI, "KEYBOARD_CODE", szKeyboardCode, nPathBuffer) != ERROR_SUCCESS) then
+		return 0;
+	endif;	
+		
+	if (szKeyboardCode = "0") then
+		return 0;
+	endif;	
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	
+	if (szKeyboardCode = "1001") then	
+		strFileName = strSupportDirPath ^ "DarfonCassini";
+	elseif (szKeyboardCode = "1002") then	
+		strFileName = strSupportDirPath ^ "DarfonSerenity";
+	elseif (szKeyboardCode = "1003") then	
+		strFileName = strSupportDirPath ^ "DarfonYamato";
+	elseif (szKeyboardCode = "1004") then	
+		strFileName = strSupportDirPath ^ "DarfonFireflyPerKey";
+	elseif (szKeyboardCode = "1005") then	
+		strFileName = strSupportDirPath ^ "DarfonViper";
+	elseif (szKeyboardCode = "1006") then	
+		strFileName = strSupportDirPath ^ "DarfonFireflyMechanicalKB";
+	elseif (szKeyboardCode = "1007") then	
+		strFileName = strSupportDirPath ^ "DarfonViperCherryMechanicalKB";
+	elseif (szKeyboardCode = "1008") then	
+		strFileName = strSupportDirPath ^ "DarfonHorizonArkCherryMechKB";
+	elseif (szKeyboardCode = "1009") then	
+		strFileName = strSupportDirPath ^ "DarfonHorizonPerKeyRGB";		
+	else
+		return 0;
+	endif;	
+	
+	strFileName = strFileName ^ "ITESHFU.exe";
+    strCommandLine = " /s";
+    
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	return 0;
+end;
+
+
+function NUMBER SetPredefinedAnimations(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strInstallDirPath, szModel, szCmdLine;
+	NUMBER nPathBuffer;
+begin
+	if (IsFIDAParam(hMSI) || IsNOFIRMWAREParam(hMSI) || IsDRIVERParam(hMSI) || !IsELCPresent(hMSI)) then
+		return 0;
+	endif;
+	
+	/*
+	if (!IsValidSystemManufacturer()) then
+		return 0;
+	endif;	
+	*/
+	
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "INSTALLDIR", strInstallDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	
+	strFileName = strInstallDirPath ^ "ELCSetup.exe";
+    strCommandLine = "";
+   
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+		
+	return 0;
+end;   
+
+
+function StartAWCCService(szServiceName)
+	NUMBER nvServiceState;
+begin
+	SERVICE_IS_PARAMS.nStopServiceWaitCount = 5;
+
+	ServiceGetServiceState(szServiceName, nvServiceState);
+	if (nvServiceState = SERVICE_STOPPED) then
+		ServiceStartService(szServiceName, "");
+	endif;
+end;
+
+
+function StopAWCCService(szServiceName)
+	NUMBER nvServiceState;
+begin
+	SERVICE_IS_PARAMS.nStartServiceWaitCount = 5;
+
+	ServiceGetServiceState(szServiceName, nvServiceState);
+	if (nvServiceState = SERVICE_RUNNING) then
+		ServiceStopService(szServiceName);
+	endif;
+end;
+
+
+function NUMBER RegisterDevices(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, strInstallDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;
+	
+	if (!IsValidSystemManufacturerToRegisterDevices()) then
+		return 0;
+	endif;
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	if (MsiGetProperty(hMSI, "INSTALLDIR", strInstallDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;	
+		
+	strFileName = strSupportDirPath ^ "DeviceRegister.exe";
+	strFileName2 = strSupportDirPath ^ "DeviceRegistration.json";
+	strCommandLine = " /register \"" + strFileName2 + "\" \"" + strInstallDirPath + "\"";
+	
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	return 0;
+end;  
+
+function NUMBER RepairRegisterDevices(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, strInstallDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;
+	
+	if (!IsValidSystemManufacturerToRegisterDevices()) then
+		return 0;
+	endif;
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	if (MsiGetProperty(hMSI, "INSTALLDIR", strInstallDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;	
+		
+	strFileName = strSupportDirPath ^ "DeviceRegister.exe";
+	strFileName2 = strSupportDirPath ^ "DeviceRegistration.json";
+	strCommandLine = " /register_repair \"" + strFileName2 + "\" \"" + strInstallDirPath + "\"";
+	
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	return 0;
+end;
+
+
+function NUMBER UnregisterDevices(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, strInstallDirPath;
+	NUMBER nResult, nPathBuffer;
+begin           
+	nPathBuffer = MAX_PATH;
+
+	if (!IsValidSystemManufacturerToRegisterDevices()) then
+		return 0;
+	endif;
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+		
+	strFileName = strSupportDirPath ^ "DeviceRegister.exe";
+	strFileName2 = strSupportDirPath ^ "DeviceRegistration.json";
+	strCommandLine = " /unregister \"" + strFileName2 + "\"";	
+				
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return 0;
+	endif;
+	
+	return 0;
+end;  
+
+
+function STRING DetectDarfonKeyboardCode(hMSI)
+	STRING strFileName, strFileName2, strCommandLine, strSupportDirPath, szKeyboardCode;
+	NUMBER nResult, nPathBuffer, nKeyboardCode;
+begin           
+	nPathBuffer = MAX_PATH;
+	
+	if (!IsValidSystemManufacturerToRegisterDevices()) then
+		return "0";
+	endif;
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return "0";
+	endif;
+		
+	strFileName = strSupportDirPath ^ "DeviceRegister.exe";
+	strFileName2 = strSupportDirPath ^ "DeviceRegistration.json";
+	strCommandLine = " /detectkeyboard \"" + strFileName2 + "\"";
+	
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then
+		return "0";
+	endif;
+	
+	nKeyboardCode = LAAW_PARAMETERS.nLaunchResult;
+	nResult = NumToStr (szKeyboardCode, nKeyboardCode);
+	
+	if (nResult < 0) then
+        return "0";
+    endif;
+     
+	SetDarfonKeyboardCode(szKeyboardCode);
+	
+	return szKeyboardCode;
+end;  
+
+
+function NUMBER DeleteCalderaShortcut(hMSI)
+	STRING szPathFile, szFilename;
+	NUMBER nvFileHandle;
+begin
+	try
+		szFilename = CommonAppDataFolder ^ "Microsoft\\Windows\\Start Menu\\Programs\\Graphics Amplifier Notification.lnk";	
+		
+		if (Is(FILE_EXISTS, szFilename) = 1) then
+			DeleteFile(szFilename);
+		endif;	
+	catch
+	endcatch;
+	
+	return 0;	
+end;
+
+
+function NUMBER UpdateInstallVersion(hMSI)
+	STRING strProductVersion;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+
+	try		
+		if (MsiGetProperty(hMSI, "ProductVersion", strProductVersion, nPathBuffer) != ERROR_SUCCESS) then	
+			return 0;
+		endif;
+			
+		CreateRegistry("SOFTWARE\\Alienware\\Alienware Command Center", "InstallVersion", strProductVersion);
+	catch
+	endcatch;
+	
+	return 0;
+end;
+
+
+function NUMBER CreateInstallDriverRegistry(hMSI)
+begin
+	try	
+		if (IsDRIVERParam(hMSI)) then
+			CreateRegistry("SOFTWARE\\Alienware\\Alienware Command Center", "InstallDriver", "1");
+		endif;
+	catch
+	endcatch;
+	
+	return 0;
+end;
+
+function NUMBER DeleteInstallDriverRegistry(hMSI)
+begin
+	try	
+		if (IsUpgradingProduct(hMSI)) then
+			return 0;
+		endif;
+		
+		DeleteRegistry("SOFTWARE\\Alienware\\Alienware Command Center", "InstallDriver");
+	catch
+	endcatch;
+	
+	return 0;
+end;
+
+function NUMBER DeleteInstallDaidRegistry(hMSI)
+begin
+	try	
+		if (IsUpgradingProduct(hMSI)) then
+			return 0;
+		endif;
+		
+		DeleteRegistry("SOFTWARE\\Alienware\\Alienware Command Center", "DAID");
+	catch
+	endcatch;
+	
+	return 0;
+end;
+
+
+function SetSystemModel(szModel)
+begin
+  MsiSetProperty(ISMSI_HANDLE, "SYS_MODEL", szModel);
+end;
+
+function SetDarfonKeyboardCode(szKeyboardCode)
+begin
+  MsiSetProperty(ISMSI_HANDLE, "KEYBOARD_CODE", szKeyboardCode);
+end;
+
+function ValidateBradBurySupportedPlatform() 
+	STRING szModel;
+begin
+	szModel = GetModelFromRegistry();
+	if (IsValidSystemManufacturerToRegisterDevices()) then
+		MsiSetProperty(ISMSI_HANDLE, "INSTALL_BRADBURY", "1");
+		InstallAudioDriver(ISMSI_HANDLE);
+	endif;
+	//else. Non Dell system.So, dont install Bradbury service.
+end;
+
+function NUMBER InstallAudioDriver(hMSI)
+	STRING strFileName, strCommandLine, strSupportDirPath,registryKey, entryKey, registryValue;//,strResult;
+	NUMBER nResult, nPathBuffer,length, type;
+begin           
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then
+		return ERROR_FUNCTION_FAILED;
+	endif;
+	
+	strFileName = strSupportDirPath ^ "Audiodriver";	
+	strFileName = strFileName ^ "AudioDriverInstaller.exe";
+	strCommandLine = "";
+
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_MAXIMIZED) < 0) then
+		//MessageBox("AudioDriverInstaller not installed", INFORMATION);
+		return 0;
+	endif;
+
+	//NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+	//MessageBox("AudioDriverInstaller result =  " + strResult, INFORMATION);
+
+	//Set the AWInstallManager registry. so that Install Manager will restart the system.
+	CreateRegistry("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce", "AWCCRequiresReboot", "1");
+
+	return 0;
+end; 
+
+function SCServiceEnableAutoStartService ( hMSI )
+STRING szMsg,
+szServiceName,
+szArguments;
+NUMBER nReturn;
+begin
+szServiceName= DCM_SERVICE_NAME;
+// Re-Enable The service
+if (SYSINFO.WINNT.bWin7_Server2008R2) then
+Sprintf ( szArguments, "config %s start= auto", szServiceName );
+else
+Sprintf ( szArguments, "config %s start= delayed-auto", szServiceName );
+endif;
+nReturn = RunHiddenApplicationGetReturnCode( SystemFolder , "sc", szArguments );
+if ( nReturn != 0 ) then //failed to enable service
+Sprintf( szMsg, "%d - Failed to configure auto start Service %s", nReturn, szServiceName);
+SprintfMsiLog(szMsg );
+endif;
+end;
+
+function NUMBER RunHiddenApplicationGetReturnCode(szPath,szApplication, szProgParms)
+        
+    NUMBER    nReturn;
+
+
+begin
+    LaunchAppAndWait ( szPath ^ szApplication , szProgParms , LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN );
+    if (nReturn = ISERR_SUCCESS) then //Application launched sucessfully
+        nReturn= LAAW_PARAMETERS.nLaunchResult;
+        return nReturn;
+    else
+        return NULL;
+    endif;
+end; //RunHiddenApplicationGetReturnCode 
+
+
+/*
+#define INTREPID_SHARELOCAL	"Microsoft\\Windows\\AppRepository\\Families\\DellInc\.AlienwareCommandCenter_htrsf667h5kn2\\SharedLocal\\"
+#define INTREPID_LOCALSTATE	"Packages\\DellInc\.AlienwareCommandCenter_htrsf667h5kn2\\LocalState\\"
+
+function NUMBER BackupIntrepidData(hMSI)
+	STRING szSourceDir, szTargetDir, szTempDir, szVersion;
+	BOOL bSharedLocalBackup, bLocalStateBackup;
+begin	
+	if (IsFIDAParam(hMSI)) then
+		return 0;
+	endif;
+
+	// Intrepid >= 5.1.15 will not uninstall appxbundle on upgrading
+	// we only need backup for these versions of Intrepid
+	szVersion = GetAppxBundleVersion(hMSI);
+	if (szVersion != "5.0.1.0" && szVersion != "5.1.14.0") then		
+		return 0;
+	endif;	
+	
+	try
+		szTempDir = TempFolder ^ "AlienwareCommandCenter_htrsf667h5kn2_Backup";
+		DeleteDir(szTempDir, ALLCONTENTS);
+	catch
+	endcatch;
+	
+	bLocalStateBackup = FALSE;
+	
+	try		
+		//szSourceDir	= CommonAppDataFolder ^ INTREPID_SHARELOCAL;
+		//szTargetDir = TempFolder ^ "AlienwareCommandCenter_htrsf667h5kn2_Backup\\SharedLocal\\";
+		//if (ExistsDir(szSourceDir) = EXISTS) then
+		//	if (XCopyFile(szSourceDir ^ "*.*", szTargetDir, COMP_NORMAL | COMP_UPDATE_SAME | INCLUDE_SUBDIR) != ERROR_SUCCESS) then
+		//		return 0;
+		//	endif;
+		//	bSharedLocalBackup = TRUE;
+		//endif;
+		
+		szSourceDir	= LocalAppDataFolder ^ INTREPID_LOCALSTATE;
+		szTargetDir = TempFolder ^ "AlienwareCommandCenter_htrsf667h5kn2_Backup\\LocalState\\";
+		if (ExistsDir(szSourceDir) = EXISTS) then			
+			if (XCopyFile(szSourceDir ^ "*.*", szTargetDir, COMP_NORMAL | COMP_UPDATE_SAME | INCLUDE_SUBDIR) != ERROR_SUCCESS) then
+				return 0;
+			endif;
+			bLocalStateBackup = TRUE;
+		endif;
+		
+		if (bLocalStateBackup) then
+			if (MsiSetProperty(hMSI, "INTREPID_DATA_BACKUP", "1") != ERROR_SUCCESS) then
+				return 0;
+			endif;
+			
+			//MessageBox("Backup LocalState!", INFORMATION);
+		endif;		
+	catch
+	endcatch;
+	
+	return 0;
+end;
+
+
+function NUMBER RestoreIntrepidData(hMSI)
+	STRING szSourceDir, szTargetDir, szBackupData;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;	
+	if (MsiGetProperty(hMSI, "INTREPID_DATA_BACKUP", szBackupData, nPathBuffer) != ERROR_SUCCESS) then
+		return 1;
+	endif;
+
+	if (szBackupData = "0") then
+		return 0;
+	endif;	
+	
+	try			
+		//szSourceDir = TempFolder ^ "AlienwareCommandCenter_htrsf667h5kn2_Backup\\SharedLocal\\";		
+		//szTargetDir	= CommonAppDataFolder ^ INTREPID_SHARELOCAL;		
+		//if (ExistsDir(szSourceDir) = EXISTS) then
+		//	MessageBox("Trying to restore sharedlocal szSourceDir: " + szSourceDir + " -> szTargetDir: " + szTargetDir, INFORMATION);
+		//	if (XCopyFile(szSourceDir ^ "*.*", szTargetDir, COMP_NORMAL | COMP_UPDATE_SAME | INCLUDE_SUBDIR) != ERROR_SUCCESS) then
+		//		MessageBox("error restoring from sharedlocal", INFORMATION);
+		//		return 0;
+		//	endif;
+		//endif;
+		
+		szSourceDir = TempFolder ^ "AlienwareCommandCenter_htrsf667h5kn2_Backup\\LocalState\\";		
+		szTargetDir	= LocalAppDataFolder ^ INTREPID_LOCALSTATE;
+		if (ExistsDir(szSourceDir) = EXISTS) then		
+			if (XCopyFile(szSourceDir ^ "*.*", szTargetDir, COMP_NORMAL | COMP_UPDATE_SAME | INCLUDE_SUBDIR) != ERROR_SUCCESS) then
+				return 0;
+			endif;
+		endif;
+		
+		//MessageBox("Restored LocalState!", INFORMATION);
+	catch
+	endcatch;
+	
+	return 0;
+end;
+*/
+
+
+
+
+
+
+
+
+
+

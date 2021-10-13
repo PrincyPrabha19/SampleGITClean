@@ -1,0 +1,105 @@
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            
+//  This template script provides the code necessary to build an entry-point 
+//  function to be called in an InstallScript action during a Suite installation. 
+//                                                                            
+//                                                                            
+//    File Name:  Setup.rul                                                   
+//                                                                            
+//  Description:  InstallShield script                                        
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Include Ifx.h for built-in InstallScript function prototypes and for Suite 
+// function prototypes.
+#include "ifx.h"
+
+// The keyword export identifies MyFunction() as an entry-point function.
+// The argument it accepts must be an object for a Suite extension interface.
+export prototype ToggleSelectAll(OBJECT);
+export prototype ToggleRestart(OBJECT);
+export prototype CopyUpdateFolder(OBJECT);
+export prototype DeleteUpdateFolder(OBJECT);
+
+// To Do:  Declare global variables, define constants, and prototype user-
+//         defined and DLL functions here.
+
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           
+// Function:  ToggleSelectAll
+//                                                                           
+//  Purpose:  Toggles the selection property in Feature selection                                                                     
+///////////////////////////////////////////////////////////////////////////////
+function ToggleSelectAll(oExtension)
+    // To Do:  Declare local variables.
+    STRING val;
+begin
+	SuiteGetProperty("SELECTALL", val);
+	if(val == "NO") then
+		SuiteSetProperty("SELECTALL", "YES");
+	endif;
+	if(val == "YES") then
+		SuiteSetProperty("SELECTALL", "NO");
+	endif;
+		
+
+end;
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           
+// Function:  ToggleSelectAll
+//                                                                           
+//  Purpose:  Toggles the selection property in Feature selection                                                                     
+///////////////////////////////////////////////////////////////////////////////
+function ToggleRestart(oExtension)
+    // To Do:  Declare local variables.
+    STRING val;
+begin
+	SuiteGetProperty("REBOOT", val);
+	if(val == "NO") then
+		SuiteSetProperty("REBOOT", "YES");
+	endif;
+	if(val == "YES") then
+		SuiteSetProperty("REBOOT", "NO");
+	endif;
+		
+
+end;
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           
+// Function:  CopyUpdateFolder
+//                                                                           
+//  Purpose:  Copies all binaries required for Update, this binaries are called
+//            from TaskScheduler for perodic update                                                                    
+///////////////////////////////////////////////////////////////////////////////
+
+function CopyUpdateFolder(oExtentension) 
+
+    // To Do:  Declare local variables.
+    STRING SOURCE_DIR;
+    STRING TARGET_DIR;
+begin
+	SuiteGetProperty("SETUPSUPPORTDIR",SOURCE_DIR);
+	SOURCE_DIR = SOURCE_DIR ^ "Update";
+	SuiteLogInfo("Source dir:" + SOURCE_DIR);
+	SuiteGetProperty("ProgramFilesFolder", TARGET_DIR);
+	TARGET_DIR = TARGET_DIR ^ "InstallShield Installation Information" ^ "{D2DA930B-CB5D-4DD6-BF62-BE6C310A353D}" ^ "Update";
+	SuiteLogInfo("Target dir:" + TARGET_DIR);
+	CreateDir(TARGET_DIR);
+	CopyFile(SOURCE_DIR ^ "*.*", TARGET_DIR ^ "*.*");
+		
+end;
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           
+// Function:  DeleteUpdateFolder
+//                                                                           
+//  Purpose:  Deletes Update folder and all its contents during uninstall                                                                   
+///////////////////////////////////////////////////////////////////////////////
+function DeleteUpdateFolder(oExtentension)
+	STRING TARGET_DIR;
+begin
+	SuiteGetProperty("ProgramFilesFolder", TARGET_DIR);
+	TARGET_DIR = TARGET_DIR ^ "InstallShield Installation Information" ^ "{D2DA930B-CB5D-4DD6-BF62-BE6C310A353D}" ^ "Update";
+	SuiteLogInfo("Deleteing dir and its contents:" + TARGET_DIR);
+	DeleteDir(TARGET_DIR, ALLCONTENTS);
+end;
+
