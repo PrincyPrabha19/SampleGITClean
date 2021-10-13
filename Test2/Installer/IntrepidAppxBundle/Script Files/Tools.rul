@@ -1,0 +1,399 @@
+#include "ifx.h"
+
+prototype SetSystemModel(STRING);
+
+export prototype BOOL IsFIDAParam(HWND);
+export prototype BOOL IsNOFIRMWAREParam(HWND);
+export prototype BOOL IsDRIVERParam(HWND);
+export prototype BOOL IsNOUWPParam(HWND);
+
+export prototype BOOL IsUpgradingProduct(HWND);
+export prototype STRING GetSystemManufacturerFromRegistry();
+export prototype STRING GetModelFromRegistry();
+export prototype STRING GetVersionFromRegistry();
+export prototype BOOL IsValidSystemManufacturer();
+export prototype BOOL IsValidSystemManufacturerToRegisterDevices();
+export prototype BOOL IsCalderaSupported(STRING);
+export prototype CreateRegistry(STRING, STRING, STRING);
+export prototype DeleteRegistry(STRING, STRING);
+export prototype CreateInstallerStatusFile(STRING);
+export prototype ValidatePlatform();
+export prototype NUMBER GetOSBuildFromRegistry();
+export prototype NUMBER GetInstallDriverFromRegistry();
+export prototype BOOL IsSystemAccount(HWND);
+
+function STRING GetSystemManufacturerFromRegistry()    
+	STRING registryKey, entryKey, registryValue; 
+    NUMBER lenght, type;
+begin
+   	registryKey = "HARDWARE\\DESCRIPTION\\System\\BIOS"; 
+    entryKey = "SystemManufacturer";   
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    if (RegDBKeyExist(registryKey) > 0) then    
+    	lenght = -1;  
+    	type = REGDB_STRING;
+        if (RegDBGetKeyValueEx(registryKey, entryKey, type, registryValue, lenght) < 0) then   
+        	return "";
+        endif;
+        
+        return registryValue;                              
+                       
+    endif; 
+    return "";
+end;
+
+
+function STRING GetModelFromRegistry()    
+	STRING registryKey, entryKey, registryValue, model; 
+    number lenght, type;
+begin   	
+   	registryKey = "HARDWARE\\DESCRIPTION\\System\\BIOS"; 
+    entryKey = "SystemProductName";   
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    if (RegDBKeyExist(registryKey) > 0) then    
+    	lenght = -1;  
+    	type = REGDB_STRING;
+        if (RegDBGetKeyValueEx(registryKey, entryKey, type, registryValue, lenght) < 0) then   
+        	return "";
+        endif;
+        
+        model = registryValue;
+        StrReplace(model, " ", "", 0);
+        StrReplace(model, "-", "", 0);
+        StrToUpper(model, model);        
+        SetSystemModel(model); 
+        
+        return model;
+    endif;     
+    
+    return "";
+end;
+
+
+function STRING GetVersionFromRegistry()    
+	STRING registryKey, entryKey, registryValue; 
+    NUMBER lenght, type;
+begin   	
+   	registryKey = "SOFTWARE\\Alienware\\Alienware Command Center"; 
+    entryKey = "InstallVersion"; 
+    registryValue = "";  
+    
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;    
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    
+    if (RegDBKeyExist(registryKey) > 0) then  
+    	lenght = -1;  
+    	type = REGDB_STRING;
+        if (RegDBGetKeyValueEx(registryKey, entryKey, type, registryValue, lenght) < 0) then
+        endif;        
+    endif;
+    
+    REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;     
+    
+    return registryValue;
+end;
+
+
+function BOOL IsValidSystemManufacturer()     
+	BOOL nResult; 
+	STRING sManufacturer, strPid, strManufacturer;   
+begin    
+	sManufacturer = GetSystemManufacturerFromRegistry();
+	StrToUpper(strManufacturer, sManufacturer);
+	
+	if (strManufacturer = "ALIENWARE") then
+		nResult = TRUE;
+	else
+		nResult = FALSE;
+	endif;   
+	
+	return(nResult);                     
+end;
+
+
+function BOOL IsValidSystemManufacturerToRegisterDevices()     
+	BOOL nResult; 
+	STRING sManufacturer, strPid, strManufacturer; 
+begin    
+	sManufacturer = GetSystemManufacturerFromRegistry();
+	StrToUpper(strManufacturer, sManufacturer);
+	
+	if (strManufacturer = "ALIENWARE" || strManufacturer = "DELL INC.") then
+		nResult = TRUE;
+	else
+		nResult = FALSE;
+	endif;   
+	
+	return(nResult);                     
+end;
+
+
+function BOOL IsCalderaSupported(szModel)
+begin
+	return szModel = "ALIENWARE15R4" ||		//CassiniMLK15
+		   szModel = "ALIENWARE17R5" || 	//CassiniMLK17
+		   szModel = "ALIENWAREM15" || 		//Orion15
+		   szModel = "ALIENWAREM17" || 		//Orion17
+		   szModel = "ALIENWAREAREA51M" ||  //Serenity
+		   szModel = "ALIENWAREM15R2" ||    //Yamato15
+	       szModel = "ALIENWAREM17R2"||     //Yamato17
+	       szModel = "ALIENWAREAREA51MR2"|| //Firefly
+	       szModel = "ALIENWAREM15R3"||     //Viper 15
+	       szModel = "ALIENWAREM17R3"||	    //Viper 17
+		   szModel = "ALIENWAREM15R4"||		//Viper MLK 15
+		   szModel = "ALIENWAREM17R4";		//Viper MLK 17
+end;
+
+
+function ValidatePlatform() 
+	STRING szModel;
+begin 
+	szModel = GetModelFromRegistry();
+	if (IsCalderaSupported(szModel)) then
+		MsiSetProperty(ISMSI_HANDLE, "INSTALL_CALDERA", "1");
+	endif;		
+end;
+
+
+function BOOL IsFIDAParam(hMSI)
+	STRING szCmdLine;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	
+	if (MsiGetProperty(hMSI, "CMD_LINE", szCmdLine, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;	
+	
+	if (StrCompare(szCmdLine, "fida") = 0) then
+		return TRUE;
+	endif;
+	
+	return FALSE;
+end;
+
+
+function BOOL IsNOFIRMWAREParam(hMSI)
+	STRING szCmdLine;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	
+	if (MsiGetProperty(hMSI, "CMD_LINE", szCmdLine, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;	
+	
+	if (StrCompare(szCmdLine, "nofirmware") = 0) then
+		return TRUE;
+	endif;
+	
+	return FALSE;
+end;
+
+
+function BOOL IsDRIVERParam(hMSI)
+	STRING szCmdLine;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	
+	if (MsiGetProperty(hMSI, "CMD_LINE", szCmdLine, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;	
+	
+	if (StrCompare(szCmdLine, "driver") = 0) then
+		return TRUE;
+	endif;
+	
+	return FALSE;
+end;
+
+
+function BOOL IsUpgradingProduct(hMSI)
+	STRING szUpgradeProductCode;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	if (MsiGetProperty(hMSI, "UPGRADINGPRODUCTCODE", szUpgradeProductCode, nPathBuffer) != ERROR_SUCCESS) then	
+		return FALSE;
+	endif;		
+		
+	if (szUpgradeProductCode != "") then
+		return TRUE;
+	endif;
+		
+	return FALSE;
+end;
+
+
+function BOOL IsNOUWPParam(hMSI)
+	STRING szCmdLine;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	
+	if (MsiGetProperty(hMSI, "CMD_LINE", szCmdLine, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;	
+	
+	if (StrCompare(szCmdLine, "nouwp") = 0) then
+		return TRUE;
+	endif;
+	
+	return FALSE;
+end;
+
+function BOOL IsSystemAccount(hMSI)
+	STRING szInfo;
+	NUMBER nPathBuffer;
+begin
+	nPathBuffer = MAX_PATH;
+	if (MsiGetProperty(hMSI, "LogonUser", szInfo, nPathBuffer) != ERROR_SUCCESS) then
+		return FALSE;
+	endif;	
+	if(StrCompare(szInfo, "SYSTEM") = 0) then
+		return TRUE;
+	else
+		return FALSE;
+	endif;
+end;
+
+function CreateRegistry(sKey, sKeyName, sKeyValue) 
+	NUMBER iResult;
+begin 
+	Disable(LOGGING);
+	
+	//if (SYSPROCESSORINFO.nProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64) then
+		REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+
+		RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);		
+		if (RegDBKeyExist(sKey) < 0) then
+			RegDBCreateKeyEx(sKey, "");
+		endif;		
+		RegDBSetKeyValueEx(sKey, sKeyName, REGDB_STRING, sKeyValue, -1);
+
+		REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY; 
+	//endif;		
+	
+	Enable(LOGGING);	
+end;
+
+
+function DeleteRegistry(sKey, sKeyName) 
+	NUMBER iResult;
+begin 
+	Disable(LOGGING);
+	
+	//if (SYSPROCESSORINFO.nProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64) then
+		REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+
+		RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);		
+		if (RegDBKeyExist(sKey) > 0) then
+			RegDBDeleteValue (sKey, sKeyName);	
+		endif;				
+
+		REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY; 
+	//endif;		
+	
+	Enable(LOGGING);	
+end;
+
+
+function NUMBER GetOSBuildFromRegistry()    
+	STRING registryKey, entryKey, registryValue; 
+    NUMBER lenght, type, result;
+begin   	
+   	registryKey = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion"; 
+    entryKey = "CurrentBuild"; 
+    result = 0;  
+    
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;    
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    
+    if (RegDBKeyExist(registryKey) > 0) then  
+    	lenght = -1;  
+    	type = REGDB_STRING;
+        if (RegDBGetKeyValueEx(registryKey, entryKey, type, registryValue, lenght) < 0) then
+			REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;
+			return 0;
+        endif;
+        
+        StrToNum(result, registryValue);
+    endif;
+    
+    REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;     
+    
+    return result;
+end;
+
+
+function NUMBER GetInstallDriverFromRegistry()    
+	STRING registryKey, entryKey, registryValue; 
+    NUMBER lenght, type, result;
+begin   	
+   	registryKey = "SOFTWARE\\Alienware\\Alienware Command Center"; 
+    entryKey = "InstallDriver"; 
+    result = 0;  
+    
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;    
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    
+    if (RegDBKeyExist(registryKey) > 0) then  
+    	lenght = -1;  
+    	type = REGDB_STRING;
+        if (RegDBGetKeyValueEx(registryKey, entryKey, type, registryValue, lenght) < 0) then
+			REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;
+			return 0;
+        endif;
+        
+        StrToNum(result, registryValue);
+    endif;
+    
+    REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;     
+    
+    return result;
+end;
+
+
+function CreateInstallerStatusFile(szContent)
+	STRING szPathFile, szDirectory, szFilename;
+	NUMBER nvFileHandle;
+begin
+	Disable(LOGGING);
+	
+	OpenFileMode(FILE_MODE_NORMAL);
+
+	szDirectory = CommonAppDataFolder ^ "Alienware";
+	
+	if (ExistsDir(szDirectory) != EXISTS) then
+		if (CreateDir(szDirectory) = 0) then
+		endif;
+	endif;
+
+	szDirectory = szDirectory ^ "Alienware Command Center";
+	
+	if (ExistsDir(szDirectory) != EXISTS) then
+		if (CreateDir(szDirectory) = 0) then
+		endif;
+	endif;	
+	
+	szFilename = "InstallStatus";
+	szPathFile = szDirectory ^ szFilename;
+	if (CreateFile(nvFileHandle, szDirectory, szFilename) = 0) then
+		WriteLine(nvFileHandle, szContent);
+		SetFileInfo(szPathFile, FILE_ATTRIBUTE, FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_HIDDEN, "");
+	endif;	
+	
+	CloseFile (nvFileHandle);
+	
+	Enable(LOGGING);
+end;
+
+
+
+ 

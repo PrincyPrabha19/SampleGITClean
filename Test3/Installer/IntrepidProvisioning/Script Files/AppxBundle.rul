@@ -1,0 +1,62 @@
+#include "ifx.h"
+export prototype NUMBER AddProvisionedAppxPackage(HWND);
+
+#define DEBUG1
+
+function NUMBER AddProvisionedAppxPackage(hMSI)
+	STRING strFileName, strFileName2, strDependencies, strCommandLine, strSupportDirPath, strResult;
+	NUMBER nResult, nPathBuffer, nCertInstallResult;
+	BOOL bInstalled;
+begin           
+	nPathBuffer = MAX_PATH;
+	
+	if (MsiGetProperty(hMSI, "SUPPORTDIR", strSupportDirPath, nPathBuffer) != ERROR_SUCCESS) then	
+		return ERROR_FUNCTION_FAILED;
+	endif;
+		
+	strFileName = "dism.exe";	
+	strCommandLine = " /Online /Add-ProvisionedAppxPackage" +
+					 " /PackagePath:\"" + strSupportDirPath ^ "8e666bbc25ef4d7992348619ccbbb1c0.appxbundle\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.NET.Native.Framework.1.6_1.6.24903.0_x64__8wekyb3d8bbwe.appx\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.NET.Native.Framework.1.6_1.6.24903.0_x86__8wekyb3d8bbwe.appx\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.NET.Native.Runtime.1.6_1.6.24903.0_x64__8wekyb3d8bbwe.appx\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.NET.Native.Runtime.1.6_1.6.24903.0_x86__8wekyb3d8bbwe.appx\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.VCLibs.140.00_14.0.25426.0_x64__8wekyb3d8bbwe.appx\"" +
+					 " /DependencyPackagePath:\"" + strSupportDirPath ^ "Microsoft.VCLibs.140.00_14.0.25426.0_x86__8wekyb3d8bbwe.appx\"" +
+					 " /LicensePath:\"" + strSupportDirPath ^ "8e666bbc25ef4d7992348619ccbbb1c0_License1.xml\"" +
+					 " /OptionalPackagePath:\"" + strSupportDirPath ^ "21b9321d64bd4529be083fbc94c9f248.appxbundle\"" +
+					 " /LicensePath:\"" + strSupportDirPath ^ "21b9321d64bd4529be083fbc94c9f248_License1.xml\"";
+					 
+	//MessageBox(strCommandLine + strResult, INFORMATION);					 
+		
+	if (LaunchAppAndWait(strFileName, strCommandLine, LAAW_OPTION_WAIT | LAAW_OPTION_HIDDEN) < 0) then		
+		return 0;	
+	endif;
+	
+	#ifdef DEBUG
+	if (LAAW_PARAMETERS.nLaunchResult != 0) then
+		NumToStr(strResult, LAAW_PARAMETERS.nLaunchResult);
+		MessageBox("AddProvisionedAppxPackage failed with error code: " + strResult, INFORMATION);
+	endif;
+	#endif
+	
+	return LAAW_PARAMETERS.nLaunchResult;
+end;  
+
+
+/*
+dism.exe /Online /Add-ProvisionedAppxPackage /PackagePath:"E:\Temp\Package\4b19020032a44daaad0c0d4fc50f1da4.appxbundle" 
+
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.NET.Native.Framework.1.6_1.6.24903.0_x64__8wekyb3d8bbwe.appx" 
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.NET.Native.Framework.1.6_1.6.24903.0_x86__8wekyb3d8bbwe.appx" 
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.NET.Native.Runtime.1.6_1.6.24903.0_x64__8wekyb3d8bbwe.appx"
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.NET.Native.Runtime.1.6_1.6.24903.0_x86__8wekyb3d8bbwe.appx" 
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.VCLibs.140.00_14.0.25426.0_x64__8wekyb3d8bbwe.appx" 
+/DependencyPackagePath:"E:\Temp\Package\Microsoft.VCLibs.140.00_14.0.25426.0_x86__8wekyb3d8bbwe.appx"
+/LicensePath:"E:\Temp\Package\4b19020032a44daaad0c0d4fc50f1da4_License1.xml"
+
+/OptionalPackagePath:"E:\Temp\Package\a153e133ba8f4609a91c0dcce3a2cb31.appxbundle" 
+/LicensePath:"E:\Temp\Package\a153e133ba8f4609a91c0dcce3a2cb31_License1.xml"
+*/
+
+
