@@ -1,0 +1,1 @@
+robocopy "\\atom.us.dell.com\Development\CC5.0\ISFiles\extras" "D:\DEVGIT\Intrepid\Installer\Files\extras" /MIR /XD "PackageBundle" /XD "AlienFXSDK"
