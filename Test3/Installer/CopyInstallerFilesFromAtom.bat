@@ -1,0 +1,1 @@
+robocopy "\\atom.us.dell.com\Development\CC5.0\ISFiles" "E:\DEVGIT\Intrepid\Installer\Files" /MIR
